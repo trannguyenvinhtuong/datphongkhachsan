@@ -1,0 +1,94 @@
+a{
+    text-decoration: none;
+    color: black;
+}
+.icon-style{
+    font-family: Arial;
+    font-size: 22px;
+    color: #7a23df;
+    font-weight: 600;
+}
+.icon-style:hover{
+    color: #7a23df;
+}
+.menu-item{
+    color: #666666;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    transition: 0.4s;
+}
+.menu-item:hover{
+    border: 1px solid rgb(185, 182, 182);
+    border-radius: 40%;
+    background-color: rgb(255, 240, 240);
+    color: black;
+    transition:0.4s;
+}
+.form-search{
+    background-image: url(img/bg-banner-home.png);
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+}
+.tk-wrapper{
+    background-color: rgb(7, 128, 250);
+    border-radius: 10px;
+}
+.tim-style{
+    color: whitesmoke;
+    font-size: 17px;
+    font-weight: 400;
+    transition: 0.6s;
+}
+.tim-style:hover{
+    color: rgb(243, 222, 222);
+    font-weight: 600;
+    border-bottom: 2px solid white ;
+}
+.ks{
+    color: rgb(243, 222, 222);
+    font-weight: 600;
+    border-bottom: 2px solid white ;
+}
+.search-wrapper{
+    width: 100%;
+    position: relative;
+    display: inline-block;
+}
+.ks-search{
+    width: 83%;
+    border-radius: 5px;
+    border: none;
+    height: 40px;
+    font-size: 16px;
+    padding-left: 14px;
+}
+.number-input{
+    width: 76%;
+    border-radius: 5px;
+    border: none;
+    height: 40px;
+    font-size: 16px;
+    padding-left: 14px;
+}
+.btn-search{
+    width: 100%;
+    height: 50px;
+    border-radius: 6px;
+    border: none;
+    background-color: rgb(221,5,224);
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    transition: 0.5s;
+}
+.btn-search:hover{
+    background-color: rgb(183,0,183);
+    transition: 0.5s;
+    border-radius: 22px;
+    color: rgb(243, 219, 174);
+}
+.img-slide-size{
+    height: 407px;
+}
