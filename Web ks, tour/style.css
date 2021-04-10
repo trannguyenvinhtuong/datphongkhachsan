@@ -92,3 +92,59 @@ a{
 .img-slide-size{
     height: 407px;
 }
+.diadiem{
+    font-size: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    font-weight: 700;
+    box-sizing: border-box;
+    border-bottom: 4px solid rgb(245, 234, 234);
+    line-height: 55px;
+}
+.img-item{
+    width: 100%;
+    height: 203px;
+    object-fit: cover;
+}
+.img-content-diadiem{
+    width: 100%;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    transition: 0.6s;
+}
+.img-content-diadiem:hover{
+    border-radius: 25px;
+    transition: 0.6s;
+    cursor: pointer;
+}
+.item-name{
+    font-size: 16px;
+    color: white;
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    padding: 7px;
+    width: 100%;
+    font-weight: 700;
+    text-align: center;
+    background-color: rgb(0,174,239);
+    border-top: 1px solid #3760e4;
+    margin: 0;
+}
+.footer-td{
+    font-size: 16px;
+    font-weight: bold;
+}
+.icon-lh{
+    color: black;
+    font-size: 25px;
+    padding-left: 10px;
+}
+.tinhthanh{
+    color: black;
+    font-size: 18px;
+    text-decoration: none;
+}
