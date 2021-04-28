@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLDPKS" Class="QLDPKSDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-RRL7VKA\SQLEXPRESS2013;Initial Catalog=QLDPKS;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="QLDPKSConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.HOME_DDNB" Member="HOME_DDNBs">
+    <Type Name="HOME_DDNB">
+      <Column Name="IDDIADIEM" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TENDIADIEM" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="img" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HOME_SLIDE" Member="HOME_SLIDEs">
+    <Type Name="HOME_SLIDE">
+      <Column Name="IDSLIDE" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SLIDECONTENT" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="IMG" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

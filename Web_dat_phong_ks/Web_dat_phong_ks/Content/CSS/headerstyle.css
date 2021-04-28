@@ -1,0 +1,27 @@
+﻿a{
+    text-decoration: none;
+    color: black;
+}
+.icon-style{
+    font-family: Arial;
+    font-size: 22px;
+    color: #7a23df;
+    font-weight: 600;
+}
+.icon-style:hover{
+    color: #7a23df;
+}
+.menu-item{
+    color: #666666;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    transition: 0.4s;
+}
+.menu-item:hover{
+    border: 1px solid rgb(185, 182, 182);
+    border-radius: 40%;
+    background-color: rgb(255, 240, 240);
+    color: black;
+    transition:0.4s;
+}
