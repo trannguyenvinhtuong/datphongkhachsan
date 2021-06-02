@@ -1,5 +1,49 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLDPKS" Class="QLDPKSDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-RRL7VKA\SQLEXPRESS2013;Initial Catalog=QLDPKS;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="QLDPKSConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.;Initial Catalog=QLDPKS;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="QLDPKSConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.BANGLOC" Member="BANGLOCs">
+    <Type Name="BANGLOC">
+      <Column Name="IDBANG" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TENBANG" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="BANGLOC_OPTIONLOC" Member="OPTIONLOCs" ThisKey="IDBANG" OtherKey="IDBANG" Type="OPTIONLOC" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PHONGDV_FREE" Member="PHONGDV_FREEs">
+    <Type Name="PHONGDV_FREE">
+      <Column Name="MAPHONG" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="MADV" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="GHICHU" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MADVFREE" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="DICHVU_PHONGDV_FREE" Member="DICHVU" ThisKey="MADV" OtherKey="MADV" Type="DICHVU" IsForeignKey="true" />
+      <Association Name="PHONG_PHONGDV_FREE" Member="PHONG" ThisKey="MAPHONG" OtherKey="MAPHONG" Type="PHONG" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BOOKING" Member="BOOKINGs">
+    <Type Name="BOOKING">
+      <Column Name="MABOOK" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MAPHONG" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="MAKH" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="NGAYVAO" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="NGAYDI" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="BOOKING_HOADON" Member="HOADONs" ThisKey="MABOOK" OtherKey="MABOOK" Type="HOADON" />
+      <Association Name="PHONG_BOOKING" Member="PHONG" ThisKey="MAPHONG" OtherKey="MAPHONG" Type="PHONG" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DICHVU" Member="DICHVUs">
+    <Type Name="DICHVU">
+      <Column Name="MADV" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TENDV" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="DICHVU_PHONGDV_FREE" Member="PHONGDV_FREEs" ThisKey="MADV" OtherKey="MADV" Type="PHONGDV_FREE" />
+      <Association Name="DICHVU_PHONGDV_FEE" Member="PHONGDV_FEEs" ThisKey="MADV" OtherKey="MADV" Type="PHONGDV_FEE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HOADON" Member="HOADONs">
+    <Type Name="HOADON">
+      <Column Name="MAHD" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MABOOK" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="TONGTIEN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="BOOKING_HOADON" Member="BOOKING" ThisKey="MABOOK" OtherKey="MABOOK" Type="BOOKING" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.HOME_DDNB" Member="HOME_DDNBs">
     <Type Name="HOME_DDNB">
       <Column Name="IDDIADIEM" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -12,6 +56,67 @@
       <Column Name="IDSLIDE" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="SLIDECONTENT" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="IMG" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KHACHSAN" Member="KHACHSANs">
+    <Type Name="KHACHSAN">
+      <Column Name="MAKHACHSAN" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MANCC" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="TENKHACHSAN" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DIACHI" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="SOLUONGPHONG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="KHACHSAN_PHONG" Member="PHONGs" ThisKey="MAKHACHSAN" OtherKey="MAKHACHSAN" Type="PHONG" />
+      <Association Name="NCC_KHACHSAN" Member="NCC" ThisKey="MANCC" OtherKey="MANCC" Type="NCC" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LOAIPHONG" Member="LOAIPHONGs">
+    <Type Name="LOAIPHONG">
+      <Column Name="MALOAI" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TENLOAIPHONG" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="LOAIPHONG_PHONG" Member="PHONGs" ThisKey="MALOAI" OtherKey="MALOAI" Type="PHONG" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NCC" Member="NCCs">
+    <Type Name="NCC">
+      <Column Name="MANCC" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TENNCC" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="NCC_KHACHSAN" Member="KHACHSANs" ThisKey="MANCC" OtherKey="MANCC" Type="KHACHSAN" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OPTIONLOC" Member="OPTIONLOCs">
+    <Type Name="OPTIONLOC">
+      <Column Name="IDKIEULOC" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TENKIEULOC" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IDBANG" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="BANGLOC_OPTIONLOC" Member="BANGLOC" ThisKey="IDBANG" OtherKey="IDBANG" Type="BANGLOC" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PHONG" Member="PHONGs">
+    <Type Name="PHONG">
+      <Column Name="MAKHACHSAN" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="MALOAI" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="GIA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MAPHONG" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ANH1" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ANH2" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ANH3" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ANH4" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ANH5" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="PHONG_PHONGDV_FREE" Member="PHONGDV_FREEs" ThisKey="MAPHONG" OtherKey="MAPHONG" Type="PHONGDV_FREE" />
+      <Association Name="PHONG_BOOKING" Member="BOOKINGs" ThisKey="MAPHONG" OtherKey="MAPHONG" Type="BOOKING" />
+      <Association Name="PHONG_PHONGDV_FEE" Member="PHONGDV_FEEs" ThisKey="MAPHONG" OtherKey="MAPHONG" Type="PHONGDV_FEE" />
+      <Association Name="KHACHSAN_PHONG" Member="KHACHSAN" ThisKey="MAKHACHSAN" OtherKey="MAKHACHSAN" Type="KHACHSAN" IsForeignKey="true" />
+      <Association Name="LOAIPHONG_PHONG" Member="LOAIPHONG" ThisKey="MALOAI" OtherKey="MALOAI" Type="LOAIPHONG" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PHONGDV_FEE" Member="PHONGDV_FEEs">
+    <Type Name="PHONGDV_FEE">
+      <Column Name="MAPHONG" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="MADV" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="GIA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MADVFEE" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="DICHVU_PHONGDV_FEE" Member="DICHVU" ThisKey="MADV" OtherKey="MADV" Type="DICHVU" IsForeignKey="true" />
+      <Association Name="PHONG_PHONGDV_FEE" Member="PHONG" ThisKey="MAPHONG" OtherKey="MAPHONG" Type="PHONG" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>
