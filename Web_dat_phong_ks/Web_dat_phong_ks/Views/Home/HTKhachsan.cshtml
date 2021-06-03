@@ -1,0 +1,251 @@
+﻿
+@{
+    ViewBag.Title = "HTKhachsan";
+    Layout = "~/Views/Shared/_LayoutDefault.cshtml";
+}
+<br/>
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            <h1 class="loc">Lọc</h1>
+            <br />
+            <ul class="list-group">
+                <li class="list-group-item" style="border-bottom: 1px dashed wheat;">
+                    <br />
+                    <h1 class="loc-label">Lọc theo tên</h1>
+                    <input type="text" placeholder="Tên khách sạn ..." class="form-control" />
+                    <br />
+                </li>
+                <li class="list-group-item" style="border-bottom: none;">
+                    <br />
+                    <h1 class="loc-label">Theo mức giá</h1>
+                    <h1 style="font-size: 14px">Từ</h1>
+                    <input type="number" placeholder="0" class="form-control" />
+                    <br />
+                    <h1 style="font-size: 14px">Đến</h1>
+                    <input type="number" placeholder="0" class="form-control" />
+                </li>
+                <li class="list-group-item" style="border-bottom: none;">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="checkdacbiet">
+                        <label class="form-check-label" for="checkdacbiet">
+                            Ưu đãi đặc biệt
+                        </label>
+                    </div>
+                    <br />
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="checkgiatot">
+                        <label class="form-check-label" for="checkgiatot">
+                            Giá tốt
+                        </label>
+                    </div>
+                    <br />
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="checkgiashock">
+                        <label class="form-check-label" for="checkgiashock">
+                            Giá shock
+                        </label>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <button type="button" class="btn btn-primary btn-tp">Tìm phòng</button>
+                    <br />
+                    <br />
+                </li>
+            </ul>
+            <!-- Part2 -->
+            <br />
+            <ul class="list-group">
+                <li class="list-group-item" style="border-bottom: 1px dashed wheat;">
+                    <br />
+                    <h1 class="loc-label">Hạng sao</h1>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="check1star">
+                        <label class="form-check-label color-star" for="check1star">
+                            <i class="fas fa-star"></i>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="check2star">
+                        <label class="form-check-label color-star" for="check2star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="check3star">
+                        <label class="form-check-label color-star" for="check3star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="check4star">
+                        <label class="form-check-label color-star" for="check4star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="check5star">
+                        <label class="form-check-label color-star" for="check5star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </label>
+                    </div>
+                    <br />
+                </li>
+                <li class="list-group-item">
+                    <br />
+                    <h1 class="loc-label">Loại hình</h1>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="check1star">
+                        <label class="form-check-label" for="check1star">
+                            Tất cả
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="check1star">
+                        <label class="form-check-label" for="check1star">
+                            Khách sạn
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="check1star">
+                        <label class="form-check-label" for="check1star">
+                            Resort
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="check1star">
+                        <label class="form-check-label" for="check1star">
+                            <i class="fas fa-star"></i>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="check1star">
+                        <label class="form-check-label" for="check1star">
+                            <i class="fas fa-star"></i>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="check1star">
+                        <label class="form-check-label" for="check1star">
+                            <i class="fas fa-star"></i>
+                        </label>
+                    </div>
+                </li>
+                <li class="list-group-item">A third item</li>
+                <li class="list-group-item">A fourth item</li>
+                <li class="list-group-item">And a fifth one</li>
+            </ul>
+        </div>
+        <div class="col-9">
+            
+
+                <h1 class="addressname">Khách sạn tại Hồ Chí Minh</h1>
+                <br />
+                <div class="option-nav-wrapper">
+                    <ul class="nav nav-pills nav-fill">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Phổ biến</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Đánh giá cao</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                Hạng sao
+                                <!-- <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownhangSao" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Hạng sao
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownhangSao">
+                                      <li><a class="dropdown-item" href="#">Sao thấp trước</a></li>
+                                      <li><a class="dropdown-item" href="#">Sao cao trước</a></li>
+                                    </ul>
+                                  </div> -->
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Giá</a>
+                        </li>
+                    </ul>
+                </div>
+               
+                <div class="container" style="padding: 0;">
+                 
+                    <div class="row">
+                        @foreach (var ks in Model)
+                        {
+                            
+                            <div class="col-9">
+                                <br/>
+                                <br/>
+                                <a href="#" class="ten-ks">@ks.TENKHACHSAN</a>
+                                <p style="height: 10px; color: rgb(226, 224, 76); font-size: 14px;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+                                <p style="font-size: 14px; height: 10px;"><i class="fas fa-map-marker-alt" style="color: blue;"></i> @ks.DIACHICUTHE</p>
+                                <p style="font-size: 14px; color: blue;">Trung tâm thương mại Sài Gòn Centre</p>
+                                <!-- <div style="width: 100%;"> -->
+                                <div class="container" style="padding:0;">
+                                    <div class="row">
+                                        <div class="col-5">
+                                            <img class="img-lstks" src="~/Content/imgs/imgks/@ks.ANHKS1" />
+                                        </div>
+                                        <div class="col-7">
+                                            <p style="font-size: 12px; height: 43px;">
+                                                Khách Sạn TTC - Deluxe Airport Sài Gòn nằm ngay trung tâm quận Tân Bình, đối diện công viên Hoàng Văn Thụ, cách sân bay quốc tế Tân Sơn Nhất 1km. Trang thiết bị hiện đại và được bài trí sang trọng, ấm cúng.
+                                            </p>
+                                            <br />
+                                            <p class="option-them"><i class="fas fa-check-circle" style="color: green;"></i> Đảm bảo hoàn tiền</p>
+                                            <p class="option-them"><i class="fas fa-check-circle" style="color: green;"></i> Đảm bảo giá tốt</p>
+                                            <p class="option-them"><i class="fas fa-utensils"></i> Bao gồm bữa sáng</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-3">
+                                <br />
+                                <br/>
+                                <div style="height: 90%;">
+                                    <div style="background-color: whitesmoke; border-radius: 5px 5px 0px 0px; height: 40%;">
+                                        <div class="danhgia">
+                                            <span class="xeploai">
+                                                Xuất sắc
+                                            </span>
+                                            <span class="diem">
+                                                9.2
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div style="background-color: #e9f3f7; border-radius: 0px 0px 5px 5px; height: 60%;">
+                                        <div class="giamgia" style="margin-top: 10px;margin-right: 10px;">Giảm giá 74%</div>
+                                        <br />
+                                        <br />
+                                        <p class="giacu">1,045,000 đ</p>
+                                        <br />
+                                        <p class="giamoi">271,000 đ</p>
+                                        <br />
+                                        <button class="xemphong">XEM PHÒNG</button>
+                                        <br />
+                                        <p style="color: red; font-size: 12px; float: right; margin-right: 10px; margin-top: 5px; font-weight: bold;">Đảm bảo còn phòng !</p>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        }
+                    </div>
+                    
+                    </div>
+            
+        </div>
+    </div>
+</div>

@@ -1288,9 +1288,29 @@ namespace Web_dat_phong_ks.Models
 		
 		private string _TENKHACHSAN;
 		
-		private string _DIACHI;
-		
 		private System.Nullable<int> _SOLUONGPHONG;
+		
+		private System.Nullable<int> _SOSAO;
+		
+		private string _TINH;
+		
+		private string _QUAN;
+		
+		private string _PHUONG;
+		
+		private string _DUONG;
+		
+		private string _DIACHICUTHE;
+		
+		private string _ANHKS1;
+		
+		private string _ANHKS2;
+		
+		private string _ANHKS3;
+		
+		private string _ANHKS4;
+		
+		private string _ANHKS5;
 		
 		private EntitySet<PHONG> _PHONGs;
 		
@@ -1306,10 +1326,30 @@ namespace Web_dat_phong_ks.Models
     partial void OnMANCCChanged();
     partial void OnTENKHACHSANChanging(string value);
     partial void OnTENKHACHSANChanged();
-    partial void OnDIACHIChanging(string value);
-    partial void OnDIACHIChanged();
     partial void OnSOLUONGPHONGChanging(System.Nullable<int> value);
     partial void OnSOLUONGPHONGChanged();
+    partial void OnSOSAOChanging(System.Nullable<int> value);
+    partial void OnSOSAOChanged();
+    partial void OnTINHChanging(string value);
+    partial void OnTINHChanged();
+    partial void OnQUANChanging(string value);
+    partial void OnQUANChanged();
+    partial void OnPHUONGChanging(string value);
+    partial void OnPHUONGChanged();
+    partial void OnDUONGChanging(string value);
+    partial void OnDUONGChanged();
+    partial void OnDIACHICUTHEChanging(string value);
+    partial void OnDIACHICUTHEChanged();
+    partial void OnANHKS1Changing(string value);
+    partial void OnANHKS1Changed();
+    partial void OnANHKS2Changing(string value);
+    partial void OnANHKS2Changed();
+    partial void OnANHKS3Changing(string value);
+    partial void OnANHKS3Changed();
+    partial void OnANHKS4Changing(string value);
+    partial void OnANHKS4Changed();
+    partial void OnANHKS5Changing(string value);
+    partial void OnANHKS5Changed();
     #endregion
 		
 		public KHACHSAN()
@@ -1339,7 +1379,7 @@ namespace Web_dat_phong_ks.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MANCC", DbType="Char(10)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MANCC", DbType="Char(10) NOT NULL", CanBeNull=false)]
 		public string MANCC
 		{
 			get
@@ -1383,26 +1423,6 @@ namespace Web_dat_phong_ks.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIACHI", DbType="NVarChar(100)")]
-		public string DIACHI
-		{
-			get
-			{
-				return this._DIACHI;
-			}
-			set
-			{
-				if ((this._DIACHI != value))
-				{
-					this.OnDIACHIChanging(value);
-					this.SendPropertyChanging();
-					this._DIACHI = value;
-					this.SendPropertyChanged("DIACHI");
-					this.OnDIACHIChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOLUONGPHONG", DbType="Int")]
 		public System.Nullable<int> SOLUONGPHONG
 		{
@@ -1419,6 +1439,226 @@ namespace Web_dat_phong_ks.Models
 					this._SOLUONGPHONG = value;
 					this.SendPropertyChanged("SOLUONGPHONG");
 					this.OnSOLUONGPHONGChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOSAO", DbType="Int")]
+		public System.Nullable<int> SOSAO
+		{
+			get
+			{
+				return this._SOSAO;
+			}
+			set
+			{
+				if ((this._SOSAO != value))
+				{
+					this.OnSOSAOChanging(value);
+					this.SendPropertyChanging();
+					this._SOSAO = value;
+					this.SendPropertyChanged("SOSAO");
+					this.OnSOSAOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TINH", DbType="NVarChar(100)")]
+		public string TINH
+		{
+			get
+			{
+				return this._TINH;
+			}
+			set
+			{
+				if ((this._TINH != value))
+				{
+					this.OnTINHChanging(value);
+					this.SendPropertyChanging();
+					this._TINH = value;
+					this.SendPropertyChanged("TINH");
+					this.OnTINHChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QUAN", DbType="NVarChar(100)")]
+		public string QUAN
+		{
+			get
+			{
+				return this._QUAN;
+			}
+			set
+			{
+				if ((this._QUAN != value))
+				{
+					this.OnQUANChanging(value);
+					this.SendPropertyChanging();
+					this._QUAN = value;
+					this.SendPropertyChanged("QUAN");
+					this.OnQUANChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PHUONG", DbType="NVarChar(100)")]
+		public string PHUONG
+		{
+			get
+			{
+				return this._PHUONG;
+			}
+			set
+			{
+				if ((this._PHUONG != value))
+				{
+					this.OnPHUONGChanging(value);
+					this.SendPropertyChanging();
+					this._PHUONG = value;
+					this.SendPropertyChanged("PHUONG");
+					this.OnPHUONGChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DUONG", DbType="NVarChar(100)")]
+		public string DUONG
+		{
+			get
+			{
+				return this._DUONG;
+			}
+			set
+			{
+				if ((this._DUONG != value))
+				{
+					this.OnDUONGChanging(value);
+					this.SendPropertyChanging();
+					this._DUONG = value;
+					this.SendPropertyChanged("DUONG");
+					this.OnDUONGChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIACHICUTHE", DbType="NVarChar(100)")]
+		public string DIACHICUTHE
+		{
+			get
+			{
+				return this._DIACHICUTHE;
+			}
+			set
+			{
+				if ((this._DIACHICUTHE != value))
+				{
+					this.OnDIACHICUTHEChanging(value);
+					this.SendPropertyChanging();
+					this._DIACHICUTHE = value;
+					this.SendPropertyChanged("DIACHICUTHE");
+					this.OnDIACHICUTHEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ANHKS1", DbType="NChar(100)")]
+		public string ANHKS1
+		{
+			get
+			{
+				return this._ANHKS1;
+			}
+			set
+			{
+				if ((this._ANHKS1 != value))
+				{
+					this.OnANHKS1Changing(value);
+					this.SendPropertyChanging();
+					this._ANHKS1 = value;
+					this.SendPropertyChanged("ANHKS1");
+					this.OnANHKS1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ANHKS2", DbType="NChar(100)")]
+		public string ANHKS2
+		{
+			get
+			{
+				return this._ANHKS2;
+			}
+			set
+			{
+				if ((this._ANHKS2 != value))
+				{
+					this.OnANHKS2Changing(value);
+					this.SendPropertyChanging();
+					this._ANHKS2 = value;
+					this.SendPropertyChanged("ANHKS2");
+					this.OnANHKS2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ANHKS3", DbType="NChar(100)")]
+		public string ANHKS3
+		{
+			get
+			{
+				return this._ANHKS3;
+			}
+			set
+			{
+				if ((this._ANHKS3 != value))
+				{
+					this.OnANHKS3Changing(value);
+					this.SendPropertyChanging();
+					this._ANHKS3 = value;
+					this.SendPropertyChanged("ANHKS3");
+					this.OnANHKS3Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ANHKS4", DbType="NChar(100)")]
+		public string ANHKS4
+		{
+			get
+			{
+				return this._ANHKS4;
+			}
+			set
+			{
+				if ((this._ANHKS4 != value))
+				{
+					this.OnANHKS4Changing(value);
+					this.SendPropertyChanging();
+					this._ANHKS4 = value;
+					this.SendPropertyChanged("ANHKS4");
+					this.OnANHKS4Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ANHKS5", DbType="NChar(100)")]
+		public string ANHKS5
+		{
+			get
+			{
+				return this._ANHKS5;
+			}
+			set
+			{
+				if ((this._ANHKS5 != value))
+				{
+					this.OnANHKS5Changing(value);
+					this.SendPropertyChanging();
+					this._ANHKS5 = value;
+					this.SendPropertyChanged("ANHKS5");
+					this.OnANHKS5Changed();
 				}
 			}
 		}
@@ -1906,6 +2146,10 @@ namespace Web_dat_phong_ks.Models
 		
 		private string _ANH5;
 		
+		private System.Nullable<int> _SOGIUONG;
+		
+		private string _LOAIGIUONG;
+		
 		private EntitySet<PHONGDV_FREE> _PHONGDV_FREEs;
 		
 		private EntitySet<BOOKING> _BOOKINGs;
@@ -1938,6 +2182,10 @@ namespace Web_dat_phong_ks.Models
     partial void OnANH4Changed();
     partial void OnANH5Changing(string value);
     partial void OnANH5Changed();
+    partial void OnSOGIUONGChanging(System.Nullable<int> value);
+    partial void OnSOGIUONGChanged();
+    partial void OnLOAIGIUONGChanging(string value);
+    partial void OnLOAIGIUONGChanged();
     #endregion
 		
 		public PHONG()
@@ -2134,6 +2382,46 @@ namespace Web_dat_phong_ks.Models
 					this._ANH5 = value;
 					this.SendPropertyChanged("ANH5");
 					this.OnANH5Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOGIUONG", DbType="Int")]
+		public System.Nullable<int> SOGIUONG
+		{
+			get
+			{
+				return this._SOGIUONG;
+			}
+			set
+			{
+				if ((this._SOGIUONG != value))
+				{
+					this.OnSOGIUONGChanging(value);
+					this.SendPropertyChanging();
+					this._SOGIUONG = value;
+					this.SendPropertyChanged("SOGIUONG");
+					this.OnSOGIUONGChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LOAIGIUONG", DbType="NVarChar(100)")]
+		public string LOAIGIUONG
+		{
+			get
+			{
+				return this._LOAIGIUONG;
+			}
+			set
+			{
+				if ((this._LOAIGIUONG != value))
+				{
+					this.OnLOAIGIUONGChanging(value);
+					this.SendPropertyChanging();
+					this._LOAIGIUONG = value;
+					this.SendPropertyChanged("LOAIGIUONG");
+					this.OnLOAIGIUONGChanged();
 				}
 			}
 		}

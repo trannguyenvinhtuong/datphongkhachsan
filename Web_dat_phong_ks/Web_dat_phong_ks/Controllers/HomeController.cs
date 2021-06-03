@@ -39,6 +39,21 @@ namespace Web_dat_phong_ks.Controllers
             return PartialView(slide);
         }
 
+        public List<KHACHSAN>lstKS(string tinh)
+        {
+            //var ks = from khachsan in data.KHACHSANs
+            //         where khachsan.TINH == tinh
+            //         select khachsan;
+            return data.KHACHSANs.Where(ks => ks.TINH == tinh).ToList();
+        }
+
+        public ActionResult HTKhachsan()
+        {
+            string tinh = "TP.HCM";
+            var ks = lstKS(tinh);
+            return View(ks);
+        }
+
        
 
     }

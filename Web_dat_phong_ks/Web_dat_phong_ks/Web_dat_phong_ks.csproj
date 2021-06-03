@@ -20,6 +20,8 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -39,6 +41,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -108,12 +116,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.1.0.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
     </Reference>
@@ -179,6 +181,7 @@
     <Content Include="Content\CSS\footerstyle.css" />
     <Content Include="Content\CSS\headerstyle.css" />
     <Content Include="Content\CSS\homestyle.css" />
+    <Content Include="Content\CSS\phongstyle.css" />
     <Content Include="Content\imgs\2game-tien-hiep.jpg" />
     <Content Include="Content\imgs\bach-luyen-thanh-tien.jpg" />
     <Content Include="Content\imgs\bg-banner-home.png" />
@@ -188,6 +191,12 @@
     <Content Include="Content\imgs\hanoi.jpg" />
     <Content Include="Content\imgs\hoian.jpg" />
     <Content Include="Content\imgs\hue.png" />
+    <Content Include="Content\imgs\imgks\lemeridiensaigon.jpg" />
+    <Content Include="Content\imgs\imgks\muongthanh1.jpg" />
+    <Content Include="Content\imgs\imgks\parkhyatt.jpg" />
+    <Content Include="Content\imgs\imgks\renaissancerriverside1.jpg" />
+    <Content Include="Content\imgs\imgks\sofitel1.jpg" />
+    <Content Include="Content\imgs\imgks\villasg.jpg" />
     <Content Include="Content\imgs\logo.png" />
     <Content Include="Content\imgs\nhatrang.jpg" />
     <Content Include="Content\imgs\phanthiet.jpg" />
@@ -233,6 +242,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\DiaDiem.cshtml" />
     <Content Include="Views\Home\HTSlide.cshtml" />
+    <Content Include="Views\Home\HTKhachsan.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

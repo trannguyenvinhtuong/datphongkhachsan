@@ -61,10 +61,20 @@
   <Table Name="dbo.KHACHSAN" Member="KHACHSANs">
     <Type Name="KHACHSAN">
       <Column Name="MAKHACHSAN" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="MANCC" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="MANCC" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
       <Column Name="TENKHACHSAN" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="DIACHI" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="SOLUONGPHONG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SOSAO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TINH" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="QUAN" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="PHUONG" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DUONG" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DIACHICUTHE" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ANHKS1" Type="System.String" DbType="NChar(100)" CanBeNull="true" />
+      <Column Name="ANHKS2" Type="System.String" DbType="NChar(100)" CanBeNull="true" />
+      <Column Name="ANHKS3" Type="System.String" DbType="NChar(100)" CanBeNull="true" />
+      <Column Name="ANHKS4" Type="System.String" DbType="NChar(100)" CanBeNull="true" />
+      <Column Name="ANHKS5" Type="System.String" DbType="NChar(100)" CanBeNull="true" />
       <Association Name="KHACHSAN_PHONG" Member="PHONGs" ThisKey="MAKHACHSAN" OtherKey="MAKHACHSAN" Type="PHONG" />
       <Association Name="NCC_KHACHSAN" Member="NCC" ThisKey="MANCC" OtherKey="MANCC" Type="NCC" IsForeignKey="true" />
     </Type>
@@ -102,6 +112,8 @@
       <Column Name="ANH3" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="ANH4" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="ANH5" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="SOGIUONG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LOAIGIUONG" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Association Name="PHONG_PHONGDV_FREE" Member="PHONGDV_FREEs" ThisKey="MAPHONG" OtherKey="MAPHONG" Type="PHONGDV_FREE" />
       <Association Name="PHONG_BOOKING" Member="BOOKINGs" ThisKey="MAPHONG" OtherKey="MAPHONG" Type="BOOKING" />
       <Association Name="PHONG_PHONGDV_FEE" Member="PHONGDV_FEEs" ThisKey="MAPHONG" OtherKey="MAPHONG" Type="PHONGDV_FEE" />
