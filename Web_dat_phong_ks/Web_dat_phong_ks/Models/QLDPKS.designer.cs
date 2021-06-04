@@ -1068,6 +1068,8 @@ namespace Web_dat_phong_ks.Models
 		
 		private string _img;
 		
+		private EntitySet<KHACHSAN> _KHACHSANs;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1082,6 +1084,7 @@ namespace Web_dat_phong_ks.Models
 		
 		public HOME_DDNB()
 		{
+			this._KHACHSANs = new EntitySet<KHACHSAN>(new Action<KHACHSAN>(this.attach_KHACHSANs), new Action<KHACHSAN>(this.detach_KHACHSANs));
 			OnCreated();
 		}
 		
@@ -1145,6 +1148,19 @@ namespace Web_dat_phong_ks.Models
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="HOME_DDNB_KHACHSAN", Storage="_KHACHSANs", ThisKey="IDDIADIEM", OtherKey="IDDIADIEM")]
+		public EntitySet<KHACHSAN> KHACHSANs
+		{
+			get
+			{
+				return this._KHACHSANs;
+			}
+			set
+			{
+				this._KHACHSANs.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -1163,6 +1179,18 @@ namespace Web_dat_phong_ks.Models
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_KHACHSANs(KHACHSAN entity)
+		{
+			this.SendPropertyChanging();
+			entity.HOME_DDNB = this;
+		}
+		
+		private void detach_KHACHSANs(KHACHSAN entity)
+		{
+			this.SendPropertyChanging();
+			entity.HOME_DDNB = null;
 		}
 	}
 	
@@ -1312,7 +1340,23 @@ namespace Web_dat_phong_ks.Models
 		
 		private string _ANHKS5;
 		
+		private string _MOTA;
+		
+		private System.Nullable<int> _GIAPHONGCU;
+		
+		private System.Nullable<int> _GIAPHONGMOI;
+		
+		private string _DIADANH;
+		
+		private string _DANHGIA;
+		
+		private System.Nullable<double> _DIEM;
+		
+		private string _IDDIADIEM;
+		
 		private EntitySet<PHONG> _PHONGs;
+		
+		private EntityRef<HOME_DDNB> _HOME_DDNB;
 		
 		private EntityRef<NCC> _NCC;
 		
@@ -1350,11 +1394,26 @@ namespace Web_dat_phong_ks.Models
     partial void OnANHKS4Changed();
     partial void OnANHKS5Changing(string value);
     partial void OnANHKS5Changed();
+    partial void OnMOTAChanging(string value);
+    partial void OnMOTAChanged();
+    partial void OnGIAPHONGCUChanging(System.Nullable<int> value);
+    partial void OnGIAPHONGCUChanged();
+    partial void OnGIAPHONGMOIChanging(System.Nullable<int> value);
+    partial void OnGIAPHONGMOIChanged();
+    partial void OnDIADANHChanging(string value);
+    partial void OnDIADANHChanged();
+    partial void OnDANHGIAChanging(string value);
+    partial void OnDANHGIAChanged();
+    partial void OnDIEMChanging(System.Nullable<double> value);
+    partial void OnDIEMChanged();
+    partial void OnIDDIADIEMChanging(string value);
+    partial void OnIDDIADIEMChanged();
     #endregion
 		
 		public KHACHSAN()
 		{
 			this._PHONGs = new EntitySet<PHONG>(new Action<PHONG>(this.attach_PHONGs), new Action<PHONG>(this.detach_PHONGs));
+			this._HOME_DDNB = default(EntityRef<HOME_DDNB>);
 			this._NCC = default(EntityRef<NCC>);
 			OnCreated();
 		}
@@ -1663,6 +1722,150 @@ namespace Web_dat_phong_ks.Models
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MOTA", DbType="NVarChar(100)")]
+		public string MOTA
+		{
+			get
+			{
+				return this._MOTA;
+			}
+			set
+			{
+				if ((this._MOTA != value))
+				{
+					this.OnMOTAChanging(value);
+					this.SendPropertyChanging();
+					this._MOTA = value;
+					this.SendPropertyChanged("MOTA");
+					this.OnMOTAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GIAPHONGCU", DbType="Int")]
+		public System.Nullable<int> GIAPHONGCU
+		{
+			get
+			{
+				return this._GIAPHONGCU;
+			}
+			set
+			{
+				if ((this._GIAPHONGCU != value))
+				{
+					this.OnGIAPHONGCUChanging(value);
+					this.SendPropertyChanging();
+					this._GIAPHONGCU = value;
+					this.SendPropertyChanged("GIAPHONGCU");
+					this.OnGIAPHONGCUChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GIAPHONGMOI", DbType="Int")]
+		public System.Nullable<int> GIAPHONGMOI
+		{
+			get
+			{
+				return this._GIAPHONGMOI;
+			}
+			set
+			{
+				if ((this._GIAPHONGMOI != value))
+				{
+					this.OnGIAPHONGMOIChanging(value);
+					this.SendPropertyChanging();
+					this._GIAPHONGMOI = value;
+					this.SendPropertyChanged("GIAPHONGMOI");
+					this.OnGIAPHONGMOIChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIADANH", DbType="NVarChar(100)")]
+		public string DIADANH
+		{
+			get
+			{
+				return this._DIADANH;
+			}
+			set
+			{
+				if ((this._DIADANH != value))
+				{
+					this.OnDIADANHChanging(value);
+					this.SendPropertyChanging();
+					this._DIADANH = value;
+					this.SendPropertyChanged("DIADANH");
+					this.OnDIADANHChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DANHGIA", DbType="NVarChar(100)")]
+		public string DANHGIA
+		{
+			get
+			{
+				return this._DANHGIA;
+			}
+			set
+			{
+				if ((this._DANHGIA != value))
+				{
+					this.OnDANHGIAChanging(value);
+					this.SendPropertyChanging();
+					this._DANHGIA = value;
+					this.SendPropertyChanged("DANHGIA");
+					this.OnDANHGIAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIEM", DbType="Float")]
+		public System.Nullable<double> DIEM
+		{
+			get
+			{
+				return this._DIEM;
+			}
+			set
+			{
+				if ((this._DIEM != value))
+				{
+					this.OnDIEMChanging(value);
+					this.SendPropertyChanging();
+					this._DIEM = value;
+					this.SendPropertyChanged("DIEM");
+					this.OnDIEMChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDDIADIEM", DbType="NChar(10)")]
+		public string IDDIADIEM
+		{
+			get
+			{
+				return this._IDDIADIEM;
+			}
+			set
+			{
+				if ((this._IDDIADIEM != value))
+				{
+					if (this._HOME_DDNB.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnIDDIADIEMChanging(value);
+					this.SendPropertyChanging();
+					this._IDDIADIEM = value;
+					this.SendPropertyChanged("IDDIADIEM");
+					this.OnIDDIADIEMChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KHACHSAN_PHONG", Storage="_PHONGs", ThisKey="MAKHACHSAN", OtherKey="MAKHACHSAN")]
 		public EntitySet<PHONG> PHONGs
 		{
@@ -1673,6 +1876,40 @@ namespace Web_dat_phong_ks.Models
 			set
 			{
 				this._PHONGs.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="HOME_DDNB_KHACHSAN", Storage="_HOME_DDNB", ThisKey="IDDIADIEM", OtherKey="IDDIADIEM", IsForeignKey=true)]
+		public HOME_DDNB HOME_DDNB
+		{
+			get
+			{
+				return this._HOME_DDNB.Entity;
+			}
+			set
+			{
+				HOME_DDNB previousValue = this._HOME_DDNB.Entity;
+				if (((previousValue != value) 
+							|| (this._HOME_DDNB.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._HOME_DDNB.Entity = null;
+						previousValue.KHACHSANs.Remove(this);
+					}
+					this._HOME_DDNB.Entity = value;
+					if ((value != null))
+					{
+						value.KHACHSANs.Add(this);
+						this._IDDIADIEM = value.IDDIADIEM;
+					}
+					else
+					{
+						this._IDDIADIEM = default(string);
+					}
+					this.SendPropertyChanged("HOME_DDNB");
+				}
 			}
 		}
 		

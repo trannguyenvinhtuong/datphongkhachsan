@@ -49,6 +49,7 @@
       <Column Name="IDDIADIEM" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="TENDIADIEM" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="img" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="HOME_DDNB_KHACHSAN" Member="KHACHSANs" ThisKey="IDDIADIEM" OtherKey="IDDIADIEM" Type="KHACHSAN" />
     </Type>
   </Table>
   <Table Name="dbo.HOME_SLIDE" Member="HOME_SLIDEs">
@@ -75,7 +76,15 @@
       <Column Name="ANHKS3" Type="System.String" DbType="NChar(100)" CanBeNull="true" />
       <Column Name="ANHKS4" Type="System.String" DbType="NChar(100)" CanBeNull="true" />
       <Column Name="ANHKS5" Type="System.String" DbType="NChar(100)" CanBeNull="true" />
+      <Column Name="MOTA" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="GIAPHONGCU" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GIAPHONGMOI" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DIADANH" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DANHGIA" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DIEM" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="IDDIADIEM" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
       <Association Name="KHACHSAN_PHONG" Member="PHONGs" ThisKey="MAKHACHSAN" OtherKey="MAKHACHSAN" Type="PHONG" />
+      <Association Name="HOME_DDNB_KHACHSAN" Member="HOME_DDNB" ThisKey="IDDIADIEM" OtherKey="IDDIADIEM" Type="HOME_DDNB" IsForeignKey="true" />
       <Association Name="NCC_KHACHSAN" Member="NCC" ThisKey="MANCC" OtherKey="MANCC" Type="NCC" IsForeignKey="true" />
     </Type>
   </Table>

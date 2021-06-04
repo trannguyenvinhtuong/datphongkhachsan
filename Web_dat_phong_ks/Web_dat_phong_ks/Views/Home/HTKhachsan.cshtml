@@ -125,19 +125,19 @@
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="check1star">
                         <label class="form-check-label" for="check1star">
-                            <i class="fas fa-star"></i>
+                            Villa
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="check1star">
                         <label class="form-check-label" for="check1star">
-                            <i class="fas fa-star"></i>
+                            Nhà nghỉ
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="check1star">
                         <label class="form-check-label" for="check1star">
-                            <i class="fas fa-star"></i>
+                            Căn hộ
                         </label>
                     </div>
                 </li>
@@ -218,10 +218,10 @@
                                     <div style="background-color: whitesmoke; border-radius: 5px 5px 0px 0px; height: 40%;">
                                         <div class="danhgia">
                                             <span class="xeploai">
-                                                Xuất sắc
+                                                @ks.DANHGIA
                                             </span>
                                             <span class="diem">
-                                                9.2
+                                                @ks.DIEM
                                             </span>
                                         </div>
                                     </div>
@@ -229,9 +229,9 @@
                                         <div class="giamgia" style="margin-top: 10px;margin-right: 10px;">Giảm giá 74%</div>
                                         <br />
                                         <br />
-                                        <p class="giacu">1,045,000 đ</p>
+                                        <p class="giacu">@string.Format("{0:0,0}",@ks.GIAPHONGCU)đ / đêm</p>
                                         <br />
-                                        <p class="giamoi">271,000 đ</p>
+                                        <p class="giamoi">@string.Format("{0:0,0}",@ks.GIAPHONGMOI)đ / đêm</p>
                                         <br />
                                         <button class="xemphong">XEM PHÒNG</button>
                                         <br />

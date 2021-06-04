@@ -39,18 +39,18 @@ namespace Web_dat_phong_ks.Controllers
             return PartialView(slide);
         }
 
-        public List<KHACHSAN>lstKS(string tinh)
+        public List<KHACHSAN>lstKS(string ID)
         {
             //var ks = from khachsan in data.KHACHSANs
             //         where khachsan.TINH == tinh
             //         select khachsan;
-            return data.KHACHSANs.Where(ks => ks.TINH == tinh).ToList();
+            return data.KHACHSANs.Where(ks => ks.IDDIADIEM == ID).ToList();
         }
 
-        public ActionResult HTKhachsan()
+        public ActionResult HTKhachsan(string iddd)
         {
-            string tinh = "TP.HCM";
-            var ks = lstKS(tinh);
+            //string tinh = "TP.Hồ Chí Minh";
+            var ks = lstKS(iddd);
             return View(ks);
         }
 
