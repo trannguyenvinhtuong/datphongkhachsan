@@ -112,3 +112,15 @@
     font-weight: 700;
     font-size: 14px;
 }
+.xemthem-btn {
+    border:none; 
+    background-color:white; 
+    display: inline-block; 
+    position:relative; 
+    left:50%; 
+    transform: translateX(-50%);
+    color:aqua;
+}
+.form-check{
+    margin-bottom:10px;
+}

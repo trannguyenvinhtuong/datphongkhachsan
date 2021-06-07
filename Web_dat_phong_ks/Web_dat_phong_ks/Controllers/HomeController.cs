@@ -39,12 +39,38 @@ namespace Web_dat_phong_ks.Controllers
             return PartialView(slide);
         }
 
-        public List<KHACHSAN>lstKS(string ID)
+        public List<ProView>lstKS(string ID)
         {
             //var ks = from khachsan in data.KHACHSANs
             //         where khachsan.TINH == tinh
             //         select khachsan;
-            return data.KHACHSANs.Where(ks => ks.IDDIADIEM == ID).ToList();
+            var ks = from s in data.KHACHSANs
+                     join b in data.HOME_DDNBs
+                     on ID equals b.IDDIADIEM
+                     where s.IDDIADIEM == ID
+                     select new ProView()
+                     {
+                         MAKHACHSAN = s.MAKHACHSAN,
+                         TENKHACHSAN = s.TENKHACHSAN,
+                         SOLUONGPHONG = (int)s.SOLUONGPHONG,
+                         SOSAO = (int)s.SOSAO,
+                         TINH = s.TINH,
+                         QUAN = s.QUAN,
+                         PHUONG = s.PHUONG,
+                         DUONG = s.DUONG,
+                         DIACHICUTHE = s.DIACHICUTHE,
+                         ANHKS1 = s.ANHKS1,
+                         MOTA = s.MOTA,
+                         GIAPHONGCU = (int)s.GIAPHONGCU,
+                         GIAPHONGMOI = (int)s.GIAPHONGMOI,
+                         DIADANH = s.DIADANH,
+                         DANHGIA = s.DANHGIA,
+                         DIEM = (int)s.DIEM,
+                         TENDIADIEM = b.TENDIADIEM
+                     };
+
+
+            return ks.ToList();
         }
 
         public ActionResult HTKhachsan(string iddd)

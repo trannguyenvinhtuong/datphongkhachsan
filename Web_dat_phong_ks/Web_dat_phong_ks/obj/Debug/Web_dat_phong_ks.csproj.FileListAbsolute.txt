@@ -107,6 +107,6 @@ C:\Users\trann\OneDrive\Documents\GitHub\datphongkhachsan\Web_dat_phong_ks\Web_d
 C:\Users\trann\OneDrive\Documents\GitHub\datphongkhachsan\Web_dat_phong_ks\Web_dat_phong_ks\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\trann\OneDrive\Documents\GitHub\datphongkhachsan\Web_dat_phong_ks\Web_dat_phong_ks\obj\Debug\Web_dat_phong_ks.dll
 C:\Users\trann\OneDrive\Documents\GitHub\datphongkhachsan\Web_dat_phong_ks\Web_dat_phong_ks\obj\Debug\Web_dat_phong_ks.pdb
-C:\Users\trann\OneDrive\Documents\GitHub\datphongkhachsan\Web_dat_phong_ks\Web_dat_phong_ks\obj\Debug\Web_dat_phong_ks.csprojAssemblyReference.cache
 C:\Users\trann\OneDrive\Documents\GitHub\datphongkhachsan\Web_dat_phong_ks\Web_dat_phong_ks\obj\Debug\Web_dat_phong_ks.csproj.CoreCompileInputs.cache
 C:\Users\trann\OneDrive\Documents\GitHub\datphongkhachsan\Web_dat_phong_ks\Web_dat_phong_ks\obj\Debug\Web_dat_phong_ks.csproj.CopyComplete
+C:\Users\trann\OneDrive\Documents\GitHub\datphongkhachsan\Web_dat_phong_ks\Web_dat_phong_ks\obj\Debug\Web_dat_phong_ks.csprojAssemblyReference.cache
