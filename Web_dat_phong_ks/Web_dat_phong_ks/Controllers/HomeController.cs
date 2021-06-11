@@ -65,7 +65,7 @@ namespace Web_dat_phong_ks.Controllers
                          GIAPHONGMOI = (int)s.GIAPHONGMOI,
                          DIADANH = s.DIADANH,
                          DANHGIA = s.DANHGIA,
-                         DIEM = (int)s.DIEM,
+                         DIEM = (float)s.DIEM,
                          TENDIADIEM = b.TENDIADIEM
                      };
 
@@ -80,7 +80,101 @@ namespace Web_dat_phong_ks.Controllers
             return View(ks);
         }
 
+        public List<KHACHSAN> lstoneKS(string maks)
+        {
+            return data.KHACHSANs.Where(n => n.MAKHACHSAN == maks).ToList();
+        }
+
+        public ActionResult ChiTietPhong(string maks)
+        {
+            var ks = lstoneKS(maks);
+            return View(ks.SingleOrDefault());
+        }
+
+        public List<TTPhongModel> lstonephong(string maks)
+        {
+            var tt = from s in data.PHONGs
+                     where s.MAKHACHSAN == maks
+                     select new TTPhongModel
+                     {
+                         MAKHACHSAN = s.MAKHACHSAN,
+                         MALOAI = s.MALOAI,
+                         MAPHONG = s.MAPHONG,
+                         TENPHONG = s.TENPHONG,
+                         DIENTICH = (int)s.DIENTICH,
+                         QUANGCANH = s.QUANGCANH,
+                         GIA = (int)s.GIA,
+                         GIAM = (float)s.GIAM,
+                         ANH1 = s.ANH1,
+                         ANH2 = s.ANH2,
+                         ANH3 = s.ANH3,
+                         ANH4 = s.ANH4,
+                         ANH5 = s.ANH5,
+                         SOGIUONG = (int)s.SOGIUONG,
+                         LOAIGIUONG = s.LOAIGIUONG,
+                         SOLUONG = (int)s.SOLUONG,
+                         SOKHACH = (int)s.SOKHACH,
+                         GIAMOI = (int)(s.GIA - ((s.GIA * s.GIAM) / 100))
+                     };
+            return tt.ToList();
+        }
+
+        public ActionResult ThongTinPhong(string maks)
+        {
+            var phong = lstonephong(maks);
+            return PartialView(phong);
+        }
+
+        public List<TienIchModel>lstTienIch(string maks)
+        {
+            var ti = from s in data.KSTIENICHes
+                     join a in data.TIENICHes
+                     on s.IDTIENICH equals a.IDTIENICH
+                     join b in data.KHACHSANs
+                     on s.MAKHACHSAN equals b.MAKHACHSAN
+                     where s.MAKHACHSAN == maks
+                     select new TienIchModel
+                     {
+                         IDTIENICH = (int)s.IDTIENICH,
+                         TENTIENICH = a.TENTIENICH,
+                         ICON = a.ICON,
+                         MAKHACHSAN = s.MAKHACHSAN,
+                         GHICHU = s.GHICHU,
+                         DIEM=(float)b.DIEM
+                     };
+            return ti.ToList();
+        }
+
+        public ActionResult tienichks(string maks)
+        {
+            var tis = lstTienIch(maks);
+            return PartialView(tis);
+        }
+
+        public List<TTPhongModel> lstgianho(string maks)
+        {
+            var popp = from s in data.PHONGs
+                       where s.MAKHACHSAN == maks
+                       select new TTPhongModel
+                       {
+                           GIA = (int)s.GIA,
+                           GIAM = (float)s.GIAM,
+                           GIAMOI = (int)(s.GIA - ((s.GIA * s.GIAM) / 100))
+                       };
+            return popp.OrderBy(n => n.GIA).ToList();
+        }
+
+        public ActionResult pphong(string maks)
+        {
+            var pp = lstgianho(maks);
+            return PartialView(pp.FirstOrDefault());
+        }
        
+        public ActionResult pphongtw(string maks)
+        {
+            var tw = lstgianho(maks);
+            return PartialView(tw.FirstOrDefault());
+        }
 
     }
 }

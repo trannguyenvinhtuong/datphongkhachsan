@@ -22,7 +22,7 @@ namespace Web_dat_phong_ks.Models
         public int GIAPHONGMOI { get; set; }
         public string DIADANH { get; set; }
         public string DANHGIA { get; set; }
-        public int DIEM { get; set; }
+        public float DIEM { get; set; }
         public string TENDIADIEM { get; set; }
     }
 }

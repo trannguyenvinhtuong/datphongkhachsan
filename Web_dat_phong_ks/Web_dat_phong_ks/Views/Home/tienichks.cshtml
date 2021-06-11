@@ -1,0 +1,34 @@
+﻿<br />
+<div class="container">
+    <div class="row">
+        <div class="col-7">
+            <h1 class="details-tieude">Tiện nghi khách sạn</h1>
+            <div style="width: 100%">
+                @foreach (var item in Model)
+                {
+                    <div style="float: left; width: 20%">
+                        <div class="detail-dv-style" style="padding-left:0">
+                            <p class="details-icon"><i class="@item.ICON"></i></p>
+                            <p>@item.TENTIENICH</p>
+                        </div>
+
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="col-5">
+            <h1 class="details-tieude">Đánh giá</h1>
+            <br />
+            <div style="width: 100%">
+                <div class="details-danhgia-diem">
+                    <p>@Model[0].DIEM</p>
+                </div>
+                <div class="details-danhgia-text">
+                    <p style="font-weight: 600 ">Đánh giá khách hàng</p>
+                    <p>Với giá cả phù hợp với Tôi thì dịch vụ khách sạn này theo tôi đánh giá cũng rất ổn. Vị trí cũng không khó tìm kiếm và đi lại. Nhân viên vui vẻ niềm nở đón tiếp khách...</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -7,14 +7,12 @@
       <Association Name="BANGLOC_OPTIONLOC" Member="OPTIONLOCs" ThisKey="IDBANG" OtherKey="IDBANG" Type="OPTIONLOC" />
     </Type>
   </Table>
-  <Table Name="dbo.PHONGDV_FREE" Member="PHONGDV_FREEs">
-    <Type Name="PHONGDV_FREE">
-      <Column Name="MAPHONG" Type="System.String" DbType="Char(10)" CanBeNull="true" />
-      <Column Name="MADV" Type="System.String" DbType="Char(10)" CanBeNull="true" />
-      <Column Name="GHICHU" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="MADVFREE" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Association Name="DICHVU_PHONGDV_FREE" Member="DICHVU" ThisKey="MADV" OtherKey="MADV" Type="DICHVU" IsForeignKey="true" />
-      <Association Name="PHONG_PHONGDV_FREE" Member="PHONG" ThisKey="MAPHONG" OtherKey="MAPHONG" Type="PHONG" IsForeignKey="true" />
+  <Table Name="dbo.TIENICH" Member="TIENICHes">
+    <Type Name="TIENICH">
+      <Column Name="IDTIENICH" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TENTIENICH" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ICON" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="TIENICH_KSTIENICH" Member="KSTIENICHes" ThisKey="IDTIENICH" OtherKey="IDTIENICH" Type="KSTIENICH" />
     </Type>
   </Table>
   <Table Name="dbo.BOOKING" Member="BOOKINGs">
@@ -32,8 +30,8 @@
     <Type Name="DICHVU">
       <Column Name="MADV" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="TENDV" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Association Name="DICHVU_PHONGDV_FREE" Member="PHONGDV_FREEs" ThisKey="MADV" OtherKey="MADV" Type="PHONGDV_FREE" />
       <Association Name="DICHVU_PHONGDV_FEE" Member="PHONGDV_FEEs" ThisKey="MADV" OtherKey="MADV" Type="PHONGDV_FEE" />
+      <Association Name="DICHVU_PHONGDV_FREE" Member="PHONGDV_FREEs" ThisKey="MADV" OtherKey="MADV" Type="PHONGDV_FREE" />
     </Type>
   </Table>
   <Table Name="dbo.HOADON" Member="HOADONs">
@@ -83,9 +81,19 @@
       <Column Name="DANHGIA" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="DIEM" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="IDDIADIEM" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="KHACHSAN_KSTIENICH" Member="KSTIENICHes" ThisKey="MAKHACHSAN" OtherKey="MAKHACHSAN" Type="KSTIENICH" />
       <Association Name="KHACHSAN_PHONG" Member="PHONGs" ThisKey="MAKHACHSAN" OtherKey="MAKHACHSAN" Type="PHONG" />
       <Association Name="HOME_DDNB_KHACHSAN" Member="HOME_DDNB" ThisKey="IDDIADIEM" OtherKey="IDDIADIEM" Type="HOME_DDNB" IsForeignKey="true" />
       <Association Name="NCC_KHACHSAN" Member="NCC" ThisKey="MANCC" OtherKey="MANCC" Type="NCC" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KSTIENICH" Member="KSTIENICHes">
+    <Type Name="KSTIENICH">
+      <Column Name="MAKHACHSAN" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDTIENICH" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="GHICHU" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="KHACHSAN_KSTIENICH" Member="KHACHSAN" ThisKey="MAKHACHSAN" OtherKey="MAKHACHSAN" Type="KHACHSAN" IsForeignKey="true" />
+      <Association Name="TIENICH_KSTIENICH" Member="TIENICH" ThisKey="IDTIENICH" OtherKey="IDTIENICH" Type="TIENICH" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.LOAIPHONG" Member="LOAIPHONGs">
@@ -114,8 +122,12 @@
     <Type Name="PHONG">
       <Column Name="MAKHACHSAN" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
       <Column Name="MALOAI" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
-      <Column Name="GIA" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="MAPHONG" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TENPHONG" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DIENTICH" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QUANGCANH" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="GIA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GIAM" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="ANH1" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="ANH2" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="ANH3" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
@@ -123,9 +135,11 @@
       <Column Name="ANH5" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="SOGIUONG" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="LOAIGIUONG" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Association Name="PHONG_PHONGDV_FREE" Member="PHONGDV_FREEs" ThisKey="MAPHONG" OtherKey="MAPHONG" Type="PHONGDV_FREE" />
+      <Column Name="SOLUONG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SOKHACH" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="PHONG_BOOKING" Member="BOOKINGs" ThisKey="MAPHONG" OtherKey="MAPHONG" Type="BOOKING" />
       <Association Name="PHONG_PHONGDV_FEE" Member="PHONGDV_FEEs" ThisKey="MAPHONG" OtherKey="MAPHONG" Type="PHONGDV_FEE" />
+      <Association Name="PHONG_PHONGDV_FREE" Member="PHONGDV_FREEs" ThisKey="MAPHONG" OtherKey="MAPHONG" Type="PHONGDV_FREE" />
       <Association Name="KHACHSAN_PHONG" Member="KHACHSAN" ThisKey="MAKHACHSAN" OtherKey="MAKHACHSAN" Type="KHACHSAN" IsForeignKey="true" />
       <Association Name="LOAIPHONG_PHONG" Member="LOAIPHONG" ThisKey="MALOAI" OtherKey="MALOAI" Type="LOAIPHONG" IsForeignKey="true" />
     </Type>
@@ -138,6 +152,16 @@
       <Column Name="MADVFEE" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Association Name="DICHVU_PHONGDV_FEE" Member="DICHVU" ThisKey="MADV" OtherKey="MADV" Type="DICHVU" IsForeignKey="true" />
       <Association Name="PHONG_PHONGDV_FEE" Member="PHONG" ThisKey="MAPHONG" OtherKey="MAPHONG" Type="PHONG" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PHONGDV_FREE" Member="PHONGDV_FREEs">
+    <Type Name="PHONGDV_FREE">
+      <Column Name="MAPHONG" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="MADV" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="GHICHU" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MADVFREE" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="DICHVU_PHONGDV_FREE" Member="DICHVU" ThisKey="MADV" OtherKey="MADV" Type="DICHVU" IsForeignKey="true" />
+      <Association Name="PHONG_PHONGDV_FREE" Member="PHONG" ThisKey="MAPHONG" OtherKey="MAPHONG" Type="PHONG" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>
