@@ -75,6 +75,9 @@ namespace Web_dat_phong_ks.Models
     partial void InsertPHONGDV_FREE(PHONGDV_FREE instance);
     partial void UpdatePHONGDV_FREE(PHONGDV_FREE instance);
     partial void DeletePHONGDV_FREE(PHONGDV_FREE instance);
+    partial void InsertTAIKHOAN(TAIKHOAN instance);
+    partial void UpdateTAIKHOAN(TAIKHOAN instance);
+    partial void DeleteTAIKHOAN(TAIKHOAN instance);
     #endregion
 		
 		public QLDPKSDataContext() : 
@@ -224,6 +227,14 @@ namespace Web_dat_phong_ks.Models
 			get
 			{
 				return this.GetTable<PHONGDV_FREE>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TAIKHOAN> TAIKHOANs
+		{
+			get
+			{
+				return this.GetTable<TAIKHOAN>();
 			}
 		}
 	}
@@ -490,15 +501,19 @@ namespace Web_dat_phong_ks.Models
 		
 		private string _MAPHONG;
 		
-		private string _MAKH;
+		private System.Nullable<int> _MAKH;
 		
 		private System.Nullable<System.DateTime> _NGAYVAO;
 		
 		private System.Nullable<System.DateTime> _NGAYDI;
 		
+		private string _YEUCAU;
+		
 		private EntitySet<HOADON> _HOADONs;
 		
 		private EntityRef<PHONG> _PHONG;
+		
+		private EntityRef<TAIKHOAN> _TAIKHOAN;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -508,18 +523,21 @@ namespace Web_dat_phong_ks.Models
     partial void OnMABOOKChanged();
     partial void OnMAPHONGChanging(string value);
     partial void OnMAPHONGChanged();
-    partial void OnMAKHChanging(string value);
+    partial void OnMAKHChanging(System.Nullable<int> value);
     partial void OnMAKHChanged();
     partial void OnNGAYVAOChanging(System.Nullable<System.DateTime> value);
     partial void OnNGAYVAOChanged();
     partial void OnNGAYDIChanging(System.Nullable<System.DateTime> value);
     partial void OnNGAYDIChanged();
+    partial void OnYEUCAUChanging(string value);
+    partial void OnYEUCAUChanged();
     #endregion
 		
 		public BOOKING()
 		{
 			this._HOADONs = new EntitySet<HOADON>(new Action<HOADON>(this.attach_HOADONs), new Action<HOADON>(this.detach_HOADONs));
 			this._PHONG = default(EntityRef<PHONG>);
+			this._TAIKHOAN = default(EntityRef<TAIKHOAN>);
 			OnCreated();
 		}
 		
@@ -567,8 +585,8 @@ namespace Web_dat_phong_ks.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAKH", DbType="Char(10)")]
-		public string MAKH
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAKH", DbType="Int")]
+		public System.Nullable<int> MAKH
 		{
 			get
 			{
@@ -578,6 +596,10 @@ namespace Web_dat_phong_ks.Models
 			{
 				if ((this._MAKH != value))
 				{
+					if (this._TAIKHOAN.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnMAKHChanging(value);
 					this.SendPropertyChanging();
 					this._MAKH = value;
@@ -627,6 +649,26 @@ namespace Web_dat_phong_ks.Models
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_YEUCAU", DbType="NVarChar(100)")]
+		public string YEUCAU
+		{
+			get
+			{
+				return this._YEUCAU;
+			}
+			set
+			{
+				if ((this._YEUCAU != value))
+				{
+					this.OnYEUCAUChanging(value);
+					this.SendPropertyChanging();
+					this._YEUCAU = value;
+					this.SendPropertyChanged("YEUCAU");
+					this.OnYEUCAUChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BOOKING_HOADON", Storage="_HOADONs", ThisKey="MABOOK", OtherKey="MABOOK")]
 		public EntitySet<HOADON> HOADONs
 		{
@@ -670,6 +712,40 @@ namespace Web_dat_phong_ks.Models
 						this._MAPHONG = default(string);
 					}
 					this.SendPropertyChanged("PHONG");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TAIKHOAN_BOOKING", Storage="_TAIKHOAN", ThisKey="MAKH", OtherKey="MAKH", IsForeignKey=true)]
+		public TAIKHOAN TAIKHOAN
+		{
+			get
+			{
+				return this._TAIKHOAN.Entity;
+			}
+			set
+			{
+				TAIKHOAN previousValue = this._TAIKHOAN.Entity;
+				if (((previousValue != value) 
+							|| (this._TAIKHOAN.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TAIKHOAN.Entity = null;
+						previousValue.BOOKINGs.Remove(this);
+					}
+					this._TAIKHOAN.Entity = value;
+					if ((value != null))
+					{
+						value.BOOKINGs.Add(this);
+						this._MAKH = value.MAKH;
+					}
+					else
+					{
+						this._MAKH = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("TAIKHOAN");
 				}
 			}
 		}
@@ -861,6 +937,12 @@ namespace Web_dat_phong_ks.Models
 		
 		private System.Nullable<int> _TONGTIEN;
 		
+		private string _HOTEN;
+		
+		private string _SDT;
+		
+		private string _EMAIL;
+		
 		private EntityRef<BOOKING> _BOOKING;
 		
     #region Extensibility Method Definitions
@@ -873,6 +955,12 @@ namespace Web_dat_phong_ks.Models
     partial void OnMABOOKChanged();
     partial void OnTONGTIENChanging(System.Nullable<int> value);
     partial void OnTONGTIENChanged();
+    partial void OnHOTENChanging(string value);
+    partial void OnHOTENChanged();
+    partial void OnSDTChanging(string value);
+    partial void OnSDTChanged();
+    partial void OnEMAILChanging(string value);
+    partial void OnEMAILChanged();
     #endregion
 		
 		public HOADON()
@@ -941,6 +1029,66 @@ namespace Web_dat_phong_ks.Models
 					this._TONGTIEN = value;
 					this.SendPropertyChanged("TONGTIEN");
 					this.OnTONGTIENChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOTEN", DbType="NVarChar(100)")]
+		public string HOTEN
+		{
+			get
+			{
+				return this._HOTEN;
+			}
+			set
+			{
+				if ((this._HOTEN != value))
+				{
+					this.OnHOTENChanging(value);
+					this.SendPropertyChanging();
+					this._HOTEN = value;
+					this.SendPropertyChanged("HOTEN");
+					this.OnHOTENChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SDT", DbType="NVarChar(100)")]
+		public string SDT
+		{
+			get
+			{
+				return this._SDT;
+			}
+			set
+			{
+				if ((this._SDT != value))
+				{
+					this.OnSDTChanging(value);
+					this.SendPropertyChanging();
+					this._SDT = value;
+					this.SendPropertyChanged("SDT");
+					this.OnSDTChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EMAIL", DbType="NVarChar(100)")]
+		public string EMAIL
+		{
+			get
+			{
+				return this._EMAIL;
+			}
+			set
+			{
+				if ((this._EMAIL != value))
+				{
+					this.OnEMAILChanging(value);
+					this.SendPropertyChanging();
+					this._EMAIL = value;
+					this.SendPropertyChanged("EMAIL");
+					this.OnEMAILChanged();
 				}
 			}
 		}
@@ -1286,10 +1434,6 @@ namespace Web_dat_phong_ks.Models
 		
 		private string _MOTA;
 		
-		private System.Nullable<int> _GIAPHONGCU;
-		
-		private System.Nullable<int> _GIAPHONGMOI;
-		
 		private string _DIADANH;
 		
 		private string _DANHGIA;
@@ -1342,10 +1486,6 @@ namespace Web_dat_phong_ks.Models
     partial void OnANHKS5Changed();
     partial void OnMOTAChanging(string value);
     partial void OnMOTAChanged();
-    partial void OnGIAPHONGCUChanging(System.Nullable<int> value);
-    partial void OnGIAPHONGCUChanged();
-    partial void OnGIAPHONGMOIChanging(System.Nullable<int> value);
-    partial void OnGIAPHONGMOIChanged();
     partial void OnDIADANHChanging(string value);
     partial void OnDIADANHChanged();
     partial void OnDANHGIAChanging(string value);
@@ -1685,46 +1825,6 @@ namespace Web_dat_phong_ks.Models
 					this._MOTA = value;
 					this.SendPropertyChanged("MOTA");
 					this.OnMOTAChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GIAPHONGCU", DbType="Int")]
-		public System.Nullable<int> GIAPHONGCU
-		{
-			get
-			{
-				return this._GIAPHONGCU;
-			}
-			set
-			{
-				if ((this._GIAPHONGCU != value))
-				{
-					this.OnGIAPHONGCUChanging(value);
-					this.SendPropertyChanging();
-					this._GIAPHONGCU = value;
-					this.SendPropertyChanged("GIAPHONGCU");
-					this.OnGIAPHONGCUChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GIAPHONGMOI", DbType="Int")]
-		public System.Nullable<int> GIAPHONGMOI
-		{
-			get
-			{
-				return this._GIAPHONGMOI;
-			}
-			set
-			{
-				if ((this._GIAPHONGMOI != value))
-				{
-					this.OnGIAPHONGMOIChanging(value);
-					this.SendPropertyChanging();
-					this._GIAPHONGMOI = value;
-					this.SendPropertyChanged("GIAPHONGMOI");
-					this.OnGIAPHONGMOIChanged();
 				}
 			}
 		}
@@ -3564,6 +3664,192 @@ namespace Web_dat_phong_ks.Models
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TAIKHOAN")]
+	public partial class TAIKHOAN : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _MAKH;
+		
+		private string _TENDN;
+		
+		private string _MATKHAU;
+		
+		private string _EMAIL;
+		
+		private string _SDT;
+		
+		private EntitySet<BOOKING> _BOOKINGs;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMAKHChanging(int value);
+    partial void OnMAKHChanged();
+    partial void OnTENDNChanging(string value);
+    partial void OnTENDNChanged();
+    partial void OnMATKHAUChanging(string value);
+    partial void OnMATKHAUChanged();
+    partial void OnEMAILChanging(string value);
+    partial void OnEMAILChanged();
+    partial void OnSDTChanging(string value);
+    partial void OnSDTChanged();
+    #endregion
+		
+		public TAIKHOAN()
+		{
+			this._BOOKINGs = new EntitySet<BOOKING>(new Action<BOOKING>(this.attach_BOOKINGs), new Action<BOOKING>(this.detach_BOOKINGs));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAKH", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int MAKH
+		{
+			get
+			{
+				return this._MAKH;
+			}
+			set
+			{
+				if ((this._MAKH != value))
+				{
+					this.OnMAKHChanging(value);
+					this.SendPropertyChanging();
+					this._MAKH = value;
+					this.SendPropertyChanged("MAKH");
+					this.OnMAKHChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENDN", DbType="NChar(50)")]
+		public string TENDN
+		{
+			get
+			{
+				return this._TENDN;
+			}
+			set
+			{
+				if ((this._TENDN != value))
+				{
+					this.OnTENDNChanging(value);
+					this.SendPropertyChanging();
+					this._TENDN = value;
+					this.SendPropertyChanged("TENDN");
+					this.OnTENDNChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MATKHAU", DbType="NChar(50)")]
+		public string MATKHAU
+		{
+			get
+			{
+				return this._MATKHAU;
+			}
+			set
+			{
+				if ((this._MATKHAU != value))
+				{
+					this.OnMATKHAUChanging(value);
+					this.SendPropertyChanging();
+					this._MATKHAU = value;
+					this.SendPropertyChanged("MATKHAU");
+					this.OnMATKHAUChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EMAIL", DbType="NChar(50)")]
+		public string EMAIL
+		{
+			get
+			{
+				return this._EMAIL;
+			}
+			set
+			{
+				if ((this._EMAIL != value))
+				{
+					this.OnEMAILChanging(value);
+					this.SendPropertyChanging();
+					this._EMAIL = value;
+					this.SendPropertyChanged("EMAIL");
+					this.OnEMAILChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SDT", DbType="NChar(11)")]
+		public string SDT
+		{
+			get
+			{
+				return this._SDT;
+			}
+			set
+			{
+				if ((this._SDT != value))
+				{
+					this.OnSDTChanging(value);
+					this.SendPropertyChanging();
+					this._SDT = value;
+					this.SendPropertyChanged("SDT");
+					this.OnSDTChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TAIKHOAN_BOOKING", Storage="_BOOKINGs", ThisKey="MAKH", OtherKey="MAKH")]
+		public EntitySet<BOOKING> BOOKINGs
+		{
+			get
+			{
+				return this._BOOKINGs;
+			}
+			set
+			{
+				this._BOOKINGs.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_BOOKINGs(BOOKING entity)
+		{
+			this.SendPropertyChanging();
+			entity.TAIKHOAN = this;
+		}
+		
+		private void detach_BOOKINGs(BOOKING entity)
+		{
+			this.SendPropertyChanging();
+			entity.TAIKHOAN = null;
 		}
 	}
 }

@@ -164,6 +164,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TKController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -200,6 +201,8 @@
     <Content Include="Content\brands.css" />
     <Content Include="Content\brands.min.css" />
     <Content Include="Content\CSS\detailsphong.css" />
+    <Content Include="Content\CSS\dkstyle.css" />
+    <Content Include="Content\CSS\dnstyle.css" />
     <Content Include="Content\CSS\searchbarstyle.css" />
     <Content Include="Content\CSS\footerstyle.css" />
     <Content Include="Content\CSS\headerstyle.css" />
@@ -317,6 +320,8 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\JS\dangky.js" />
+    <Content Include="Scripts\JS\dangnhap.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
@@ -355,6 +360,9 @@
     <Content Include="Views\Home\tienichks.cshtml" />
     <Content Include="Views\Home\pphong.cshtml" />
     <Content Include="Views\Home\pphongtw.cshtml" />
+    <Content Include="Views\TK\dangky.cshtml" />
+    <Content Include="Views\TK\thanhcong.cshtml" />
+    <Content Include="Views\TK\dangnhap.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

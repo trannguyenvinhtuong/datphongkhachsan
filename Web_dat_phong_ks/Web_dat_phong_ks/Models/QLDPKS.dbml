@@ -19,11 +19,13 @@
     <Type Name="BOOKING">
       <Column Name="MABOOK" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="MAPHONG" Type="System.String" DbType="Char(10)" CanBeNull="true" />
-      <Column Name="MAKH" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="MAKH" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="NGAYVAO" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="NGAYDI" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="YEUCAU" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Association Name="BOOKING_HOADON" Member="HOADONs" ThisKey="MABOOK" OtherKey="MABOOK" Type="HOADON" />
       <Association Name="PHONG_BOOKING" Member="PHONG" ThisKey="MAPHONG" OtherKey="MAPHONG" Type="PHONG" IsForeignKey="true" />
+      <Association Name="TAIKHOAN_BOOKING" Member="TAIKHOAN" ThisKey="MAKH" OtherKey="MAKH" Type="TAIKHOAN" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.DICHVU" Member="DICHVUs">
@@ -39,6 +41,9 @@
       <Column Name="MAHD" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="MABOOK" Type="System.String" DbType="Char(10)" CanBeNull="true" />
       <Column Name="TONGTIEN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HOTEN" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="SDT" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Association Name="BOOKING_HOADON" Member="BOOKING" ThisKey="MABOOK" OtherKey="MABOOK" Type="BOOKING" IsForeignKey="true" />
     </Type>
   </Table>
@@ -75,8 +80,6 @@
       <Column Name="ANHKS4" Type="System.String" DbType="NChar(100)" CanBeNull="true" />
       <Column Name="ANHKS5" Type="System.String" DbType="NChar(100)" CanBeNull="true" />
       <Column Name="MOTA" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="GIAPHONGCU" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="GIAPHONGMOI" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="DIADANH" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="DANHGIA" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="DIEM" Type="System.Double" DbType="Float" CanBeNull="true" />
@@ -162,6 +165,16 @@
       <Column Name="MADVFREE" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Association Name="DICHVU_PHONGDV_FREE" Member="DICHVU" ThisKey="MADV" OtherKey="MADV" Type="DICHVU" IsForeignKey="true" />
       <Association Name="PHONG_PHONGDV_FREE" Member="PHONG" ThisKey="MAPHONG" OtherKey="MAPHONG" Type="PHONG" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TAIKHOAN" Member="TAIKHOANs">
+    <Type Name="TAIKHOAN">
+      <Column Name="MAKH" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TENDN" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="MATKHAU" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="SDT" Type="System.String" DbType="NChar(11)" CanBeNull="true" />
+      <Association Name="TAIKHOAN_BOOKING" Member="BOOKINGs" ThisKey="MAKH" OtherKey="MAKH" Type="BOOKING" />
     </Type>
   </Table>
 </Database>

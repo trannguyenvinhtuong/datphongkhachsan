@@ -60,9 +60,7 @@ namespace Web_dat_phong_ks.Controllers
                          DUONG = s.DUONG,
                          DIACHICUTHE = s.DIACHICUTHE,
                          ANHKS1 = s.ANHKS1,
-                         MOTA = s.MOTA,
-                         GIAPHONGCU = (int)s.GIAPHONGCU,
-                         GIAPHONGMOI = (int)s.GIAPHONGMOI,
+                         MOTA = s.MOTA,                         
                          DIADANH = s.DIADANH,
                          DANHGIA = s.DANHGIA,
                          DIEM = (float)s.DIEM,
@@ -175,6 +173,5 @@ namespace Web_dat_phong_ks.Controllers
             var tw = lstgianho(maks);
             return PartialView(tw.FirstOrDefault());
         }
-
     }
 }

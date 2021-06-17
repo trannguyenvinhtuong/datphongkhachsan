@@ -30,6 +30,8 @@
     <link href="~/Content/CSS/searchbarstyle.css" type="text/css" rel="stylesheet" />
 
     <link href="~/Content/CSS/detailsphong.css" type="text/css" rel="stylesheet" />
+
+   
 </head>
 <body>
     <div style="background-color: cornflowerblue; height: 100px; width: 100%;"></div>
@@ -63,8 +65,8 @@
                                     <i class="fas fa-user"></i>
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#">Đăng nhập</a></li>
-                                    <li><a class="dropdown-item" href="#">Đăng ký</a></li>
+                                    <li><a class="dropdown-item" href="@Url.Action("dangnhap","TK")">Đăng nhập</a></li>
+                                    <li><a class="dropdown-item" href="@Url.Action("dangky","TK")">Đăng ký</a></li>
                                     
                                 </ul>
                             </li>
@@ -113,5 +115,6 @@
         </div>
     
     </div>
+  
 </body>
 </html>
