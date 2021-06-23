@@ -71,7 +71,9 @@
                                         <div class="details-giamoi" id="giamoi">@string.Format("{0:0,0}", item.GIAMOI)đ /đêm</div>
 
                                         <br />
-                                        <button class="details-chonphong">Đặt phòng</button>
+                                        <a href="@Url.Action("ThanhToan","GioHang")">
+                                            <button class="details-chonphong">Đặt phòng</button>
+                                        </a>
                                     </td>
                                 </tr>
                             </tbody>

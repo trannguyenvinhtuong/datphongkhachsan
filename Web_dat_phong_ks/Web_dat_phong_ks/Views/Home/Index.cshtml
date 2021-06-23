@@ -8,69 +8,81 @@
     <br />
     <div class="container">
         <div class="row">
+           
             <div class="col-4">
-                <form class="tk-wrapper">
 
-                    <ul class="nav" style="padding-top:10px;">
-                        <li class="nav-item">
-                            <a class="nav-link active tim-style ks" aria-current="page" href="#">
-                                <i class="fas fa-building"></i> Tìm khách sạn
-                            </a>
-                        </li>
-                        <li class="nav-item ms-2">
-                            <a class="nav-link tim-style" href="#">
-                                <i class="far fa-flag"></i> Tìm tour
-                            </a>
-                        </li>
-                    </ul>
-                    <br />
-                    <div class="search-wrapper">
-                        <i class="fas fa-bed" style="color: white; font-size: 18px; padding-left: 10px; padding-right: 10px;"></i>
-                        <input type="text" name="keyword" class="ks-search" placeholder="Tên địa danh...">
-                    </div>
-                    <br />
-                    <br />
-                    <div class="search-wrapper">
-                        <i class="fas fa-plane-arrival" style="color: white; font-size: 18px; padding-left: 10px; padding-right: 10px;"></i> </i>
-                        <input type="date" name="ngay-den" class="ks-search">
-                    </div>
-                    <br />
-                    <br />
-                    <div class="search-wrapper">
-                        <i class="fas fa-plane-departure" style="color: white; font-size: 18px; padding-left: 10px; padding-right: 10px;"></i> </i>
-                        <input type="date" name="ngay-di" class="ks-search">
-                    </div>
-                    <br />
-                    <br />
-                    <div class="container" style="padding: 0px;">
-                        <div class="row">
-                            <div class="col">
-                                <div class="search-wrapper">
-                                    <i class="fas fa-house-user" style="color: white; font-size: 18px; padding-left: 10px; padding-right: 12px;"></i> 
-                                    <input type="number" name="soluongphong" class="number-input" placeholder="Số phòng...">
+
+                
+
+                <form class="tk-wrapper">
+                    @using (Html.BeginForm("search", "Search", FormMethod.Post))
+                    {
+                        <h2>@ViewBag.Loitim</h2>
+                        <ul class="nav" style="padding-top:10px;">
+                            <li class="nav-item">
+                                <a class="nav-link active tim-style ks" aria-current="page" href="#">
+                                    <i class="fas fa-building"></i> Tìm khách sạn
+                                </a>
+                            </li>
+                            <li class="nav-item ms-2">
+                                <a class="nav-link tim-style" href="#">
+                                    <i class="far fa-flag"></i> Tìm tour
+                                </a>
+                            </li>
+                        </ul>
+                        <br />
+
+
+
+                        <div class="search-wrapper">
+                            <i class="fas fa-bed" style="color: white; font-size: 18px; padding-left: 10px; padding-right: 10px;"></i>
+                            <input type="text" name="keyword" class="ks-search" placeholder="Tên địa danh..." />
+                        </div>
+                        <br />
+                        <br />
+                        <div class="search-wrapper">
+                            <i class="fas fa-plane-arrival" style="color: white; font-size: 18px; padding-left: 10px; padding-right: 10px;"></i>
+                            <input type="date" name="ngay-den" class="ks-search" />
+                        </div>
+                        <br />
+                        <br />
+                        <div class="search-wrapper">
+                            <i class="fas fa-plane-departure" style="color: white; font-size: 18px; padding-left: 10px; padding-right: 10px;"></i>
+                            <input type="date" name="ngay-di" class="ks-search">
+                        </div>
+                        <br />
+                        <br />
+                        <div class="container" style="padding: 0px;">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="search-wrapper">
+                                        <i class="fas fa-house-user" style="color: white; font-size: 18px; padding-left: 10px; padding-right: 12px;"></i>
+                                        <input type="number" name="soluongphong" class="number-input" placeholder="Số phòng...">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col">
-                                <div class="search-wrapper">
-                                    <i class="fas fa-male" style="color: white; font-size: 18px; padding-right: 10px;"></i>
-                                    <input type="number" name="soluongkhach" class="number-input" placeholder="Số khách...">
+                                <div class="col">
+                                    <div class="search-wrapper">
+                                        <i class="fas fa-male" style="color: white; font-size: 18px; padding-right: 10px;"></i>
+                                        <input type="number" name="soluongkhach" class="number-input" placeholder="Số khách...">
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <br />
-                    <div class="container">
-                        <button type="submit" class="btn-search">Tìm khách sạn</button>
-                    </div>
-                    <br />
+                        <br />
+                        <div class="container">
+                            <button type="submit" class="btn-search">Tìm khách sạn</button>
+                        </div>
+                        <br />
+                    }
+                    </form>
+                
+                </div>
+            
+        <div class="col-8">
 
-                </form>
-            </div>
-            <div class="col-8">
-
-                @*slide*@
-                @Html.Action("HTSlide", "Home")
-            </div>
+            @*slide*@
+            @Html.Action("HTSlide", "Home")
+        </div>
         </div>
     </div>
 

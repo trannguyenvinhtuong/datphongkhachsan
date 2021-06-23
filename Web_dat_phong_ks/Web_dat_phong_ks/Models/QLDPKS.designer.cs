@@ -497,7 +497,7 @@ namespace Web_dat_phong_ks.Models
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private string _MABOOK;
+		private int _MABOOK;
 		
 		private string _MAPHONG;
 		
@@ -519,7 +519,7 @@ namespace Web_dat_phong_ks.Models
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnMABOOKChanging(string value);
+    partial void OnMABOOKChanging(int value);
     partial void OnMABOOKChanged();
     partial void OnMAPHONGChanging(string value);
     partial void OnMAPHONGChanged();
@@ -541,8 +541,8 @@ namespace Web_dat_phong_ks.Models
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MABOOK", DbType="Char(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string MABOOK
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MABOOK", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int MABOOK
 		{
 			get
 			{
@@ -931,9 +931,9 @@ namespace Web_dat_phong_ks.Models
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private string _MAHD;
+		private int _MAHD;
 		
-		private string _MABOOK;
+		private int _MABOOK;
 		
 		private System.Nullable<int> _TONGTIEN;
 		
@@ -949,9 +949,9 @@ namespace Web_dat_phong_ks.Models
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnMAHDChanging(string value);
+    partial void OnMAHDChanging(int value);
     partial void OnMAHDChanged();
-    partial void OnMABOOKChanging(string value);
+    partial void OnMABOOKChanging(int value);
     partial void OnMABOOKChanged();
     partial void OnTONGTIENChanging(System.Nullable<int> value);
     partial void OnTONGTIENChanged();
@@ -969,8 +969,8 @@ namespace Web_dat_phong_ks.Models
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAHD", DbType="Char(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string MAHD
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAHD", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int MAHD
 		{
 			get
 			{
@@ -989,8 +989,8 @@ namespace Web_dat_phong_ks.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MABOOK", DbType="Char(10)")]
-		public string MABOOK
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MABOOK", DbType="Int NOT NULL")]
+		public int MABOOK
 		{
 			get
 			{
@@ -1120,7 +1120,7 @@ namespace Web_dat_phong_ks.Models
 					}
 					else
 					{
-						this._MABOOK = default(string);
+						this._MABOOK = default(int);
 					}
 					this.SendPropertyChanged("BOOKING");
 				}
