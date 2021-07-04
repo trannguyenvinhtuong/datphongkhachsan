@@ -13,27 +13,46 @@ namespace GUI
 {
     public partial class FrmDangNhap : DevExpress.XtraEditors.XtraForm
     {
+
+        QL_NguoiDung nguoiDung = new QL_NguoiDung();
+
         public FrmDangNhap()
         {
             InitializeComponent();
+            txtTK.Focus();
         }
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
+            DangNhap result;
+            //Chưa nhập thông tin
+            result = nguoiDung.Check_User(txtTK.Text, txtMK.Text);
             if (txtTK.Text == "")
-                XtraMessageBox.Show("Bạn chưa nhập tên đăng nhập", "Thông báo", (DevExpress.Utils.DefaultBoolean)MessageBoxIcon.Warning);
-            if (txtMK.Text == "")
-                XtraMessageBox.Show("Bạn chưa nhập mật khẩu", "Thông báo", (DevExpress.Utils.DefaultBoolean)MessageBoxIcon.Warning);
-            /*if (dt.checkDangNhap(txtTK.Text, txtMK.Text) == false)
             {
-                MessageBox.Show("Bạn đã nhập sai, vui lòng nhập lại", "Thông báo");
+                XtraMessageBox.Show("Bạn chưa nhập tên đăng nhập", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtTK.Focus();
                 return;
-            }*/
-            string tk = "AD01";
-            int mk = 123456;
-            if (txtTK.Text != tk.ToString() || txtMK.Text != mk.ToString())
+            }    
+                
+            if (txtMK.Text == "")
             {
-                XtraMessageBox.Show("Bạn đã nhập sai, vui lòng nhập lại", "Thông báo", (DevExpress.Utils.DefaultBoolean)MessageBoxIcon.Error);
+                XtraMessageBox.Show("Bạn chưa nhập mật khẩu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtTK.Focus();
+                return;
+            }    
+                
+            //sai tên đăng nhập hoặc mật khẩu
+            if (result == DangNhap.Invalid)
+            {
+                XtraMessageBox.Show("Bạn đã nhập sai, vui lòng nhập lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtTK.Focus();
+                return;
+            }
+                //tài khoản bị khóa
+            else if (result == DangNhap.Disabled)
+            {
+                XtraMessageBox.Show("Tài khoản của bạn đã bị khoá, vui lòng liên hệ admin để mở khoá", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtTK.Focus();
                 return;
             }
             else

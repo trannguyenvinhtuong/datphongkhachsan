@@ -105,3 +105,7 @@ D:\GitHub\datphongkhachsan\WFDatPhongKS\DatPhongKS\GUI\obj\Debug\GUI.FrmDangNhap
 D:\GitHub\datphongkhachsan\WFDatPhongKS\DatPhongKS\GUI\obj\Debug\GUI.csprojAssemblyReference.cache
 D:\GitHub\datphongkhachsan\WFDatPhongKS\DatPhongKS\GUI\obj\Debug\GUI.FrmDatPhong.resources
 D:\GitHub\datphongkhachsan\WFDatPhongKS\DatPhongKS\GUI\obj\Debug\GUI.FrmTraPhong.resources
+D:\GitHub\datphongkhachsan\WFDatPhongKS\DatPhongKS\GUI\obj\Debug\GUI.FrmXacNhanDatPhong.resources
+D:\GitHub\datphongkhachsan\WFDatPhongKS\DatPhongKS\GUI\bin\Debug\BLL_DAL.dll
+D:\GitHub\datphongkhachsan\WFDatPhongKS\DatPhongKS\GUI\bin\Debug\BLL_DAL.pdb
+D:\GitHub\datphongkhachsan\WFDatPhongKS\DatPhongKS\GUI\bin\Debug\BLL_DAL.dll.config
