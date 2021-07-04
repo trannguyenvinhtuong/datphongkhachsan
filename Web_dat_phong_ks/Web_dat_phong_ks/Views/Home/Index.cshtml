@@ -10,14 +10,15 @@
         <div class="row">
            
             <div class="col-4">
+                <h2>@ViewBag.Loitim</h2>
 
 
                 
+                    <form class="tk-wrapper" method="post" action="@Url.Action("search","Search")" onsubmit="return kiemtradulieu()">
 
-                <form class="tk-wrapper">
-                    @using (Html.BeginForm("search", "Search", FormMethod.Post))
-                    {
-                        <h2>@ViewBag.Loitim</h2>
+                        
+                        
+
                         <ul class="nav" style="padding-top:10px;">
                             <li class="nav-item">
                                 <a class="nav-link active tim-style ks" aria-current="page" href="#">
@@ -36,19 +37,19 @@
 
                         <div class="search-wrapper">
                             <i class="fas fa-bed" style="color: white; font-size: 18px; padding-left: 10px; padding-right: 10px;"></i>
-                            <input type="text" name="keyword" class="ks-search" placeholder="Tên địa danh..." />
+                            <input type="text" id="keyword" name="keyword" class="ks-search" placeholder="Tên địa danh..." />
                         </div>
                         <br />
                         <br />
                         <div class="search-wrapper">
                             <i class="fas fa-plane-arrival" style="color: white; font-size: 18px; padding-left: 10px; padding-right: 10px;"></i>
-                            <input type="date" name="ngay-den" class="ks-search" />
+                            <input type="date" name="ngay-den" class="ks-search" id="ngayden" />
                         </div>
                         <br />
                         <br />
                         <div class="search-wrapper">
                             <i class="fas fa-plane-departure" style="color: white; font-size: 18px; padding-left: 10px; padding-right: 10px;"></i>
-                            <input type="date" name="ngay-di" class="ks-search">
+                            <input type="date" name="ngay-di" class="ks-search" id="ngaydi" />
                         </div>
                         <br />
                         <br />
@@ -57,13 +58,13 @@
                                 <div class="col">
                                     <div class="search-wrapper">
                                         <i class="fas fa-house-user" style="color: white; font-size: 18px; padding-left: 10px; padding-right: 12px;"></i>
-                                        <input type="number" name="soluongphong" class="number-input" placeholder="Số phòng...">
+                                        <input type="number" name="soluongphong" class="number-input" id="soluongphong" placeholder="Số phòng...">
                                     </div>
                                 </div>
                                 <div class="col">
                                     <div class="search-wrapper">
                                         <i class="fas fa-male" style="color: white; font-size: 18px; padding-right: 10px;"></i>
-                                        <input type="number" name="soluongkhach" class="number-input" placeholder="Số khách...">
+                                        <input type="number" name="soluongkhach" class="number-input" id="soluongkhach" placeholder="Số khách...">
                                     </div>
                                 </div>
                             </div>
@@ -73,10 +74,10 @@
                             <button type="submit" class="btn-search">Tìm khách sạn</button>
                         </div>
                         <br />
-                    }
+
                     </form>
                 
-                </div>
+            </div>
             
         <div class="col-8">
 
@@ -175,4 +176,4 @@
 <br />
 <br />
 
-
+<script language="javascript" src="~/Scripts/JS/kiemtradulieu.js"></script>

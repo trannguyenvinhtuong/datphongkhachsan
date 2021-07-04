@@ -14,17 +14,17 @@ namespace Web_dat_phong_ks.Controllers
         public ActionResult search(FormCollection collection)
         {
             var dulieutim = collection["keyword"];
-            KHACHSAN ks = data.KHACHSANs.SingleOrDefault(s => s.TENKHACHSAN == dulieutim);
-            if (ks != null)
+            HOME_DDNB dd = data.HOME_DDNBs.Where(s => s.TENDIADIEM == dulieutim).SingleOrDefault();
+            if (dd != null)
             {
-                return RedirectToAction("HTKhachsan", "Home", new { iddd = ks.MAKHACHSAN });
+                return RedirectToAction("HTKhachsan", "Home", new { iddd = dd.IDDIADIEM });
             }
             else
             {
                 ViewBag.Loitim = "Không có khách sạn";
-                return RedirectToAction("Index","Home");
+                return RedirectToAction("Index", "Home");
             }
-            
+
         }
     }
 }

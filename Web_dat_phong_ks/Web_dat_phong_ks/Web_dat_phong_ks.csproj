@@ -325,6 +325,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\JS\dangky.js" />
     <Content Include="Scripts\JS\dangnhap.js" />
+    <Content Include="Scripts\JS\kiemtradulieu.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
