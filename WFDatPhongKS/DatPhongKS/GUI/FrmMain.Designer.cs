@@ -41,14 +41,14 @@ namespace GUI
             this.panelBot = new System.Windows.Forms.Panel();
             this.panelTop = new System.Windows.Forms.Panel();
             this.menu_employee = new System.Windows.Forms.ToolStripMenuItem();
+            this.nhânViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_customer = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_products = new System.Windows.Forms.ToolStripMenuItem();
+            this.đặtPhòngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.trảPhòngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_invoice = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_statistics = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu = new System.Windows.Forms.MenuStrip();
-            this.đặtPhòngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.trảPhòngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nhânViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnThoatNick)).BeginInit();
@@ -70,7 +70,7 @@ namespace GUI
             this.panelContent.BackColor = System.Drawing.Color.LightBlue;
             this.panelContent.Location = new System.Drawing.Point(151, 83);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(683, 380);
+            this.panelContent.Size = new System.Drawing.Size(683, 487);
             this.panelContent.TabIndex = 29;
             // 
             // panel2
@@ -82,7 +82,7 @@ namespace GUI
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(10, 78);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(135, 391);
+            this.panel2.Size = new System.Drawing.Size(135, 498);
             this.panel2.TabIndex = 28;
             // 
             // label2
@@ -90,7 +90,7 @@ namespace GUI
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(53, 312);
+            this.label2.Location = new System.Drawing.Point(53, 354);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 22);
             this.label2.TabIndex = 2;
@@ -99,7 +99,7 @@ namespace GUI
             // btnThoatNick
             // 
             this.btnThoatNick.Image = ((System.Drawing.Image)(resources.GetObject("btnThoatNick.Image")));
-            this.btnThoatNick.Location = new System.Drawing.Point(6, 287);
+            this.btnThoatNick.Location = new System.Drawing.Point(6, 338);
             this.btnThoatNick.Name = "btnThoatNick";
             this.btnThoatNick.Size = new System.Drawing.Size(44, 47);
             this.btnThoatNick.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -123,7 +123,7 @@ namespace GUI
             this.panelRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelRight.Location = new System.Drawing.Point(840, 10);
             this.panelRight.Name = "panelRight";
-            this.panelRight.Size = new System.Drawing.Size(10, 459);
+            this.panelRight.Size = new System.Drawing.Size(10, 566);
             this.panelRight.TabIndex = 25;
             // 
             // panelLeft
@@ -132,7 +132,7 @@ namespace GUI
             this.panelLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLeft.Location = new System.Drawing.Point(0, 10);
             this.panelLeft.Name = "panelLeft";
-            this.panelLeft.Size = new System.Drawing.Size(10, 459);
+            this.panelLeft.Size = new System.Drawing.Size(10, 566);
             this.panelLeft.TabIndex = 24;
             // 
             // panelBot
@@ -140,7 +140,7 @@ namespace GUI
             this.panelBot.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.panelBot.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelBot.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panelBot.Location = new System.Drawing.Point(0, 469);
+            this.panelBot.Location = new System.Drawing.Point(0, 576);
             this.panelBot.Name = "panelBot";
             this.panelBot.Size = new System.Drawing.Size(850, 10);
             this.panelBot.TabIndex = 23;
@@ -166,6 +166,12 @@ namespace GUI
             this.menu_employee.Size = new System.Drawing.Size(143, 54);
             this.menu_employee.Text = "Quản Lý";
             // 
+            // nhânViênToolStripMenuItem
+            // 
+            this.nhânViênToolStripMenuItem.Name = "nhânViênToolStripMenuItem";
+            this.nhânViênToolStripMenuItem.Size = new System.Drawing.Size(162, 26);
+            this.nhânViênToolStripMenuItem.Text = "Nhân viên";
+            // 
             // menu_customer
             // 
             this.menu_customer.ForeColor = System.Drawing.Color.OrangeRed;
@@ -184,6 +190,20 @@ namespace GUI
             this.menu_products.Name = "menu_products";
             this.menu_products.Size = new System.Drawing.Size(124, 54);
             this.menu_products.Text = "Phòng";
+            // 
+            // đặtPhòngToolStripMenuItem
+            // 
+            this.đặtPhòngToolStripMenuItem.Name = "đặtPhòngToolStripMenuItem";
+            this.đặtPhòngToolStripMenuItem.Size = new System.Drawing.Size(165, 26);
+            this.đặtPhòngToolStripMenuItem.Text = "Đặt phòng";
+            this.đặtPhòngToolStripMenuItem.Click += new System.EventHandler(this.đặtPhòngToolStripMenuItem_Click);
+            // 
+            // trảPhòngToolStripMenuItem
+            // 
+            this.trảPhòngToolStripMenuItem.Name = "trảPhòngToolStripMenuItem";
+            this.trảPhòngToolStripMenuItem.Size = new System.Drawing.Size(165, 26);
+            this.trảPhòngToolStripMenuItem.Text = "Trả phòng";
+            this.trảPhòngToolStripMenuItem.Click += new System.EventHandler(this.trảPhòngToolStripMenuItem_Click);
             // 
             // menu_invoice
             // 
@@ -218,31 +238,11 @@ namespace GUI
             this.Menu.TabIndex = 26;
             this.Menu.Text = "menuStrip1";
             // 
-            // đặtPhòngToolStripMenuItem
-            // 
-            this.đặtPhòngToolStripMenuItem.Name = "đặtPhòngToolStripMenuItem";
-            this.đặtPhòngToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
-            this.đặtPhòngToolStripMenuItem.Text = "Đặt phòng";
-            this.đặtPhòngToolStripMenuItem.Click += new System.EventHandler(this.đặtPhòngToolStripMenuItem_Click);
-            // 
-            // trảPhòngToolStripMenuItem
-            // 
-            this.trảPhòngToolStripMenuItem.Name = "trảPhòngToolStripMenuItem";
-            this.trảPhòngToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
-            this.trảPhòngToolStripMenuItem.Text = "Trả phòng";
-            this.trảPhòngToolStripMenuItem.Click += new System.EventHandler(this.trảPhòngToolStripMenuItem_Click);
-            // 
-            // nhânViênToolStripMenuItem
-            // 
-            this.nhânViênToolStripMenuItem.Name = "nhânViênToolStripMenuItem";
-            this.nhânViênToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
-            this.nhânViênToolStripMenuItem.Text = "Nhân viên";
-            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(850, 479);
+            this.ClientSize = new System.Drawing.Size(850, 586);
             this.Controls.Add(this.panelContent);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);

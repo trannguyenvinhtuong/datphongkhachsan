@@ -57,7 +57,7 @@ namespace GUI
             this.txtMK.Name = "txtMK";
             this.txtMK.Size = new System.Drawing.Size(207, 29);
             this.txtMK.TabIndex = 25;
-            this.txtMK.Text = "123456";
+            this.txtMK.Text = "admin";
             this.txtMK.UseSystemPasswordChar = true;
             // 
             // txtTK
@@ -67,7 +67,7 @@ namespace GUI
             this.txtTK.Name = "txtTK";
             this.txtTK.Size = new System.Drawing.Size(207, 29);
             this.txtTK.TabIndex = 24;
-            this.txtTK.Text = "AD01";
+            this.txtTK.Text = "2001180817";
             // 
             // label3
             // 
@@ -130,6 +130,7 @@ namespace GUI
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.IconOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("FrmDangNhap.IconOptions.SvgImage")));
             this.Name = "FrmDangNhap";
             this.Text = "Đăng Nhập";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmDangNhap_FormClosing);
