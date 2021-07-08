@@ -1,0 +1,70 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Đăng ký</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/CSS/dkstyle.css">
+
+    <script src="https://kit.fontawesome.com/2a8f00c7fa.js" crossorigin="anonymous"></script>
+
+    @*<link href="~/Content/fontawesome.css" rel="stylesheet" />
+        <link href="~/Content/brands.css" rel="stylesheet" />
+        <link href="~/Content/solid.css" rel="stylesheet" />*@
+</head>
+<body id="bdy-dk">
+    <div class="dk-bg">
+        <div class="dk-header">
+            <h2>Tạo tài khoản</h2>
+        </div>
+        <form class="form-dk" id="IDform-dk" method="post" onsubmit="return checkinput()">
+            <div class="form-dk-control">
+                <label>Tên đăng nhập: </label>
+                <input type="text" name="dk-tendn" id="dk-tendn" placeholder="abc">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error</small>
+            </div>
+            <div class="form-dk-control">
+                <label>Email: </label>
+                <input type="email" name="dk-email" id="dk-email" placeholder="abc@xyz.com">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error</small>
+            </div>
+            <div class="form-dk-control">
+                <label>Mật khẩu: </label>
+                <input type="password" name="dk-mk" id="dk-mk" placeholder="xxxxx">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error</small>
+            </div>
+            <div class="form-dk-control">
+                <label>Xác nhận mật khẩu: </label>
+                <input type="password" name="dk-xnmk" id="dk-xnmk" placeholder="xxxxx">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error</small>
+            </div>
+            <div class="form-dk-control">
+                <label>Số điện thoại: </label>
+                <input type="text" name="dk-sdt" id="dk-sdt" placeholder="0999999999">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error</small>
+            </div>
+            <button class="dk-btn">Submit</button>
+        </form>
+        <script charset="utf-8" language="javascript" src="~/Scripts/JS/dangky.js"></script>
+
+    </div>
+
+</body>
+</html>

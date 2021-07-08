@@ -1,0 +1,373 @@
+﻿
+@{
+    ViewBag.Title = "HTKhachsan";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+
+@Html.Action("secondsearch", "Search", new { ngayden = Model[0].NGAYDEN, ngaydi = Model[0].NGAYDI, tendiadiem = Model[0].TENDIADIEM, sophong = Model[0].SOPHONG, songuoi = Model[0].SONGUOI })
+
+
+
+
+
+
+
+
+<br />
+<br />
+<div class="container">
+    <div class="row">
+        
+        <div class="col-3">
+            <h1 class="loc">Lọc</h1>
+            <br />
+            <ul class="list-group">
+                <li class="list-group-item" style="border-bottom: 1px dashed wheat;">
+                    <br />
+                    <h1 class="loc-label">Lọc theo tên</h1>
+                    <input type="text" placeholder="Tên khách sạn ..." class="form-control" />
+                    <br />
+                </li>
+                <li class="list-group-item" style="border-bottom: none;">
+                    <br />
+                    <h1 class="loc-label">Theo mức giá</h1>
+                    <h1 style="font-size: 14px">Từ</h1>
+                    <input type="number" placeholder="0" class="form-control" />
+                    <br />
+                    <h1 style="font-size: 14px">Đến</h1>
+                    <input type="number" placeholder="0" class="form-control" />
+                </li>
+                <li class="list-group-item" style="border-bottom: none;">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="checkdacbiet">
+                        <label class="form-check-label" for="checkdacbiet">
+                            Ưu đãi đặc biệt
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="checkgiatot">
+                        <label class="form-check-label" for="checkgiatot">
+                            Giá tốt
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="checkgiashock">
+                        <label class="form-check-label" for="checkgiashock">
+                            Giá shock
+                        </label>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <button type="button" class="btn btn-primary btn-tp">Tìm phòng</button>
+                    <br />
+                    <br />
+                </li>
+            </ul>
+            <!-- Part2 -->
+            <br />
+            <ul class="list-group">
+                <li class="list-group-item" style="border-bottom: 1px dashed wheat;">
+
+                    <h1 class="loc-label">Hạng sao</h1>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="check1star">
+                        <label class="form-check-label color-star" for="check1star">
+                            <i class="fas fa-star"></i>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="check2star">
+                        <label class="form-check-label color-star" for="check2star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="check3star">
+                        <label class="form-check-label color-star" for="check3star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="check4star">
+                        <label class="form-check-label color-star" for="check4star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="check5star">
+                        <label class="form-check-label color-star" for="check5star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </label>
+                    </div>
+                    <br />
+                </li>
+                <li class="list-group-item" style="border-bottom: 1px dashed wheat;">
+
+                    <h1 class="loc-label">Loại hình</h1>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="tatca">
+                        <label class="form-check-label" for="tatca">
+                            Tất cả
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="khachsan">
+                        <label class="form-check-label" for="khachsan">
+                            Khách sạn
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="resort">
+                        <label class="form-check-label" for="resort">
+                            Resort
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="villa">
+                        <label class="form-check-label" for="villa">
+                            Villa
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="nhanghi">
+                        <label class="form-check-label" for="nhanghi">
+                            Nhà nghỉ
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="canho">
+                        <label class="form-check-label" for="canho">
+                            Căn hộ
+                        </label>
+                    </div>
+                    <br />
+                </li>
+                <li class="list-group-item" style="border-bottom: 1px dashed wheat;">
+                    <h1 class="loc-label">Đánh giá</h1>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="tuyetvoi">
+                        <label class="form-check-label" for="tuyetvoi">
+                            Tuyệt vời (9.0+)
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="rattot">
+                        <label class="form-check-label" for="rattot">
+                            Rất tốt (8.0+)
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="tot">
+                        <label class="form-check-label" for="tot">
+                            Tốt (7.0+)
+                        </label>
+                    </div>
+                    <br />
+
+                </li>
+                <li class="list-group-item" style="border-bottom: 1px dashed wheat;">
+                    <h1 class="loc-label">Tiện nghi</h1>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="ddsb">
+                        <label class="form-check-label" for="ddsb">
+                            Đưa đón sân bay
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="ddbp">
+                        <label class="form-check-label" for="ddbp">
+                            Đưa đón bến phà
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="ctxh">
+                        <label class="form-check-label" for="ctxh">
+                            Cho thuê xe hơi
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="ctxm">
+                        <label class="form-check-label" for="ctxm">
+                            Cho thuê xe máy
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="ctxd">
+                        <label class="form-check-label" for="ctxd">
+                            Cho thuê xe đạp
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="tdnt">
+                        <label class="form-check-label" for="tdnt">
+                            Thu đổi ngoại tệ
+                        </label>
+                    </div>
+
+                    <div class="dropdown" style="width:100%;">
+                        <button class="xemthem-btn dropdown-toggle btn" type="button" id="collapsemenu" data-bs-toggle="dropdown" aria-expanded="false">
+                            Xem thêm
+                        </button>
+
+                        <ul class="dropdown-menu" aria-labelledby="collapsemenu" style="width:100%">
+                            <li style="padding-left: 20px;">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="lt">
+                                    <label class="form-check-label" for="lt">
+                                        Lễ tân 24h
+                                    </label>
+                                </div>
+                            </li>
+                            <li style="padding-left: 20px;">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="nh">
+                                    <label class="form-check-label" for="nh">
+                                        Nhà hàng
+                                    </label>
+                                </div>
+                            </li>
+                            <li style="padding-left: 20px;">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="db">
+                                    <label class="form-check-label" for="db">
+                                        Trợ giúp đặc biệt
+                                    </label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </li>
+
+            </ul>
+        </div>
+
+
+
+
+
+
+
+
+        <div class="col-9">
+
+
+
+            <h1 class="addressname" id="adddc">Khách sạn tại @Model[0].TENDIADIEM</h1>
+            @*<script type="text/javascript">
+                    var dldd = dd[1];
+                    document.getElementById("adddc").innerHTML = dldd;
+                </script>*@
+            <br />
+            <div class="option-nav-wrapper">
+                <ul class="nav nav-pills nav-fill">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Phổ biến</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Đánh giá cao</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Hạng sao
+                            @*<div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownhangSao" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Hạng sao
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownhangSao">
+                                        <li><a class="dropdown-item" href="#">Sao thấp trước</a></li>
+                                        <li><a class="dropdown-item" href="#">Sao cao trước</a></li>
+                                    </ul>
+                                </div>*@
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Giá</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="container" style="padding: 0;">
+
+                <div class="row">
+                    @foreach (var ks in Model)
+                    {
+
+                        <div class="col-9">
+                            <br />
+                            <br />
+                            <a href="#" class="ten-ks">@ks.TENKHACHSAN</a>
+                            <p style="height: 10px; color: rgb(226, 224, 76); font-size: 14px;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+                            <p style="font-size: 14px; height: 10px;"><i class="fas fa-map-marker-alt" style="color: blue;"></i> @ks.DIACHICUTHE</p>
+                            <br />
+                            <p style="font-size: 14px; color: blue;">Trung tâm thương mại Sài Gòn Centre</p>
+                            <!-- <div style="width: 100%;"> -->
+                            <div class="container" style="padding:0;">
+                                <div class="row">
+                                    <div class="col-5">
+                                        <img class="img-lstks" src="~/Content/imgs/imgks/@ks.ANHKS1" />
+                                    </div>
+                                    <div class="col-7">
+                                        <p style="font-size: 12px; height: 43px;">
+                                            Khách Sạn TTC - Deluxe Airport Sài Gòn nằm ngay trung tâm quận Tân Bình, đối diện công viên Hoàng Văn Thụ, cách sân bay quốc tế Tân Sơn Nhất 1km. Trang thiết bị hiện đại và được bài trí sang trọng, ấm cúng.
+                                        </p>
+                                        <br />
+                                        <p class="option-them"><i class="fas fa-check-circle" style="color: green;"></i> Đảm bảo hoàn tiền</p>
+                                        <p class="option-them"><i class="fas fa-check-circle" style="color: green;"></i> Đảm bảo giá tốt</p>
+                                        <p class="option-them"><i class="fas fa-utensils"></i> Bao gồm bữa sáng</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-3">
+                            <br />
+                            <br />
+                            <div style="height: 90%;">
+                                <div style="background-color: whitesmoke; border-radius: 5px 5px 0px 0px; height: 40%;">
+                                    <div class="danhgia">
+                                        <span class="xeploai">
+                                            @ks.DANHGIA
+                                        </span>
+                                        <span class="diem">
+                                            @ks.DIEM
+                                        </span>
+                                    </div>
+                                </div>
+                                <div style="background-color: #e9f3f7; border-radius: 0px 0px 5px 5px; height: 60%;">
+                                    @Html.Action("pphong", "Home", new { maks = ks.MAKHACHSAN })
+                                    <br />
+                                    <a href="@Url.Action("ChiTietPhong", "Home", new { maks=ks.MAKHACHSAN,ngayden = ks.NGAYDEN, ngaydi = ks.NGAYDI, tendiadiem = ks.TENDIADIEM, sophong = ks.SOPHONG, songuoi = ks.SONGUOI })">
+                                        <button class="xemphong">XEM PHÒNG</button>
+                                    </a>
+                                    <br />
+                                    <p style="color: red; font-size: 12px; float: right; margin-right: 10px; margin-top: 5px; font-weight: bold;">Đảm bảo còn phòng !</p>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                    }
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<script language="javascript" src="~/Scripts/JS/setngay.js"></script>
+

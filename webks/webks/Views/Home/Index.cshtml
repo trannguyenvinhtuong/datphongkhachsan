@@ -1,0 +1,180 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="form-search" style="background-image:url(@Url.Content("~/Content/imgs/bg-banner-home.png"))">
+    <br />
+    <div class="container">
+        <div class="row">
+
+            <div class="col-4">
+                <h2>@ViewBag.Loitim</h2>
+
+
+
+                <form class="tk-wrapper" method="post" action="@Url.Action("search","Search")" onsubmit="return kiemtradulieu()">
+
+
+
+
+                    <ul class="nav" style="padding-top:10px;">
+                        <li class="nav-item">
+                            <a class="nav-link active tim-style ks" aria-current="page" href="#">
+                                <i class="fas fa-building"></i> Tìm khách sạn
+                            </a>
+                        </li>
+                        <li class="nav-item ms-2">
+                            <a class="nav-link tim-style" href="#">
+                                <i class="far fa-flag"></i> Tìm tour
+                            </a>
+                        </li>
+                    </ul>
+                    <br />
+
+
+
+                    <div class="search-wrapper">
+                        <i class="fas fa-bed" style="color: white; font-size: 18px; padding-left: 10px; padding-right: 10px;"></i>
+                        <input type="text" id="keyword" name="keyword" class="ks-search" placeholder="Tên địa danh..." />
+                    </div>
+                    <br />
+                    <br />
+                    <div class="search-wrapper">
+                        <i class="fas fa-plane-arrival" style="color: white; font-size: 18px; padding-left: 10px; padding-right: 10px;"></i>
+                        <input type="date" name="ngay_den" class="ks-search" id="ngayden" />
+                    </div>
+                    <br />
+                    <br />
+                    <div class="search-wrapper">
+                        <i class="fas fa-plane-departure" style="color: white; font-size: 18px; padding-left: 10px; padding-right: 10px;"></i>
+                        <input type="date" name="ngay_di" class="ks-search" id="ngaydi" />
+                    </div>
+                    <br />
+                    <br />
+                    <div class="container" style="padding: 0px;">
+                        <div class="row">
+                            <div class="col">
+                                <div class="search-wrapper">
+                                    <i class="fas fa-house-user" style="color: white; font-size: 18px; padding-left: 10px; padding-right: 12px;"></i>
+                                    <input type="number" name="soluongphong" class="number-input" id="soluongphong" placeholder="Số phòng...">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="search-wrapper">
+                                    <i class="fas fa-male" style="color: white; font-size: 18px; padding-right: 10px;"></i>
+                                    <input type="number" name="soluongkhach" class="number-input" id="soluongkhach" placeholder="Số khách...">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="container">
+                        <button type="submit" class="btn-search">Tìm khách sạn</button>
+                    </div>
+                    <br />
+
+                </form>
+
+            </div>
+
+            <div class="col-8">
+
+                @*slide*@
+                @Html.Action("HTSlide", "Home")
+            </div>
+        </div>
+    </div>
+
+</div>
+<br />
+<br />
+
+@Html.Action("DiaDiem", "Home")
+
+<!-- Tim kiem theo dia danh -->
+<br />
+<br />
+<div class="container">
+    <h1 class="diadiem">Tìm kiếm theo địa danh</h1>
+    <br />
+    <div class="row">
+        <div class="col">
+            <a href="#" class="tinhthanh">An Giang</a>
+            <a href="#" class="tinhthanh">Bà Rịa - Vũng Tàu</a>
+            <a href="#" class="tinhthanh">Bắc Giang</a>
+            <a href="#" class="tinhthanh">Bắc Kạn</a>
+            <a href="#" class="tinhthanh">Bạc Liêu</a>
+            <a href="#" class="tinhthanh">Bắc Ninh</a>
+            <a href="#" class="tinhthanh">Bến Tre</a>
+            <a href="#" class="tinhthanh">Bình Định</a>
+            <a href="#" class="tinhthanh">Bình Dương</a>
+            <a href="#" class="tinhthanh">Bình Phước</a>
+            <a href="#" class="tinhthanh">Bình Thuận</a>
+            <a href="#" class="tinhthanh">Cà Mau</a>
+            <a href="#" class="tinhthanh">Cao Bằng</a>
+            <a href="#" class="tinhthanh">Đắk Lắk</a>
+            <a href="#" class="tinhthanh">Đắk Nông</a>
+            <a href="#" class="tinhthanh">Điện Biên</a>
+            <a href="#" class="tinhthanh">Đồng Nai</a>
+            <a href="#" class="tinhthanh">Đồng Tháp</a>
+            <a href="#" class="tinhthanh">Gia Lai</a>
+            <a href="#" class="tinhthanh">Hà Giang</a>
+            <a href="#" class="tinhthanh">Hà Nam</a>
+
+        </div>
+        <div class="col">
+            <a href="#" class="tinhthanh">Hà Tĩnh</a>
+            <a href="#" class="tinhthanh">Hải Dương</a>
+            <a href="#" class="tinhthanh">Hậu Giang</a>
+            <a href="#" class="tinhthanh">Hòa Bình</a>
+            <a href="#" class="tinhthanh">Hưng Yên</a>
+            <a href="#" class="tinhthanh">Khánh Hòa</a>
+            <a href="#" class="tinhthanh">Kiên Giang</a>
+            <a href="#" class="tinhthanh">Kon Tum</a>
+            <a href="#" class="tinhthanh">Lai Châu</a>
+            <a href="#" class="tinhthanh">Lâm Đồng</a>
+            <a href="#" class="tinhthanh">Lạng Sơn</a>
+            <a href="#" class="tinhthanh">Lào Cai</a>
+            <a href="#" class="tinhthanh">Long An</a>
+            <a href="#" class="tinhthanh">Nam Định</a>
+            <a href="#" class="tinhthanh">Nghệ An</a>
+            <a href="#" class="tinhthanh">Ninh Bình</a>
+            <a href="#" class="tinhthanh">Ninh Thuận</a>
+            <a href="#" class="tinhthanh">Phú Thọ</a>
+            <a href="#" class="tinhthanh">Quảng Bình</a>
+            <a href="#" class="tinhthanh">Quảng Nam</a>
+            <a href="#" class="tinhthanh">Quảng Ngãi</a>
+        </div>
+        <div class="col">
+            <a href="#" class="tinhthanh">Quảng Ninh</a>
+            <a href="#" class="tinhthanh">Quảng Trị</a>
+            <a href="#" class="tinhthanh">Sóc Trăng</a>
+            <a href="#" class="tinhthanh">Sơn La</a>
+            <a href="#" class="tinhthanh">Tây Ninh</a>
+            <a href="#" class="tinhthanh">Thái Bình</a>
+            <a href="#" class="tinhthanh">Thái Nguyên</a>
+            <a href="#" class="tinhthanh">Thanh Hóa</a>
+            <a href="#" class="tinhthanh">Thừa Thiên Huế</a>
+            <a href="#" class="tinhthanh">Tiền Giang</a>
+            <a href="#" class="tinhthanh">Trà Vinh</a>
+            <a href="#" class="tinhthanh">Tuyên Quang</a>
+            <a href="#" class="tinhthanh">Vĩnh Long</a>
+            <a href="#" class="tinhthanh">Vĩnh Phúc</a>
+            <a href="#" class="tinhthanh">Yên Bái</a>
+            <a href="#" class="tinhthanh">Phú Yên</a>
+            <a href="#" class="tinhthanh">Cần Thơ</a>
+            <a href="#" class="tinhthanh">Đà Nẵng</a>
+            <a href="#" class="tinhthanh">Hải Phòng</a>
+            <a href="#" class="tinhthanh">Hà Nội</a>
+            <a href="#" class="tinhthanh">TP HCM</a>
+        </div>
+    </div>
+</div>
+
+<br />
+<br />
+
+<script language="javascript" src="~/Scripts/JS/kiemtradulieu.js"></script>
+

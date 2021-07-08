@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "dangnhap";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/CSS/dnstyle.css" type="text/css" rel="stylesheet" />
+<div style="background-color:#FF99CC">
+    <br />
+    <br />
+    <br />
+    <div class="container">
+        <div class="dn-area">
+            <div class="dn-header">
+                <h2>Đăng nhập</h2>
+            </div>
+            <form id="form-dn" onsubmit="return checkdninput()" method="post">
+                <div class="form-dn-control">
+                    <label>Tên đăng nhập</label>
+                    <input type="text" name="dn-tendn" id="dn-tendn">
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Error</small>
+                </div>
+                <div class="form-dn-control">
+                    <label>Mật khẩu</label>
+                    <input type="password" name="dn-mk" id="dn-mk">
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Error</small>
+                </div>
+                <h2 style="text-align:center;color:red;font-size:16px; padding-bottom:10px">@ViewBag.Thongbao</h2>
+                <button class="btn-dn">Đăng nhập</button>
+                <p class="dk-link">Bạn chưa có tài khoản? <a href="#" style="color: blue">Đăng ký ngay!</a></p>
+
+            </form>
+
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+
+</div>
+
+<script language="javascript" src="~/Scripts/JS/dangnhap.js"></script>
+

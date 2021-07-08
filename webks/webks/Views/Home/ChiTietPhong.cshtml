@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewBag.Title = "ChiTietPhong";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+@Html.Action("secondsearch", "Search", new { ngayden = Model.NGAYDEN, ngaydi = Model.NGAYDI, tendiadiem = Model.TENDIADIEM, sophong = Model.SOPHONG, songuoi = Model.SONGUOI })
+<br />
+<br />
+<br />
+
+<div class="container">
+    <div class="row">
+        <div class="col-8">
+            <h1 class="details-tenks">
+                @Model.TENKHACHSAN
+            </h1>
+            <p class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </p>
+            <div style="width: 100%; height: 10px">
+                <div style="float: left;">
+                    <div class="diemdg">@Model.DIEM</div>
+                </div>
+                <div style="float: left;">
+                    <p class="textdanhgia">@Model.DANHGIA</p>
+                </div>
+            </div>
+            <br />
+            <p class="diachi">
+                <i class="fas fa-map-marker-alt"></i>
+                @Model.DIACHICUTHE
+            </p>
+        </div>
+
+        <div class="col-4">
+            <div style="float: left; width: 50%">
+                @Html.Action("pphongtw", "Home", new { maks = Model.MAKHACHSAN })
+            </div>
+            <div style="float: left; width: 50%">
+                <a href="#chonphonglink">
+                    <button class="details-chonphong">Chọn phòng</button>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-6" style="height: 358px; padding-right: 2px">
+            <img class="details-img-big" style="border-radius: 10px 0px 0px 10px; " src="~/Content/imgs/imgks/@Model.ANHKS1">
+        </div>
+        <div class="col-6" style="height: 360px; padding-left: 2px">
+            <div style="width: 50%; float: left; height: 179px;">
+                <img class="details-img-small padding-style-right" src="~/Content/imgs/imgks/@Model.ANHKS2">
+                <img class="details-img-small padding-style-right padding-style-top" src="~/Content/imgs/imgks/@Model.ANHKS3">
+            </div>
+            <div style="width: 50%; float: left; height: 179px;">
+                <img class="details-img-small" style="border-radius: 0px 10px 0px 0px" src="~/Content/imgs/imgks/@Model.ANHKS4">
+                <img class="details-img-small padding-style-top" style="border-radius: 0px 0px 10px 0px" src="~/Content/imgs/imgks/@Model.ANHKS5">
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+@Html.Action("tienichks", "Home", new { maks = @Model.MAKHACHSAN })
+
+
+@Html.Action("ThongTinPhong", "Home", new { maks = @Model.MAKHACHSAN })
+
