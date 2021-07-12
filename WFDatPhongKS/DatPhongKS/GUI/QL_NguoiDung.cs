@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Data;
+using DevExpress.XtraEditors;
+using System.Windows.Forms;
+using System.Xml;
 
 namespace GUI
 {
@@ -36,9 +39,139 @@ namespace GUI
                 return DangNhap.Invalid;
             else if (dt.Rows[0][2] == null || dt.Rows[0][2].ToString() == "False")
             {
-                return DangNhap.Disabled;// User không hoạt động
+                return DangNhap.Disable;// User không hoạt động
             }
             return DangNhap.Success; // Đăng nhập thành công
+        }
+
+        //public DangNhap_Quyen Check_Quyen_User(string pUser)
+        //{
+        //    SqlDataAdapter daUser = new SqlDataAdapter(" select MANV, QUYEN from NHANVIEN where MANV='" + pUser + "'", Properties.Settings.Default.Connect);
+        //    DataTable dt = new DataTable();
+        //    daUser.Fill(dt);
+        //    if (dt.Rows.Count == 0)
+        //        return DangNhap_Quyen.Invalid;
+        //    else if (dt.Rows[0][1].ToString() == "False")
+        //    {
+        //        return DangNhap_Quyen.staff;// User là staff
+        //    }
+        //    return DangNhap_Quyen.admin; // User là admin
+        //}
+
+        //cấu hình
+        public DataTable GetServerName()
+        {
+            SqlDataSourceEnumerator instance = SqlDataSourceEnumerator.Instance;
+            System.Data.DataTable table = instance.GetDataSources();
+            return table;
+
+        }
+        public DataTable GetAuthentication()
+        {
+            SqlDataSourceEnumerator instance = SqlDataSourceEnumerator.Instance;
+            System.Data.DataTable table = instance.GetDataSources();
+            return table;
+
+        }
+        public List<string> GetDatabaseName(string pServerName, string pUser, string pPass)
+        {
+            List<string> list = new List<string>();
+            DataTable dt = new DataTable();
+            string conn = @"Data Source=" + pServerName + ";Initial Catalog=" + "master" + ";Persist Security Info=True;User ID=" + pUser + ";Password=" + pPass;
+            try
+            {
+                using (SqlConnection sqlConn = new SqlConnection(conn))
+                {
+                    sqlConn.Open();
+                    DataTable tblDatabases = sqlConn.GetSchema("Databases");
+                    sqlConn.Close();
+
+                    foreach (DataRow row in tblDatabases.Rows)
+                    {
+                        list.Add(row["database_name"].ToString());
+                    }
+                }
+                return list;
+            }
+            catch
+            {
+                XtraMessageBox.Show("Thông tin cấu hình chưa chính xác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+
+        }
+        public List<string> GetDatabaseNameWindows(string pServerName)
+        {
+            List<string> list = new List<string>();
+            DataTable dt = new DataTable();
+            string conn = @"Data Source=" + pServerName + ";Initial Catalog=" + "master" + ";Integrated Security=True";
+            try
+            {
+                using (SqlConnection sqlConn = new SqlConnection(conn))
+                {
+                    sqlConn.Open();
+                    DataTable tblDatabases = sqlConn.GetSchema("Databases");
+                    sqlConn.Close();
+
+                    foreach (DataRow row in tblDatabases.Rows)
+                    {
+                        list.Add(row["database_name"].ToString());
+                    }
+                }
+                return list;
+            }
+            catch
+            {
+                MessageBox.Show("Thông tin cấu hình chưa chính xác");
+                return null;
+            }
+
+        }
+
+        public void ChangeConnectionString(string pServerName, string pDataBase, string pUser, string pPass)
+        {
+            GUI.Properties.Settings.Default.Connect = "Data Source=" + pServerName
+            + ";Initial Catalog=" + pDataBase + ";User ID=" + pUser + ";pwd = " + pPass + "";
+            Properties.Settings.Default.Save();
+        }
+
+
+        public bool ChangeConnectionStringApp(string Name, string value, string providerName, string AppName)
+        {
+            bool retVal = false;
+            try
+            {
+
+                string FILE_NAME = string.Concat(Application.StartupPath, "\\", AppName.Trim(), ".exe.Config"); //the application configuration file name
+                XmlTextReader reader = new XmlTextReader(FILE_NAME);
+                XmlDocument doc = new XmlDocument();
+                doc.Load(reader);
+                reader.Close();
+                string nodeRoute = string.Concat("connectionStrings/add");
+
+                XmlNode cnnStr = null;
+                XmlElement root = doc.DocumentElement;
+                XmlNodeList Settings = root.SelectNodes(nodeRoute);
+
+                for (int i = 0; i < Settings.Count; i++)
+                {
+                    cnnStr = Settings[i];
+                    if (cnnStr.Attributes["name"].Value.Equals(Name))
+                        break;
+                    cnnStr = null;
+                }
+
+                cnnStr.Attributes["connectionString"].Value = value;
+                cnnStr.Attributes["providerName"].Value = providerName;
+                doc.Save(FILE_NAME);
+                retVal = true;
+            }
+            catch
+            {
+                retVal = false;
+
+            }
+            return retVal;
         }
 
     }

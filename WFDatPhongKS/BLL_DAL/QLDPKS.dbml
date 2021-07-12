@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLDPKS" Class="QLDPKSDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=WIN2K\WIN2K;Initial Catalog=QLDPKS;User ID=sa" SettingsObjectName="BLL_DAL.Properties.Settings" SettingsPropertyName="QLDPKSConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=B902702E395D455\WIN2K;Initial Catalog=QLDPKS;User ID=sa" SettingsObjectName="BLL_DAL.Properties.Settings" SettingsPropertyName="QLDPKSConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.BANGLOC" Member="BANGLOCs">
     <Type Name="BANGLOC">
       <Column Name="IDBANG" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -177,6 +177,13 @@
       <Association Name="TIENICH_KSTIENICH" Member="KSTIENICHes" ThisKey="IDTIENICH" OtherKey="IDTIENICH" Type="KSTIENICH" />
     </Type>
   </Table>
+  <Table Name="dbo.QL_NGUOIDUNG" Member="QL_NGUOIDUNGs">
+    <Type Name="QL_NGUOIDUNG">
+      <Column Name="TENDANGNHAP" Type="System.String" DbType="VarChar(15) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MATKHAU" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="HOATDONG" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
   <Table Name="dbo.QL_PHANQUYEN" Member="QL_PHANQUYENs">
     <Type Name="QL_PHANQUYEN">
       <Column Name="MANHOM" Type="System.String" DbType="VarChar(15) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -203,13 +210,6 @@
       <Association Name="NHANVIEN_QL_NGUOIDUNGNHOMNGUOIDUNG" Member="NHANVIEN" ThisKey="TENDANGNHAP" OtherKey="MANV" Type="NHANVIEN" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.QL_NGUOIDUNG" Member="QL_NGUOIDUNGs">
-    <Type Name="QL_NGUOIDUNG">
-      <Column Name="TENDANGNHAP" Type="System.String" DbType="VarChar(15) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="MATKHAU" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="HOATDONG" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
   <Table Name="dbo.NHANVIEN" Member="NHANVIENs">
     <Type Name="NHANVIEN">
       <Column Name="MANV" Type="System.String" DbType="VarChar(15) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -222,6 +222,7 @@
       <Column Name="HINHANH" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="MATKHAU" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="HOATDONG" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="QUYEN" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Association Name="NHANVIEN_QL_NGUOIDUNGNHOMNGUOIDUNG" Member="QL_NGUOIDUNGNHOMNGUOIDUNGs" ThisKey="MANV" OtherKey="TENDANGNHAP" Type="QL_NGUOIDUNGNHOMNGUOIDUNG" />
     </Type>
   </Table>

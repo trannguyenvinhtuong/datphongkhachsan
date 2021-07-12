@@ -12,6 +12,8 @@ namespace GUI
     {
         public static FrmDangNhap frmDangNhap = null;
         public static FrmMain frmMain = null;
+        public static FrmDatPhong frmDatPhong = null;
+        public static FrmTraPhong frmTraPhong = null;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

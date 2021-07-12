@@ -33,6 +33,7 @@ namespace GUI
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelContent = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lbltendangnhap = new DevExpress.XtraEditors.LabelControl();
             this.label2 = new System.Windows.Forms.Label();
             this.btnThoatNick = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -43,16 +44,20 @@ namespace GUI
             this.menu_employee = new System.Windows.Forms.ToolStripMenuItem();
             this.nhânViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_customer = new System.Windows.Forms.ToolStripMenuItem();
-            this.menu_products = new System.Windows.Forms.ToolStripMenuItem();
+            this.menu_Rooms = new System.Windows.Forms.ToolStripMenuItem();
             this.đặtPhòngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trảPhòngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_invoice = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_statistics = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu = new System.Windows.Forms.MenuStrip();
+            this.btnDoiMK = new DevExpress.XtraEditors.SimpleButton();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelContent.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnThoatNick)).BeginInit();
             this.Menu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -64,10 +69,12 @@ namespace GUI
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseClick);
             // 
             // panelContent
             // 
             this.panelContent.BackColor = System.Drawing.Color.LightBlue;
+            this.panelContent.Controls.Add(this.pictureBox2);
             this.panelContent.Location = new System.Drawing.Point(151, 83);
             this.panelContent.Name = "panelContent";
             this.panelContent.Size = new System.Drawing.Size(683, 487);
@@ -76,6 +83,8 @@ namespace GUI
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.LightBlue;
+            this.panel2.Controls.Add(this.btnDoiMK);
+            this.panel2.Controls.Add(this.lbltendangnhap);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.btnThoatNick);
             this.panel2.Controls.Add(this.pictureBox1);
@@ -85,12 +94,19 @@ namespace GUI
             this.panel2.Size = new System.Drawing.Size(135, 498);
             this.panel2.TabIndex = 28;
             // 
+            // lbltendangnhap
+            // 
+            this.lbltendangnhap.Location = new System.Drawing.Point(14, 371);
+            this.lbltendangnhap.Name = "lbltendangnhap";
+            this.lbltendangnhap.Size = new System.Drawing.Size(0, 13);
+            this.lbltendangnhap.TabIndex = 3;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(53, 354);
+            this.label2.Location = new System.Drawing.Point(50, 420);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 22);
             this.label2.TabIndex = 2;
@@ -99,7 +115,7 @@ namespace GUI
             // btnThoatNick
             // 
             this.btnThoatNick.Image = ((System.Drawing.Image)(resources.GetObject("btnThoatNick.Image")));
-            this.btnThoatNick.Location = new System.Drawing.Point(6, 338);
+            this.btnThoatNick.Location = new System.Drawing.Point(0, 406);
             this.btnThoatNick.Name = "btnThoatNick";
             this.btnThoatNick.Size = new System.Drawing.Size(44, 47);
             this.btnThoatNick.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -169,8 +185,9 @@ namespace GUI
             // nhânViênToolStripMenuItem
             // 
             this.nhânViênToolStripMenuItem.Name = "nhânViênToolStripMenuItem";
-            this.nhânViênToolStripMenuItem.Size = new System.Drawing.Size(162, 26);
+            this.nhânViênToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.nhânViênToolStripMenuItem.Text = "Nhân viên";
+            this.nhânViênToolStripMenuItem.Click += new System.EventHandler(this.nhânViênToolStripMenuItem_Click);
             // 
             // menu_customer
             // 
@@ -180,28 +197,28 @@ namespace GUI
             this.menu_customer.Size = new System.Drawing.Size(174, 54);
             this.menu_customer.Text = "Khách Hàng";
             // 
-            // menu_products
+            // menu_Rooms
             // 
-            this.menu_products.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menu_Rooms.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.đặtPhòngToolStripMenuItem,
             this.trảPhòngToolStripMenuItem});
-            this.menu_products.ForeColor = System.Drawing.Color.OrangeRed;
-            this.menu_products.Image = ((System.Drawing.Image)(resources.GetObject("menu_products.Image")));
-            this.menu_products.Name = "menu_products";
-            this.menu_products.Size = new System.Drawing.Size(124, 54);
-            this.menu_products.Text = "Phòng";
+            this.menu_Rooms.ForeColor = System.Drawing.Color.OrangeRed;
+            this.menu_Rooms.Image = ((System.Drawing.Image)(resources.GetObject("menu_Rooms.Image")));
+            this.menu_Rooms.Name = "menu_Rooms";
+            this.menu_Rooms.Size = new System.Drawing.Size(124, 54);
+            this.menu_Rooms.Text = "Phòng";
             // 
             // đặtPhòngToolStripMenuItem
             // 
             this.đặtPhòngToolStripMenuItem.Name = "đặtPhòngToolStripMenuItem";
-            this.đặtPhòngToolStripMenuItem.Size = new System.Drawing.Size(165, 26);
+            this.đặtPhòngToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.đặtPhòngToolStripMenuItem.Text = "Đặt phòng";
             this.đặtPhòngToolStripMenuItem.Click += new System.EventHandler(this.đặtPhòngToolStripMenuItem_Click);
             // 
             // trảPhòngToolStripMenuItem
             // 
             this.trảPhòngToolStripMenuItem.Name = "trảPhòngToolStripMenuItem";
-            this.trảPhòngToolStripMenuItem.Size = new System.Drawing.Size(165, 26);
+            this.trảPhòngToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.trảPhòngToolStripMenuItem.Text = "Trả phòng";
             this.trảPhòngToolStripMenuItem.Click += new System.EventHandler(this.trảPhòngToolStripMenuItem_Click);
             // 
@@ -229,7 +246,7 @@ namespace GUI
             this.Menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menu_employee,
             this.menu_customer,
-            this.menu_products,
+            this.menu_Rooms,
             this.menu_invoice,
             this.menu_statistics});
             this.Menu.Location = new System.Drawing.Point(10, 10);
@@ -237,6 +254,32 @@ namespace GUI
             this.Menu.Size = new System.Drawing.Size(830, 58);
             this.Menu.TabIndex = 26;
             this.Menu.Text = "menuStrip1";
+            // 
+            // btnDoiMK
+            // 
+            this.btnDoiMK.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDoiMK.Appearance.Options.UseFont = true;
+            this.btnDoiMK.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
+            this.btnDoiMK.Location = new System.Drawing.Point(0, 117);
+            this.btnDoiMK.Name = "btnDoiMK";
+            this.btnDoiMK.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.btnDoiMK.Size = new System.Drawing.Size(132, 39);
+            this.btnDoiMK.TabIndex = 4;
+            this.btnDoiMK.Text = "Đổi mật khẩu";
+            this.btnDoiMK.Click += new System.EventHandler(this.btnDoiMK_Click);
+            this.btnDoiMK.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnDoiMK_MouseClick);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.White;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(6, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(677, 445);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 23;
+            this.pictureBox2.TabStop = false;
             // 
             // FrmMain
             // 
@@ -257,11 +300,13 @@ namespace GUI
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMain_FormClosing);
             this.Load += new System.EventHandler(this.FrmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelContent.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnThoatNick)).EndInit();
             this.Menu.ResumeLayout(false);
             this.Menu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -280,13 +325,16 @@ namespace GUI
         private System.Windows.Forms.PictureBox btnThoatNick;
         private System.Windows.Forms.ToolStripMenuItem menu_employee;
         private System.Windows.Forms.ToolStripMenuItem menu_customer;
-        private System.Windows.Forms.ToolStripMenuItem menu_products;
+        private System.Windows.Forms.ToolStripMenuItem menu_Rooms;
         private System.Windows.Forms.ToolStripMenuItem menu_invoice;
         private System.Windows.Forms.ToolStripMenuItem menu_statistics;
         private System.Windows.Forms.MenuStrip Menu;
         private System.Windows.Forms.ToolStripMenuItem nhânViênToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem đặtPhòngToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem trảPhòngToolStripMenuItem;
+        private DevExpress.XtraEditors.LabelControl lbltendangnhap;
+        private DevExpress.XtraEditors.SimpleButton btnDoiMK;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 
