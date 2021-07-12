@@ -1,0 +1,19 @@
+﻿<div class="container">
+    <h1 class="diadiem">Địa điểm nổi bật</h1>
+    <br />
+    <div class="row">
+        @foreach (var dd in Model)
+        {
+            <div class="col-3">
+                <div class="img-content-diadiem">
+                    <a href="@Url.Action("HTKhachsan", "Home", new { iddd = dd.IDDIADIEM })">
+                        <img class="img-item" src="~/Content/imgs/@dd.img">
+                        <h3 class="item-name">@dd.TENDIADIEM</h3>
+                    </a>
+                </div>
+                <br />
+                <br />
+            </div>
+        }
+    </div>
+</div>

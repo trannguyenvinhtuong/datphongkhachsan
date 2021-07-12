@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @*@Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")*@
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+    <script src="~/Scripts/jquery-3.6.0.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/bootstrap.bundle.js"></script>
+
+    <script src="https://kit.fontawesome.com/2a8f00c7fa.js" crossorigin="anonymous"></script>
+
+    <link href="~/Content/CSS/headerstyle.css" type="text/css" rel="stylesheet" />
+
+    <link href="~/Content/CSS/footerstyle.css" type="text/css" rel="stylesheet" />
+
+    <link href="~/Content/CSS/homestyle.css" type="text/css" rel="stylesheet" />
+
+    <link href="~/Content/CSS/phongstyle.css" type="text/css" rel="stylesheet" />
+
+    <link href="~/Content/CSS/searchbarstyle.css" type="text/css" rel="stylesheet" />
+
+    <link href="~/Content/CSS/detailsphong.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+    <div style="background-color: cornflowerblue; height: 100px; width: 100%;"></div>
+    <div style="background-color:#f8f9fa">
+        <div class="container">
+
+            <nav class="navbar navbar-expand-lg bg-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand icon-style" href="@Url.Action("Index","Home")">Find hotel <i class="fas fa-hotel"></i></a>
+                    <button class="navbar-toggler navbar-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item ms-3">
+                                <a class="nav-link active menu-item" aria-current="page" href="@Url.Action("Index","Home")">Khách sạn</a>
+                            </li>
+                            <li class="nav-item ms-3">
+                                <a class="nav-link menu-item" href="#">Tour</a>
+                            </li>
+                            <li class="nav-item ms-3">
+                                <a class="nav-link menu-item" href="#">Combo trọn gói</a>
+                            </li>
+                            <li class="nav-item ms-3">
+                                <a class="nav-link menu-item" href="#">Blog</a>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle menu-item" style="font-size: 20px;" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fas fa-user"></i>
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="@Url.Action("dangnhap","TK")">Đăng nhập</a></li>
+                                    <li><a class="dropdown-item" href="@Url.Action("dangky","TK")">Đăng ký</a></li>
+
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+        </div>
+    </div>
+
+
+    <div>
+        @RenderBody()
+        @*<hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>*@
+    </div>
+
+    <br />
+    <br />
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1 class="footer-td">ĐỀ TÀI XÂY DỰNG ỨNG DỤNG ĐẶT PHÒNG KHÁCH SẠN</h1>
+                    <p>Sinh viên tham gia:</p>
+                </div>
+                <div class="col">
+                    <h1 class="footer-td">QUY ĐỊNH CHUNG</h1>
+                </div>
+                <div class="col">
+                    <h1 class="footer-td">LIÊN HỆ VỚI CHÚNG TÔI</h1>
+                    <a href="#" class="icon-lh">
+                        <i class="fab fa-facebook-square"></i>
+                    </a>
+                    <a href="#" class="icon-lh">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="icon-lh">
+                        <i class="fab fa-twitter-square"></i>
+                    </a>
+                    <a href="#" class="icon-lh">
+                        <i class="fab fa-google-plus"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    @*@Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)*@
+</body>
+</html>

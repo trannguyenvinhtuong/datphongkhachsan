@@ -1,0 +1,113 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Poppins:wght@300&display=swap');
+
+.dn-area {
+    height: auto;
+    position: relative;
+    left: 50%;
+    background-color: white;
+    width: 480px;
+    transform: translateX(-50%);
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    max-width: 100%;
+}
+
+.dn-header {
+    text-align: center;
+    padding: 10px;
+}
+
+    .dn-header h2 {
+        font-size: 28px;
+        margin: 0;
+        font-family: 'Nunito', sans-serif;
+        color: #FF6666;
+        padding-top: 20px;
+    }
+
+.dn-area form {
+    padding: 30px 40px;
+}
+
+.form-dn-control {
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+    .form-dn-control label {
+        display: inline-block;
+        margin-bottom: 5px;
+        font-weight: 500;
+        font-size: 16px;
+    }
+
+    .form-dn-control input {
+        border: 2px solid #f0f0f0;
+        border-radius: 4px;
+        display: block;
+        font-family: inherit;
+        font-size: 14px;
+        padding: 10px;
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .form-dn-control i {
+        position: absolute;
+        top: 40px;
+        right: 10px;
+        visibility: hidden;
+    }
+
+    .form-dn-control small {
+        visibility: hidden;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+.btn-dn {
+    background-color: #FF1284;
+    width: 100%;
+    padding: 10px;
+    border: 0;
+    border-radius: 8px;
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+    .btn-dn:hover {
+        background-color: #dc066d;
+    }
+
+.form-dn-control.sucess input {
+    border-color: #2ecc71;
+}
+
+.form-dn-control.fail input {
+    border-color: #e74c3c;
+}
+
+.form-dn-control.sucess i.fa-check-circle {
+    visibility: visible;
+    color: green;
+}
+
+.form-dn-control.fail i.fa-exclamation-circle {
+    visibility: visible;
+    color: red;
+}
+
+.form-dn-control.fail small {
+    color: #e74c3c;
+    visibility: visible;
+}
+.dk-link{
+    text-align:center;
+    padding:10px;
+    font-size:16px;
+    font-family: "Nunito",sans-serif;
+    font-weight:500;
+}

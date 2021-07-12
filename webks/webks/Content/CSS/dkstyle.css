@@ -1,0 +1,109 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+#bdy-dk {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FF66FF;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.dk-bg {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    width: 450px;
+    max-width: 100%;
+}
+
+.dk-header {
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #f0f0f0;
+    padding: 20px 40px;
+}
+
+    .dk-header h2 {
+        margin: 0;
+    }
+
+.dk-bg form {
+    padding: 30px 40px;
+}
+
+.form-dk-control {
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+    .form-dk-control label {
+        display: inline-block;
+        margin-bottom: 5px;
+    }
+
+    .form-dk-control input {
+        border: 2px solid #f0f0f0;
+        border-radius: 4px;
+        display: block;
+        font-family: inherit;
+        font-size: 14px;
+        padding: 10px;
+        width: 93%;
+    }
+
+    .form-dk-control i {
+        position: absolute;
+        top: 40px;
+        right: 10px;
+        visibility: hidden;
+    }
+
+    .form-dk-control small {
+        visibility: hidden;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+.dk-btn {
+    background-color: #FF1284;
+    width: 100%;
+    padding: 10px;
+    border: 0;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+    .dk-btn:hover {
+        background-color: #dc066d;
+    }
+
+.form-dk-control.sucess input {
+    border-color: #2ecc71;
+}
+
+.form-dk-control.fail input {
+    border-color: #e74c3c;
+}
+
+.form-dk-control.sucess i.fa-check-circle {
+    visibility: visible;
+    color: green;
+}
+
+.form-dk-control.fail i.fa-exclamation-circle {
+    visibility: visible;
+    color: red;
+}
+/*.form-dk-control.sucess small{
+	color: #2ecc71;
+	visibility: visible;
+}*/
+.form-dk-control.fail small {
+    color: #e74c3c;
+    visibility: visible;
+}
