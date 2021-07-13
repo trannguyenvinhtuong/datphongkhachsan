@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConnectSQL.cs" />
     <Compile Include="DATPHONG_BLLDAL.cs" />
     <Compile Include="NHANVIEN_BLLDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

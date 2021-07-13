@@ -1,6 +1,5 @@
 D:\GitHub\datphongkhachsan\WFDatPhongKS\BLL_DAL\bin\Debug\BLL_DAL.dll
 D:\GitHub\datphongkhachsan\WFDatPhongKS\BLL_DAL\bin\Debug\BLL_DAL.pdb
-D:\GitHub\datphongkhachsan\WFDatPhongKS\BLL_DAL\obj\Debug\BLL_DAL.csprojAssemblyReference.cache
 D:\GitHub\datphongkhachsan\WFDatPhongKS\BLL_DAL\obj\Debug\BLL_DAL.csproj.CoreCompileInputs.cache
 D:\GitHub\datphongkhachsan\WFDatPhongKS\BLL_DAL\obj\Debug\BLL_DAL.dll
 D:\GitHub\datphongkhachsan\WFDatPhongKS\BLL_DAL\obj\Debug\BLL_DAL.pdb

@@ -32,7 +32,9 @@ namespace GUI
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelContent = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnDoiMK = new DevExpress.XtraEditors.SimpleButton();
             this.lbltendangnhap = new DevExpress.XtraEditors.LabelControl();
             this.label2 = new System.Windows.Forms.Label();
             this.btnThoatNick = new System.Windows.Forms.PictureBox();
@@ -50,14 +52,14 @@ namespace GUI
             this.menu_invoice = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_statistics = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu = new System.Windows.Forms.MenuStrip();
-            this.btnDoiMK = new DevExpress.XtraEditors.SimpleButton();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelContent.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnThoatNick)).BeginInit();
             this.Menu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -80,9 +82,22 @@ namespace GUI
             this.panelContent.Size = new System.Drawing.Size(683, 487);
             this.panelContent.TabIndex = 29;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.White;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(6, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(677, 445);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 23;
+            this.pictureBox2.TabStop = false;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.LightBlue;
+            this.panel2.Controls.Add(this.pictureBox3);
             this.panel2.Controls.Add(this.btnDoiMK);
             this.panel2.Controls.Add(this.lbltendangnhap);
             this.panel2.Controls.Add(this.label2);
@@ -94,12 +109,29 @@ namespace GUI
             this.panel2.Size = new System.Drawing.Size(135, 498);
             this.panel2.TabIndex = 28;
             // 
+            // btnDoiMK
+            // 
+            this.btnDoiMK.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDoiMK.Appearance.Options.UseFont = true;
+            this.btnDoiMK.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnDoiMK.ImageOptions.SvgImage")));
+            this.btnDoiMK.Location = new System.Drawing.Point(0, 117);
+            this.btnDoiMK.Name = "btnDoiMK";
+            this.btnDoiMK.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.btnDoiMK.Size = new System.Drawing.Size(132, 39);
+            this.btnDoiMK.TabIndex = 4;
+            this.btnDoiMK.Text = "Đổi mật khẩu";
+            this.btnDoiMK.Click += new System.EventHandler(this.btnDoiMK_Click);
+            this.btnDoiMK.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnDoiMK_MouseClick);
+            // 
             // lbltendangnhap
             // 
-            this.lbltendangnhap.Location = new System.Drawing.Point(14, 371);
+            this.lbltendangnhap.Appearance.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbltendangnhap.Appearance.Options.UseFont = true;
+            this.lbltendangnhap.Location = new System.Drawing.Point(25, 368);
             this.lbltendangnhap.Name = "lbltendangnhap";
-            this.lbltendangnhap.Size = new System.Drawing.Size(0, 13);
+            this.lbltendangnhap.Size = new System.Drawing.Size(61, 22);
             this.lbltendangnhap.TabIndex = 3;
+            this.lbltendangnhap.Text = "User ID";
             // 
             // label2
             // 
@@ -181,11 +213,12 @@ namespace GUI
             this.menu_employee.Name = "menu_employee";
             this.menu_employee.Size = new System.Drawing.Size(143, 54);
             this.menu_employee.Text = "Quản Lý";
+            this.menu_employee.Click += new System.EventHandler(this.menu_employee_Click);
             // 
             // nhânViênToolStripMenuItem
             // 
             this.nhânViênToolStripMenuItem.Name = "nhânViênToolStripMenuItem";
-            this.nhânViênToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.nhânViênToolStripMenuItem.Size = new System.Drawing.Size(162, 26);
             this.nhânViênToolStripMenuItem.Text = "Nhân viên";
             this.nhânViênToolStripMenuItem.Click += new System.EventHandler(this.nhânViênToolStripMenuItem_Click);
             // 
@@ -211,14 +244,14 @@ namespace GUI
             // đặtPhòngToolStripMenuItem
             // 
             this.đặtPhòngToolStripMenuItem.Name = "đặtPhòngToolStripMenuItem";
-            this.đặtPhòngToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.đặtPhòngToolStripMenuItem.Size = new System.Drawing.Size(165, 26);
             this.đặtPhòngToolStripMenuItem.Text = "Đặt phòng";
             this.đặtPhòngToolStripMenuItem.Click += new System.EventHandler(this.đặtPhòngToolStripMenuItem_Click);
             // 
             // trảPhòngToolStripMenuItem
             // 
             this.trảPhòngToolStripMenuItem.Name = "trảPhòngToolStripMenuItem";
-            this.trảPhòngToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.trảPhòngToolStripMenuItem.Size = new System.Drawing.Size(165, 26);
             this.trảPhòngToolStripMenuItem.Text = "Trả phòng";
             this.trảPhòngToolStripMenuItem.Click += new System.EventHandler(this.trảPhòngToolStripMenuItem_Click);
             // 
@@ -255,31 +288,15 @@ namespace GUI
             this.Menu.TabIndex = 26;
             this.Menu.Text = "menuStrip1";
             // 
-            // btnDoiMK
+            // pictureBox3
             // 
-            this.btnDoiMK.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDoiMK.Appearance.Options.UseFont = true;
-            this.btnDoiMK.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
-            this.btnDoiMK.Location = new System.Drawing.Point(0, 117);
-            this.btnDoiMK.Name = "btnDoiMK";
-            this.btnDoiMK.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.btnDoiMK.Size = new System.Drawing.Size(132, 39);
-            this.btnDoiMK.TabIndex = 4;
-            this.btnDoiMK.Text = "Đổi mật khẩu";
-            this.btnDoiMK.Click += new System.EventHandler(this.btnDoiMK_Click);
-            this.btnDoiMK.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnDoiMK_MouseClick);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.White;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(6, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(677, 445);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 23;
-            this.pictureBox2.TabStop = false;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(3, 368);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 5;
+            this.pictureBox3.TabStop = false;
             // 
             // FrmMain
             // 
@@ -301,12 +318,13 @@ namespace GUI
             this.Load += new System.EventHandler(this.FrmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelContent.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnThoatNick)).EndInit();
             this.Menu.ResumeLayout(false);
             this.Menu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -335,6 +353,7 @@ namespace GUI
         private DevExpress.XtraEditors.LabelControl lbltendangnhap;
         private DevExpress.XtraEditors.SimpleButton btnDoiMK;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }
 

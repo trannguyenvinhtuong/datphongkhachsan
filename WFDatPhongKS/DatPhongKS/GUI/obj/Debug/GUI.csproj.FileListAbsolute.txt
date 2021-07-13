@@ -209,3 +209,4 @@ D:\GitHub\datphongkhachsan\WFDatPhongKS\DatPhongKS\GUI\bin\Debug\es\DevExpress.D
 D:\GitHub\datphongkhachsan\WFDatPhongKS\DatPhongKS\GUI\bin\Debug\ja\DevExpress.Diagram.v19.2.Core.resources.dll
 D:\GitHub\datphongkhachsan\WFDatPhongKS\DatPhongKS\GUI\bin\Debug\ru\DevExpress.Diagram.v19.2.Core.resources.dll
 D:\GitHub\datphongkhachsan\WFDatPhongKS\DatPhongKS\GUI\obj\Debug\GUI.FrmDoiMK.resources
+D:\GitHub\datphongkhachsan\WFDatPhongKS\DatPhongKS\GUI\obj\Debug\GUI.FrmBackground.resources

@@ -15,20 +15,29 @@ namespace GUI
 {
     public partial class FrmMain : DevExpress.XtraEditors.XtraForm
     {
-
+        string tendangnhap = "", tennv = "", matkhau = "", quyen = "";
         QL_NguoiDung nguoiDung = new QL_NguoiDung();
+        string UID = FrmDangNhap.ID_USER;
+        //SqlConnection conn = new SqlConnection(@"Data Source=B902702E395D455\WIN2K; ;Initial Catalog = QLDPKS; User = sa; Password=sa2012");
         public FrmMain()
         {
             InitializeComponent();
-            
         }
+        static string chucVu;
 
-        public string _message;
 
-        public FrmMain(string Message) : this()
+        public static string ChucVu1 { get => chucVu; set => chucVu = value; }
+
+        public FrmMain(string chucvu)
         {
-            _message = Message;
-            lbltendangnhap.Text = _message;
+            InitializeComponent();
+            ChucVu1 = chucvu;
+
+            if (ChucVu1 == "False")
+            {
+                menu_employee.Enabled = false;
+                menu_statistics.Enabled = false;
+            }
 
         }
 
@@ -45,7 +54,7 @@ namespace GUI
             panelContent.Show();
         }
 
-        
+
 
         public void skin()
         {
@@ -63,6 +72,7 @@ namespace GUI
         private void FrmMain_Load(object sender, EventArgs e)
         {
             skin();
+            lbltendangnhap.Text = UID.ToString();
         }
 
         private void btnThoatNick_MouseClick(object sender, MouseEventArgs e)
@@ -85,13 +95,27 @@ namespace GUI
 
         private void nhânViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //if (quyen == "True")
+            //{
             FrmNhanVien nv = new FrmNhanVien();
             nhung(nv);
+            //}
+            //else
+            //{
+            //    XtraMessageBox.Show("Admin mới có thể sử dụng chức năng này !", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}                          
+        }
+
+        private void menu_employee_Click(object sender, EventArgs e)
+        {
+
+
+
         }
 
         private void btnDoiMK_MouseClick(object sender, MouseEventArgs e)
         {
-            
+
         }
 
         private void btnDoiMK_Click(object sender, EventArgs e)

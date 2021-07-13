@@ -14,6 +14,7 @@ namespace GUI
         public static FrmMain frmMain = null;
         public static FrmDatPhong frmDatPhong = null;
         public static FrmTraPhong frmTraPhong = null;
+        public static FrmCauHinh frmCauHinh = null;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -23,6 +24,7 @@ namespace GUI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             frmDangNhap = new FrmDangNhap();
+            //frmCauHinh = new FrmCauHinh();
             Application.Run(frmDangNhap);
         }
     }

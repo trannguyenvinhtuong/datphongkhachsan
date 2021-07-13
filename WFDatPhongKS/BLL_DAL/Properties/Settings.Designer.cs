@@ -26,8 +26,8 @@ namespace BLL_DAL.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=B902702E395D455\\WIN2K;Initial Catalog=QLDPKS_new;User ID=sa;Password=" +
-            "sa2012")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=B902702E395D455\\WIN2K;Initial Catalog=QLDPKS;User ID=sa;Password=sa20" +
+            "12")]
         public string QLDPKSConnectionString {
             get {
                 return ((string)(this["QLDPKSConnectionString"]));

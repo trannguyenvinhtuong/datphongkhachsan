@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="Connect" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Data Source=B902702E395D455\WIN2K;Initial Catalog=QLDPKS_new;User ID=sa;Password=sa2012</Value>
+      <Value Profile="(Default)">Data Source=B902702E395D455\WIN2K;Initial Catalog=QLDPKS;User ID=sa;Password=sa2012</Value>
     </Setting>
     <Setting Name="QLDPKSConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;

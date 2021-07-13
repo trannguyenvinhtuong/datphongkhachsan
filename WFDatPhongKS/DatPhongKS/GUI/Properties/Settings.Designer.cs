@@ -25,8 +25,8 @@ namespace GUI.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=B902702E395D455\\WIN2K;Initial Catalog=QLDPKS_new;User ID=sa;Password=" +
-            "sa2012")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=B902702E395D455\\WIN2K;Initial Catalog=QLDPKS;User ID=sa;Password=sa20" +
+            "12")]
         public string Connect {
             get {
                 return ((string)(this["Connect"]));

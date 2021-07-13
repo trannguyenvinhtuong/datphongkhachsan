@@ -14,6 +14,7 @@ namespace GUI
 {
     class QL_NguoiDung
     {
+        SqlConnection con = new SqlConnection(@"Data Source=B902702E395D455\WIN2K; ;Initial Catalog = QLDPKS; User = sa; Password=sa2012");
         public int Check_Config()
         {
             if (Properties.Settings.Default.Connect == string.Empty)
@@ -43,20 +44,68 @@ namespace GUI
             }
             return DangNhap.Success; // Đăng nhập thành công
         }
-
-        //public DangNhap_Quyen Check_Quyen_User(string pUser)
+        //public string layChucVu(string taiKhoan, string matKhau)
         //{
-        //    SqlDataAdapter daUser = new SqlDataAdapter(" select MANV, QUYEN from NHANVIEN where MANV='" + pUser + "'", Properties.Settings.Default.Connect);
+        //    string id = "";
+
+        //    SqlCommand cmd = new SqlCommand("SELECT * FROM NHANVIEN WHERE MANV = '" + taiKhoan + "' and MatKhau = '" + matKhau + "'", cnn);
+        //    SqlDataAdapter da = new SqlDataAdapter(cmd);
         //    DataTable dt = new DataTable();
-        //    daUser.Fill(dt);
-        //    if (dt.Rows.Count == 0)
-        //        return DangNhap_Quyen.Invalid;
-        //    else if (dt.Rows[0][1].ToString() == "False")
+        //    da.Fill(dt);
+        //    if (dt != null)
         //    {
-        //        return DangNhap_Quyen.staff;// User là staff
+        //        foreach (DataRow dr in dt.Rows)
+        //        {
+
+        //            id = dr["CHUCVU"].ToString();
+        //        }
         //    }
-        //    return DangNhap_Quyen.admin; // User là admin
+
+
+        //    return id;
         //}
+        public bool login(string taiKhoan, string matKhau)
+        {
+
+            string sqlAcount = "select MaNV, MatKhau from NhanVien where MANV = '" + taiKhoan + "' and MatKhau = '" + matKhau + "'";
+            SqlCommand cmd = new SqlCommand(sqlAcount, con);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            if (dt.Rows.Count > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public string Check_Quyen_User(string pUser)
+        {
+            string id = "";
+            SqlDataAdapter daUser = new SqlDataAdapter(" select QUYEN from NHANVIEN where MANV='" + pUser + "'", Properties.Settings.Default.Connect);
+            DataTable dt = new DataTable();
+            daUser.Fill(dt);
+            //if (dt.Rows.Count == 0)
+            //    return DangNhap_Quyen.Invalid;
+            //else if (dt.Rows[0][1].ToString() == "False")
+            //{
+            //    return DangNhap_Quyen.staff;// User là staff
+            //}
+            //return DangNhap_Quyen.admin; // User là admin
+            if (dt != null)
+            {
+                foreach (DataRow dr in dt.Rows)
+                {
+
+                    id = dr["Quyen"].ToString();
+                }
+            }
+
+
+            return id;
+        }
 
         //cấu hình
         public DataTable GetServerName()

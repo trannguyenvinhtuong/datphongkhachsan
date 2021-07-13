@@ -36,13 +36,10 @@ namespace GUI
         // Nhúng form con vào pannel chính
         public void nhung(Form frm)
         {
-            panelContent.Controls.Clear();//Xóa các control trong form cũ
             frm.FormBorderStyle = FormBorderStyle.None;
             frm.TopLevel = false;
             frm.Visible = true;
             frm.Dock = DockStyle.Fill;
-            panelContent.Controls.Add(frm);//thêm form mới vào panel
-            panelContent.Show();
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
