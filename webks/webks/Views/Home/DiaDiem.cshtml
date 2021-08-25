@@ -6,7 +6,8 @@
         {
             <div class="col-3">
                 <div class="img-content-diadiem">
-                    <a href="@Url.Action("HTKhachsan", "Home", new { iddd = dd.IDDIADIEM })">
+                    
+                    <a href="@Url.Action("HTKhachsan", "Home", new { iddd = dd.IDDIADIEM, ngayden = DateTime.Now.ToString("yyyy-MM-dd"), ngaydi = (DateTime.Now).Add(new System.TimeSpan(1,0,0,0)).ToString("yyyy-MM-dd"), sophong = 1, songuoi = 2 })">
                         <img class="img-item" src="~/Content/imgs/@dd.img">
                         <h3 class="item-name">@dd.TENDIADIEM</h3>
                     </a>

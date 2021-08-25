@@ -42,7 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConnectSQL.cs" />
     <Compile Include="DATPHONG_BLLDAL.cs" />
+    <Compile Include="HOADON_DLLDAL.cs" />
+    <Compile Include="NHANVIEN_BLLDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -54,6 +57,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLDPKS.dbml</DependentUpon>
     </Compile>
+    <Compile Include="QLDV_BLLDAL.cs" />
+    <Compile Include="QLKHACHSAN_BLLDAL.cs" />
+    <Compile Include="QLKSTIENICH_BLLDAL.cs" />
+    <Compile Include="QLNCC_BLLDAL.cs" />
+    <Compile Include="QLPHONG_BLLDAL.cs" />
+    <Compile Include="QLTIENICH_BLLDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

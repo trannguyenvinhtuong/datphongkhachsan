@@ -121,12 +121,14 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\GioHangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\TKController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\GioHang.cs" />
     <Compile Include="Models\ProView.cs" />
     <Compile Include="Models\QLDPKS.designer.cs">
       <AutoGen>True</AutoGen>
@@ -171,6 +173,10 @@
     <Content Include="Content\imgs\hanoi.jpg" />
     <Content Include="Content\imgs\hoian.jpg" />
     <Content Include="Content\imgs\hue.png" />
+    <Content Include="Content\imgs\imgks\c1.png" />
+    <Content Include="Content\imgs\imgks\c2.png" />
+    <Content Include="Content\imgs\imgks\c3.png" />
+    <Content Include="Content\imgs\imgks\c4.png" />
     <Content Include="Content\imgs\imgks\camellia.jpg" />
     <Content Include="Content\imgs\imgks\imperial1.jpg" />
     <Content Include="Content\imgs\imgks\imperial2.jpg" />
@@ -186,6 +192,10 @@
     <Content Include="Content\imgs\imgks\renaissancerriverside1.jpg" />
     <Content Include="Content\imgs\imgks\sofitel1.jpg" />
     <Content Include="Content\imgs\imgks\villasg.jpg" />
+    <Content Include="Content\imgs\imgphong\camp04.jpg" />
+    <Content Include="Content\imgs\imgphong\camp01.jpg" />
+    <Content Include="Content\imgs\imgphong\camp02.jpg" />
+    <Content Include="Content\imgs\imgphong\camp03.jpg" />
     <Content Include="Content\imgs\imgphong\impdlxvt1.png" />
     <Content Include="Content\imgs\imgphong\impdlxvt10.png" />
     <Content Include="Content\imgs\imgphong\impdlxvt11.png" />
@@ -259,7 +269,7 @@
     <Content Include="Scripts\JS\dangky.js" />
     <Content Include="Scripts\JS\dangnhap.js" />
     <Content Include="Scripts\JS\kiemtradulieu.js" />
-    <Content Include="Scripts\JS\setngay.js" />
+    <Content Include="Scripts\JS\kiemtrasecondsearch.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -285,6 +295,9 @@
     <Content Include="Views\TK\thanhcong.cshtml" />
     <Content Include="Views\TK\dangnhap.cshtml" />
     <Content Include="Views\Search\secondsearch.cshtml" />
+    <Content Include="Views\GioHang\GioHang.cshtml" />
+    <Content Include="Views\GioHang\Thanhcong.cshtml" />
+    <Content Include="Views\Home\hientk.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

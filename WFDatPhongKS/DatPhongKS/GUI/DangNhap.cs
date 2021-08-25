@@ -8,8 +8,8 @@ namespace GUI
 {
     public enum DangNhap
     {
-        Invalid,
-        Disabled,
-        Success
+        Invalid, //Kiểm tra
+        Disable,//Vô hiệu hoá
+        Success //Thành công
     }
 }

@@ -1,0 +1,215 @@
+﻿
+@{
+    ViewBag.Title = "GioHang";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="background-color:#EDF2F7">
+    <br />
+    <div class="container">
+        <div class="row">
+            <div class="col-7">
+                <div class="tt-htks">
+                    <div style="width:22%;float: left;">
+                        <img src="~/Content/imgs/imgks/@Model.ANHKS1" class="tt-imgks" />
+                    </div>
+                    <div style="width:78%;float: left;">
+                        <div class="details-tieude">@Model.TENKHACHSAN</div>
+                        <p class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </p>
+                        <div style="width:100%">
+                            <div class="tt-kv-ttp">
+                                <p style="font-weight:bold;">Nhận phòng</p>
+                                <p style="padding-top:0">@Model.NGAYDEN</p>
+                            </div>
+                            <div class="tt-kv-ttp">
+                                <p style="font-weight:bold;">Trả phòng</p>
+                                <p>@Model.NGAYDI</p>
+                            </div>
+                            <div class="tt-kv-ttp">
+                                <p style="font-weight:bold;">Số đêm</p>
+                                <p>@Model.SODEM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <form action="@Url.Action("Datphong","GioHang",new { maphong=Model.MAPHONG, ngayden=Model.NGAYDEN, ngaydi=Model.NGAYDI })" method="post">
+                    <div class="tt-htks lh">
+                        <div class="details-tieude">Thông tin liên hệ</div>
+                        <br />
+                        <div class="tt-td-input">Họ tên</div>
+                        <input class="tt-input-style" type="text" name="tt-hoten" />
+                        <br />
+                        <br />
+                        <br>
+                        <div style="width: 100%;">
+                            <div style="width: 50%; float: left; padding-right: 20px;">
+                                <div class="tt-td-input">Số điện thoại</div>
+                                <input class="tt-input-style" type="text" name="tt-sdt" />
+                            </div>
+                            <div style="width:50%; float:left; padding-left: 20px;">
+                                <div class="tt-td-input">Email</div>
+                                <input class="tt-input-style" type="email" name="tt-email" />
+                            </div>
+                        </div>
+
+                    </div>
+                    <br />
+                    <div class="tt-htks yc">
+                        <div class="details-tieude">Yêu cầu</div>
+                        <br />
+                        <p>Loại giường</p>
+                        <p>
+                            <i class="fas fa-check" style="color: #07b8f3; font-size: 18px;"></i>
+                            <i class="fas fa-bed" style="font-size:18px; padding-left: 10px; padding-right: 10px;"></i>
+                            @Model.SOGIUONG giường @Model.LOAIGIUONG
+                        </p>
+                        <div class="tt-kv-yc">
+                            <div class="details-tieude" style="font-size: 16px">Yêu cầu đặc biệt</div>
+                            <br />
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="kohutthuoc" name="kohutthuoc">
+                                <label class="form-check-label" for="kohutthuoc">
+                                    Phòng không hút thuốc
+                                </label>
+                               
+                            </div>
+                            <br />
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="tangcao" name="tangcao" runat="server">
+                                <label class="form-check-label" for="tangcao">
+                                    Phòng ở tầng cao
+                                </label>
+                            </div>
+                            <br />
+                            <div class="details-tieude" style="font-size: 16px">Yêu cầu riêng bạn</div>
+                            <br />
+                            <textarea type="text" class="yc-rieng-input" name="yc-rieng"></textarea>
+                        </div>
+                        <br />
+                        <div class="tt-kv-yc">
+                            <div class="details-tieude" style="font-size: 16px">Xuất hóa đơn</div>
+                            <br />
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="xuathoadon" name="xuathoadon">
+                                <label class="form-check-label" for="xuathoadon">
+                                    Yêu cầu xuất hóa đơn
+                                </label>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <br />
+                    <div class="tt-htks">
+                        <div class="details-tieude">
+                            <i class="fas fa-percent" style="color:green;"></i>
+                            Mã giảm giá
+                        </div>
+                        <br />
+                        <input type="text" name="magiamgia" class="tt-input-style">
+                    </div>
+                    <br />
+                    <button type="submit" class="details-chonphong btn-tt">Gửi yêu cầu đặt phòng</button>
+                </form>
+            </div>
+            
+            <div class="col-5">
+                <div class="tt-htks" style="height: auto;">
+                    <div class="details-giam tt-giam">Giảm giá @Model.GIAM %</div>
+                    <img src="~/Content/imgs/imgphong/@Model.ANH1" class="tt-img">
+                    <br />
+                    <div class="details-tieude" style="padding-top:18px">@Model.TENPHONG</div>
+                    <div style="width: 100%; padding-top: 10px; font-size: 14px;">
+                        <div style="width: 50%; float: left;">
+                            <i class="fas fa-ruler-vertical" style="font-size: 18px"></i> @Model.DIENTICH m2
+                        </div>
+                        <div style="width: 50%; float: left;">
+                            <i class="far fa-eye" style="font-size: 18px"></i> @Model.QUANGCANH
+                        </div>
+                    </div>
+                    <br />
+                    <div class="tt-nd" style="width: 100%;">
+                        <div style="width: 10%; float: left;">
+                            <i class="fas fa-bed" style="font-size: 18px"></i>
+                        </div>
+                        <div style="width: 90%; float: left;">@Model.SOGIUONG giường @Model.LOAIGIUONG</div>
+                    </div>
+                    <br />
+                    <div class="tt-nd" style="width: 100%;">
+                        <div style="width: 10%; float: left;">
+                            <i class="fas fa-money-bill-wave" style="font-size: 18px"></i>
+                        </div>
+                        <div style="width: 90%; float: left;"> Không hỗ trợ hoàn hủy</div>
+                    </div>
+                    <br />
+                    <div class="tt-nd" style="width: 100%;">
+                        <div style="width: 10%; float: left;">
+                            <i class="fas fa-utensils" style="padding-right: 10px;font-size: 16px"></i>
+                        </div>
+                        <div style="width: 90%; float: left;">
+                            Không bao gồm bữa sáng
+                        </div>
+                    </div>
+                    <br />
+                    <div class="tt-nd" style="width: 100%; height:108px;">
+                        <div style="width: 10%; float: left;">
+                            <i class="fas fa-exclamation"></i>
+                        </div>
+                        <div style="width: 90%; float: left;">
+                            <p>Không cho phép hút thuốc</p>
+                            <p>Không cho phép thú cưng</p>
+                            <p>Không cho phép tổ chức tiệc / sự kiện</p>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div class="tt-htks" style="height: auto;">
+                    <div style="width: 100%; border-bottom: 1px solid #E2E8F0; height: 29px;">
+                        <div style="width: 50%; float: left; font-size: 14px; text-align:left;">
+                            <p>1 phòng x @Model.SODEM đêm</p>
+                        </div>
+                        <div style="width: 50%; float: left; font-size: 14px; text-align: right;">
+                            <p>@string.Format("{0:0,0}", Model.TONGTIEN) VND</p>
+                        </div>
+                    </div>
+                    <br />
+                    <div style="width: 100%; border-bottom: 1px solid #E2E8F0; height: 29px;">
+                        <div style="width: 50%; float: left; font-size: 14px; text-align:left;">
+                            <p>Thuế và dịch vụ khách sạn</p>
+                        </div>
+                        <div style="width: 50%; float: left; font-size: 14px; text-align: right;">
+                            <p>@string.Format("{0:0,0}", Model.THUE) VND</p>
+                        </div>
+                    </div>
+                    <br />
+                    <div style="width: 100%; border-bottom: 1px solid #E2E8F0; height: 68px;">
+                        <div style="width: 50%; float: left; font-size: 14px; text-align:left;">
+                            <p style="font-weight:bold;">Tổng tiền thanh toán</p>
+                            <p style="font-size:12px;">Đã bao gồm thuế, VAT, phí</p>
+                        </div>
+                        <div style="width: 50%; float: left; font-size: 14px; text-align: right;">
+                            <p style="font-weight:bold; font-size: 16px;">@string.Format("{0:0,0}", Model.THANHTIEN) VND</p>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="tt-alert">
+                        <p style="color:#ED8936">
+                            <i class="fas fa-exclamation-triangle" style="color:red;"></i>
+                            Nhân viên sẽ chủ động liên hệ xác nhận trong vòng 30 phút
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <br />
+</div>
+<br />

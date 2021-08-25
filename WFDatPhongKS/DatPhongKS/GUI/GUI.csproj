@@ -33,20 +33,40 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.BonusSkins.v19.2" />
-    <Reference Include="DevExpress.Data.v19.2" />
-    <Reference Include="DevExpress.Utils.v19.2" />
-    <Reference Include="DevExpress.Sparkline.v19.2.Core" />
-    <Reference Include="DevExpress.XtraBars.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraEditors.v19.2" />
-    <Reference Include="DevExpress.Printing.v19.2.Core" />
-    <Reference Include="DevExpress.XtraGrid.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraLayout.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraPrinting.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraScheduler.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraScheduler.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.BonusSkins.v20.1" />
+    <Reference Include="DevExpress.Charts.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v20.1" />
+    <Reference Include="DevExpress.Office.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v20.1.Export, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.Desktop.v20.1" />
+    <Reference Include="DevExpress.Utils.v20.1" />
+    <Reference Include="DevExpress.Sparkline.v20.1.Core" />
+    <Reference Include="DevExpress.Utils.v20.1.UI, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v20.1" />
+    <Reference Include="DevExpress.Printing.v20.1.Core" />
+    <Reference Include="DevExpress.XtraGauges.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraLayout.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.CodeParser.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v20.1.Extensions, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -57,18 +77,55 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConnectSQL.cs" />
     <Compile Include="DangNhap.cs" />
+    <Compile Include="DangNhap_Quyen.cs" />
+    <Compile Include="DataSet_QLDP.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_QLDP.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Editks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editks.Designer.cs">
+      <DependentUpon>Editks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBackground.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBackground.Designer.cs">
+      <DependentUpon>FrmBackground.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCauHinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCauHinh.Designer.cs">
+      <DependentUpon>FrmCauHinh.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmDatPhong.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmDatPhong.Designer.cs">
       <DependentUpon>FrmDatPhong.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmDoiMK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDoiMK.Designer.cs">
+      <DependentUpon>FrmDoiMK.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNhanVien.Designer.cs">
+      <DependentUpon>FrmNhanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmTraPhong.cs">
       <SubType>Form</SubType>
@@ -90,15 +147,145 @@
     <Compile Include="FrmDangNhap.Designer.cs">
       <DependentUpon>FrmDangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="QLDichvu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLDichvu.designer.cs">
+      <DependentUpon>QLDichvu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLHoadon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLHoadon.designer.cs">
+      <DependentUpon>QLHoadon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLKhachSan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLKhachSan.designer.cs">
+      <DependentUpon>QLKhachSan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLKSTI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLKSTI.designer.cs">
+      <DependentUpon>QLKSTI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLNCC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLNCC.designer.cs">
+      <DependentUpon>QLNCC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLPhong.designer.cs">
+      <DependentUpon>QLPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLTienich.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLTienich.designer.cs">
+      <DependentUpon>QLTienich.cs</DependentUpon>
+    </Compile>
     <Compile Include="QL_NguoiDung.cs" />
+    <Compile Include="RePass_Result.cs" />
+    <Compile Include="rptNhanVien.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptNhanVien.Designer.cs">
+      <DependentUpon>rptNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SuaDV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuaDV.designer.cs">
+      <DependentUpon>SuaDV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SuaKSTI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuaKSTI.designer.cs">
+      <DependentUpon>SuaKSTI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Suancc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Suancc.designer.cs">
+      <DependentUpon>Suancc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Suaphong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Suaphong.designer.cs">
+      <DependentUpon>Suaphong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Suatienich.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Suatienich.designer.cs">
+      <DependentUpon>Suatienich.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThemDV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemDV.designer.cs">
+      <DependentUpon>ThemDV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Themks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Themks.designer.cs">
+      <DependentUpon>Themks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Themksti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Themksti.designer.cs">
+      <DependentUpon>Themksti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Themncc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Themncc.designer.cs">
+      <DependentUpon>Themncc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Themphong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Themphong.designer.cs">
+      <DependentUpon>Themphong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Themtienich.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Themtienich.designer.cs">
+      <DependentUpon>Themtienich.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Editks.resx">
+      <DependentUpon>Editks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBackground.resx">
+      <DependentUpon>FrmBackground.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCauHinh.resx">
+      <DependentUpon>FrmCauHinh.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmDangNhap.resx">
       <DependentUpon>FrmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDatPhong.resx">
       <DependentUpon>FrmDatPhong.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmDoiMK.resx">
+      <DependentUpon>FrmDoiMK.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNhanVien.resx">
+      <DependentUpon>FrmNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTraPhong.resx">
       <DependentUpon>FrmTraPhong.cs</DependentUpon>
@@ -116,7 +303,75 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="QLDichvu.resx">
+      <DependentUpon>QLDichvu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLHoadon.resx">
+      <DependentUpon>QLHoadon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLKhachSan.resx">
+      <DependentUpon>QLKhachSan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLKSTI.resx">
+      <DependentUpon>QLKSTI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLNCC.resx">
+      <DependentUpon>QLNCC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLPhong.resx">
+      <DependentUpon>QLPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLTienich.resx">
+      <DependentUpon>QLTienich.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptNhanVien.resx">
+      <DependentUpon>rptNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SuaDV.resx">
+      <DependentUpon>SuaDV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SuaKSTI.resx">
+      <DependentUpon>SuaKSTI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Suancc.resx">
+      <DependentUpon>Suancc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Suaphong.resx">
+      <DependentUpon>Suaphong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Suatienich.resx">
+      <DependentUpon>Suatienich.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemDV.resx">
+      <DependentUpon>ThemDV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Themks.resx">
+      <DependentUpon>Themks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Themksti.resx">
+      <DependentUpon>Themksti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Themncc.resx">
+      <DependentUpon>Themncc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Themphong.resx">
+      <DependentUpon>Themphong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Themtienich.resx">
+      <DependentUpon>Themtienich.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="App.config" />
+    <None Include="DataSet_QLDP.xsc">
+      <DependentUpon>DataSet_QLDP.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet_QLDP.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_QLDP.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet_QLDP.xss">
+      <DependentUpon>DataSet_QLDP.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

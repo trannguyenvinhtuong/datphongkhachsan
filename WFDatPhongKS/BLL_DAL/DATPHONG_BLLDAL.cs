@@ -29,7 +29,9 @@ namespace BLL_DAL
 		{
 			return QLDP.BOOKINGs.ToList<BOOKING>();
 		}
+
 		
+
 
 	}
 }

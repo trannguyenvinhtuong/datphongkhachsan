@@ -48,5 +48,25 @@ namespace webks.Controllers
 
             return PartialView(ngay);
         }
+
+        [HttpPost]
+        public ActionResult secondSearch(FormCollection collection)
+        {
+            var dulieutim = collection["search_name"];
+            string nd = collection["date_den"].ToString();
+            string ndi = collection["date_di"].ToString();
+            int sophong = int.Parse(collection["slphong"]);
+            int songuoi = int.Parse(collection["slnglon"]);
+            HOME_DDNB dd = data.HOME_DDNBs.Where(s => s.TENDIADIEM == dulieutim).SingleOrDefault();
+            if (dd != null)
+            {
+                return RedirectToAction("HTKhachsan", "Home", new { iddd = dd.IDDIADIEM, ngayden = nd, ngaydi = ndi, sophong = sophong, songuoi = songuoi });
+            }
+            else
+            {
+                ViewBag.Loitim = "Không có khách sạn";
+                return RedirectToAction("Index", "Home");
+            }
+        }
     }    
 }

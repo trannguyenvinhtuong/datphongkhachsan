@@ -77,7 +77,22 @@ namespace webks.Controllers
 
         public ActionResult HTKhachsan(string iddd, string ngayden, string ngaydi, int sophong, int songuoi)
         {
-            //string tinh = "TP.Hồ Chí Minh";
+            
+            //if(ngaydi=="" && ngayden=="")
+            //{
+            //    TimeSpan time = new System.TimeSpan(1, 0, 0, 0);
+            //    DateTime homnay = DateTime.Now;
+            //    DateTime ngaymai = homnay.Add(time);
+            //    ngayden = homnay.ToString();
+            //    ngaydi = ngaymai.ToString();
+            //    var ks = lstKS(iddd, ngayden, ngaydi, sophong, songuoi);
+            //    return View(ks);
+            //}
+            //else
+            //{
+            //    var ks = lstKS(iddd, ngayden, ngaydi, sophong, songuoi);
+            //    return View(ks);
+            //}
             var ks = lstKS(iddd, ngayden, ngaydi, sophong, songuoi);
             return View(ks);
         }
@@ -120,7 +135,7 @@ namespace webks.Controllers
             return View(ks.SingleOrDefault());
         }
 
-        public List<TTPhongModel> lstonephong(string maks)
+        public List<TTPhongModel> lstonephong(string maks,string ngayden, string ngaydi)
         {
             var tt = from s in data.PHONGs
                      where s.MAKHACHSAN == maks
@@ -148,9 +163,9 @@ namespace webks.Controllers
             return tt.ToList();
         }
 
-        public ActionResult ThongTinPhong(string maks)
+        public ActionResult ThongTinPhong(string maks, string ngayden, string ngaydi)
         {
-            var phong = lstonephong(maks);
+            var phong = lstonephong(maks,ngayden,ngaydi);
             return PartialView(phong);
         }
 
@@ -204,5 +219,25 @@ namespace webks.Controllers
             var tw = lstgianho(maks);
             return PartialView(tw.FirstOrDefault());
         }
+
+        public ActionResult hientk()
+        {
+            List<string> tentk = new List<string>();
+            
+            if (Session["Taikhoan"] == null || Session["Taikhoan"].ToString() == null)
+            {
+                string tentk1 = "";
+                tentk.Add(tentk1);
+            }
+            else
+            {
+                TAIKHOAN tk = (TAIKHOAN)Session["Taikhoan"];
+                string tentk1 = "Xin chào " + tk.TENDN.Trim();
+                tentk.Add(tentk1);
+            }
+            return PartialView(tentk);            
+        }
+
+        
     }
 }

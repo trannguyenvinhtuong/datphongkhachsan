@@ -25,5 +25,8 @@ namespace webks.Models
         public int SOLUONG { get; set; }
         public int SOKHACH { get; set; }
         public int GIAMOI { get; set; }
+
+        public string NGAYDEN { get; set; }
+        public string NGAYDI { get; set; }
     }
 }

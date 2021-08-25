@@ -1,12 +1,13 @@
-﻿<form>
+﻿<form action="@Url.Action("secondSearch","Search")" method="post" onsubmit="return kiemtra()">
     <div class="container" style="padding: 0">
         <div class="search-bar">
             <div class="row">
                 <div class="col" style="border-right: 1px solid #e2e8f0">
                     <h1 class="search-bar-td">
                         Địa điểm
+                        
                     </h1>
-                    <input class="search-bar-txt" type="text" placeholder=@Model[2] name="search_name">
+                    <input class="search-bar-txt" type="text" placeholder=@Model[2] name="search_name" id="search_name">
                 </div>
                 <div class="col" style="border-right: 1px solid #e2e8f0; padding-left: 20px; padding-right: 20px;">
                     <div class="container" style="width: 100%; padding: 0">
@@ -15,13 +16,13 @@
                                 <h1 class="search-bar-td">
                                     Ngày đến
                                 </h1>
-                                <input class="date-input" type="date" name="date_den" value=@Model[0]>
+                                <input class="date-input" type="date" name="date_den" id="date_den" value=@Model[0]>
                             </div>
                             <div class="col" style="width: 50%">
                                 <h1 class="search-bar-td">
                                     Ngày đi
                                 </h1>
-                                <input class="date-input" type="date" name="date_di" value=@Model[1]>
+                                <input class="date-input" type="date" name="date_di" id="date_di" value=@Model[1]>
                             </div>
                         </div>
                     </div>
@@ -44,7 +45,7 @@
                                                 <h1 class="dropdown-nd">Phòng</h1>
                                             </div>
                                             <div class="col-4">
-                                                <input class="number-dropdown" type="number" name="slphong" value=@Model[3]>
+                                                <input class="number-dropdown" type="number" name="slphong" id="slphong" value=@Model[3]>
                                             </div>
                                         </div>
 
@@ -57,7 +58,7 @@
                                                 <h1 class="dropdown-nd">Người lớn</h1>
                                             </div>
                                             <div class="col-4">
-                                                <input class="number-dropdown" type="number" name="slnglon" value=@Model[4]>
+                                                <input class="number-dropdown" type="number" name="slnglon" id="slnglon" value=@Model[4]>
                                             </div>
                                         </div>
 
@@ -93,4 +94,5 @@
 
     </div>
 </form>
+<script src="~/Scripts/JS/kiemtrasecondsearch.js" language="javascript"></script>
 

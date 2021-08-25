@@ -57,7 +57,6 @@ namespace GUI
             this.txtMK.Name = "txtMK";
             this.txtMK.Size = new System.Drawing.Size(207, 29);
             this.txtMK.TabIndex = 25;
-            this.txtMK.Text = "admin";
             this.txtMK.UseSystemPasswordChar = true;
             // 
             // txtTK
@@ -67,7 +66,7 @@ namespace GUI
             this.txtTK.Name = "txtTK";
             this.txtTK.Size = new System.Drawing.Size(207, 29);
             this.txtTK.TabIndex = 24;
-            this.txtTK.Text = "2001180817";
+            this.txtTK.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTK_KeyPress);
             // 
             // label3
             // 
