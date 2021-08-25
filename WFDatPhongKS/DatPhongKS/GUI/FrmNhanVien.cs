@@ -195,8 +195,11 @@ namespace GUI
                 rpt1.Parameters["gioitinh"].Value = comboGioiTinh.Text;
                 rpt1.Parameters["matkhau"].Value = txtMK.Text;
                 rpt1.Parameters["email"].Value = txtEmail.Text;
+<<<<<<< HEAD
                 rpt1.Parameters["sdt"].Value = txtSDT.Text;
                 rpt1.Parameters["hinhanh"].Value = ptanh.Text;
+=======
+>>>>>>> 471b3102bc25857bb13ca30876b7ba2f7bcb9fcf
                 if (MessageBox.Show("Xác nhận thông tin Export", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
 

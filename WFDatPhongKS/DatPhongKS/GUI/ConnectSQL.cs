@@ -21,8 +21,12 @@ namespace GUI
         #region Contrustor
         public ConnectSQL()
         {
+<<<<<<< HEAD
             StrCon = @"Data Source = DOUBLESHIT; Initial Catalog = QLDPKS; Integrated Security = True";
             //StrCon = @"Data Source=B902702E395D455\WIN2K; ;Initial Catalog = QLDPKS; User = sa; Password=sa2012";
+=======
+            StrCon = @"Data Source=B902702E395D455\WIN2K; ;Initial Catalog = QLDPKS; User = sa; Password=sa2012";
+>>>>>>> 471b3102bc25857bb13ca30876b7ba2f7bcb9fcf
             Conn1 = new SqlConnection(StrCon);
         }
         #endregion

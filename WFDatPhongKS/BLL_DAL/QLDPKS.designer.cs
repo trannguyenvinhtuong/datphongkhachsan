@@ -81,6 +81,7 @@ namespace BLL_DAL
     partial void InsertPHONGDV_FREE(PHONGDV_FREE instance);
     partial void UpdatePHONGDV_FREE(PHONGDV_FREE instance);
     partial void DeletePHONGDV_FREE(PHONGDV_FREE instance);
+<<<<<<< HEAD
     partial void InsertQL_NGUOIDUNG(QL_NGUOIDUNG instance);
     partial void UpdateQL_NGUOIDUNG(QL_NGUOIDUNG instance);
     partial void DeleteQL_NGUOIDUNG(QL_NGUOIDUNG instance);
@@ -100,6 +101,33 @@ namespace BLL_DAL
 		
 		public QLDPKSDataContext() : 
 				base(global::BLL_DAL.Properties.Settings.Default.QLDPKSConnectionString2, mappingSource)
+=======
+    partial void InsertTAIKHOAN(TAIKHOAN instance);
+    partial void UpdateTAIKHOAN(TAIKHOAN instance);
+    partial void DeleteTAIKHOAN(TAIKHOAN instance);
+    partial void InsertTIENICH(TIENICH instance);
+    partial void UpdateTIENICH(TIENICH instance);
+    partial void DeleteTIENICH(TIENICH instance);
+    partial void InsertQL_NGUOIDUNG(QL_NGUOIDUNG instance);
+    partial void UpdateQL_NGUOIDUNG(QL_NGUOIDUNG instance);
+    partial void DeleteQL_NGUOIDUNG(QL_NGUOIDUNG instance);
+    partial void InsertQL_PHANQUYEN(QL_PHANQUYEN instance);
+    partial void UpdateQL_PHANQUYEN(QL_PHANQUYEN instance);
+    partial void DeleteQL_PHANQUYEN(QL_PHANQUYEN instance);
+    partial void InsertQL_NHOM_NGUOIDUNG(QL_NHOM_NGUOIDUNG instance);
+    partial void UpdateQL_NHOM_NGUOIDUNG(QL_NHOM_NGUOIDUNG instance);
+    partial void DeleteQL_NHOM_NGUOIDUNG(QL_NHOM_NGUOIDUNG instance);
+    partial void InsertQL_NGUOIDUNGNHOMNGUOIDUNG(QL_NGUOIDUNGNHOMNGUOIDUNG instance);
+    partial void UpdateQL_NGUOIDUNGNHOMNGUOIDUNG(QL_NGUOIDUNGNHOMNGUOIDUNG instance);
+    partial void DeleteQL_NGUOIDUNGNHOMNGUOIDUNG(QL_NGUOIDUNGNHOMNGUOIDUNG instance);
+    partial void InsertNHANVIEN(NHANVIEN instance);
+    partial void UpdateNHANVIEN(NHANVIEN instance);
+    partial void DeleteNHANVIEN(NHANVIEN instance);
+    #endregion
+		
+		public QLDPKSDataContext() : 
+				base(global::BLL_DAL.Properties.Settings.Default.QLDPKSConnectionString1, mappingSource)
+>>>>>>> 471b3102bc25857bb13ca30876b7ba2f7bcb9fcf
 		{
 			OnCreated();
 		}
@@ -272,19 +300,19 @@ namespace BLL_DAL
 			}
 		}
 		
+<<<<<<< HEAD
 		public System.Data.Linq.Table<QL_NGUOIDUNGNHOMNGUOIDUNG> QL_NGUOIDUNGNHOMNGUOIDUNGs
 		{
 			get
 			{
 				return this.GetTable<QL_NGUOIDUNGNHOMNGUOIDUNG>();
-			}
-		}
-		
-		public System.Data.Linq.Table<QL_NHOM_NGUOIDUNG> QL_NHOM_NGUOIDUNGs
+=======
+		public System.Data.Linq.Table<QL_NGUOIDUNG> QL_NGUOIDUNGs
 		{
 			get
 			{
-				return this.GetTable<QL_NHOM_NGUOIDUNG>();
+				return this.GetTable<QL_NGUOIDUNG>();
+>>>>>>> 471b3102bc25857bb13ca30876b7ba2f7bcb9fcf
 			}
 		}
 		
@@ -293,6 +321,30 @@ namespace BLL_DAL
 			get
 			{
 				return this.GetTable<QL_PHANQUYEN>();
+			}
+		}
+		
+<<<<<<< HEAD
+		public System.Data.Linq.Table<QL_PHANQUYEN> QL_PHANQUYENs
+		{
+			get
+			{
+				return this.GetTable<QL_PHANQUYEN>();
+=======
+		public System.Data.Linq.Table<QL_NHOM_NGUOIDUNG> QL_NHOM_NGUOIDUNGs
+		{
+			get
+			{
+				return this.GetTable<QL_NHOM_NGUOIDUNG>();
+			}
+		}
+		
+		public System.Data.Linq.Table<QL_NGUOIDUNGNHOMNGUOIDUNG> QL_NGUOIDUNGNHOMNGUOIDUNGs
+		{
+			get
+			{
+				return this.GetTable<QL_NGUOIDUNGNHOMNGUOIDUNG>();
+>>>>>>> 471b3102bc25857bb13ca30876b7ba2f7bcb9fcf
 			}
 		}
 		
@@ -4081,8 +4133,123 @@ namespace BLL_DAL
 		}
 	}
 	
+<<<<<<< HEAD
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.PHONGDV_FREE")]
 	public partial class PHONGDV_FREE : INotifyPropertyChanging, INotifyPropertyChanged
+=======
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.QL_NGUOIDUNG")]
+	public partial class QL_NGUOIDUNG : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _TENDANGNHAP;
+		
+		private string _MATKHAU;
+		
+		private bool _HOATDONG;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnTENDANGNHAPChanging(string value);
+    partial void OnTENDANGNHAPChanged();
+    partial void OnMATKHAUChanging(string value);
+    partial void OnMATKHAUChanged();
+    partial void OnHOATDONGChanging(bool value);
+    partial void OnHOATDONGChanged();
+    #endregion
+		
+		public QL_NGUOIDUNG()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENDANGNHAP", DbType="VarChar(15) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string TENDANGNHAP
+		{
+			get
+			{
+				return this._TENDANGNHAP;
+			}
+			set
+			{
+				if ((this._TENDANGNHAP != value))
+				{
+					this.OnTENDANGNHAPChanging(value);
+					this.SendPropertyChanging();
+					this._TENDANGNHAP = value;
+					this.SendPropertyChanged("TENDANGNHAP");
+					this.OnTENDANGNHAPChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MATKHAU", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string MATKHAU
+		{
+			get
+			{
+				return this._MATKHAU;
+			}
+			set
+			{
+				if ((this._MATKHAU != value))
+				{
+					this.OnMATKHAUChanging(value);
+					this.SendPropertyChanging();
+					this._MATKHAU = value;
+					this.SendPropertyChanged("MATKHAU");
+					this.OnMATKHAUChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOATDONG", DbType="Bit NOT NULL")]
+		public bool HOATDONG
+		{
+			get
+			{
+				return this._HOATDONG;
+			}
+			set
+			{
+				if ((this._HOATDONG != value))
+				{
+					this.OnHOATDONGChanging(value);
+					this.SendPropertyChanging();
+					this._HOATDONG = value;
+					this.SendPropertyChanged("HOATDONG");
+					this.OnHOATDONGChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.QL_PHANQUYEN")]
+	public partial class QL_PHANQUYEN : INotifyPropertyChanging, INotifyPropertyChanged
+>>>>>>> 471b3102bc25857bb13ca30876b7ba2f7bcb9fcf
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -4599,12 +4766,18 @@ namespace BLL_DAL
 		}
 	}
 	
+<<<<<<< HEAD
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.QL_NHOM_NGUOIDUNG")]
 	public partial class QL_NHOM_NGUOIDUNG : INotifyPropertyChanging, INotifyPropertyChanged
+=======
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.NHANVIEN")]
+	public partial class NHANVIEN : INotifyPropertyChanging, INotifyPropertyChanged
+>>>>>>> 471b3102bc25857bb13ca30876b7ba2f7bcb9fcf
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
+<<<<<<< HEAD
 		private string _MANHOM;
 		
 		private string _TENNHOM;
@@ -4739,6 +4912,9 @@ namespace BLL_DAL
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
+=======
+		private string _MANV;
+>>>>>>> 471b3102bc25857bb13ca30876b7ba2f7bcb9fcf
 		
 		private void attach_QL_NGUOIDUNGNHOMNGUOIDUNGs(QL_NGUOIDUNGNHOMNGUOIDUNG entity)
 		{
@@ -4779,18 +4955,49 @@ namespace BLL_DAL
 		
 		private EntityRef<DM_MANHINH> _DM_MANHINH;
 		
+<<<<<<< HEAD
 		private EntityRef<QL_NHOM_NGUOIDUNG> _QL_NHOM_NGUOIDUNG;
+=======
+		private bool _QUYEN;
+		
+		private EntitySet<QL_NGUOIDUNGNHOMNGUOIDUNG> _QL_NGUOIDUNGNHOMNGUOIDUNGs;
+>>>>>>> 471b3102bc25857bb13ca30876b7ba2f7bcb9fcf
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
+<<<<<<< HEAD
     partial void OnMANHOMChanging(string value);
     partial void OnMANHOMChanged();
     partial void OnMAMANHINHChanging(string value);
     partial void OnMAMANHINHChanged();
     partial void OnCOQUYENChanging(bool value);
     partial void OnCOQUYENChanged();
+=======
+    partial void OnMANVChanging(string value);
+    partial void OnMANVChanged();
+    partial void OnTENNVChanging(string value);
+    partial void OnTENNVChanged();
+    partial void OnGIOITINHChanging(string value);
+    partial void OnGIOITINHChanged();
+    partial void OnNGAYSINHChanging(System.Nullable<System.DateTime> value);
+    partial void OnNGAYSINHChanged();
+    partial void OnSDTChanging(string value);
+    partial void OnSDTChanged();
+    partial void OnDIACHIChanging(string value);
+    partial void OnDIACHIChanged();
+    partial void OnEMAILChanging(string value);
+    partial void OnEMAILChanged();
+    partial void OnHINHANHChanging(System.Data.Linq.Binary value);
+    partial void OnHINHANHChanged();
+    partial void OnMATKHAUChanging(string value);
+    partial void OnMATKHAUChanged();
+    partial void OnHOATDONGChanging(bool value);
+    partial void OnHOATDONGChanged();
+    partial void OnQUYENChanging(bool value);
+    partial void OnQUYENChanged();
+>>>>>>> 471b3102bc25857bb13ca30876b7ba2f7bcb9fcf
     #endregion
 		
 		public QL_PHANQUYEN()
@@ -5017,8 +5224,13 @@ namespace BLL_DAL
 			}
 		}
 		
+<<<<<<< HEAD
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENDN", DbType="NChar(50)")]
 		public string TENDN
+=======
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HINHANH", DbType="Image", UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary HINHANH
+>>>>>>> 471b3102bc25857bb13ca30876b7ba2f7bcb9fcf
 		{
 			get
 			{
@@ -5077,8 +5289,33 @@ namespace BLL_DAL
 			}
 		}
 		
+<<<<<<< HEAD
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SDT", DbType="NChar(11)")]
 		public string SDT
+=======
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QUYEN", DbType="Bit NOT NULL")]
+		public bool QUYEN
+		{
+			get
+			{
+				return this._QUYEN;
+			}
+			set
+			{
+				if ((this._QUYEN != value))
+				{
+					this.OnQUYENChanging(value);
+					this.SendPropertyChanging();
+					this._QUYEN = value;
+					this.SendPropertyChanged("QUYEN");
+					this.OnQUYENChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NHANVIEN_QL_NGUOIDUNGNHOMNGUOIDUNG", Storage="_QL_NGUOIDUNGNHOMNGUOIDUNGs", ThisKey="MANV", OtherKey="TENDANGNHAP")]
+		public EntitySet<QL_NGUOIDUNGNHOMNGUOIDUNG> QL_NGUOIDUNGNHOMNGUOIDUNGs
+>>>>>>> 471b3102bc25857bb13ca30876b7ba2f7bcb9fcf
 		{
 			get
 			{

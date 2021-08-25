@@ -25,7 +25,12 @@ namespace GUI.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+<<<<<<< HEAD
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DOUBLESHIT;Initial Catalog=QLDPKS;Integrated Security=True")]
+=======
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=B902702E395D455\\WIN2K;Initial Catalog=QLDPKS;User ID=sa;Password=sa20" +
+            "12")]
+>>>>>>> 471b3102bc25857bb13ca30876b7ba2f7bcb9fcf
         public string Connect {
             get {
                 return ((string)(this["Connect"]));
@@ -38,7 +43,12 @@ namespace GUI.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+<<<<<<< HEAD
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DOUBLESHIT;Initial Catalog=QLDPKS;Integrated Security=True")]
+=======
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=B902702E395D455\\WIN2K;Initial Catalog=QLDPKS;User ID=sa;Password=sa20" +
+            "12")]
+>>>>>>> 471b3102bc25857bb13ca30876b7ba2f7bcb9fcf
         public string QLDPKSConnectionString {
             get {
                 return ((string)(this["QLDPKSConnectionString"]));

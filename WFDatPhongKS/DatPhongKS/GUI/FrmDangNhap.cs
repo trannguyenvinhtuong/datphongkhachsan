@@ -45,7 +45,11 @@ namespace GUI
             }
             catch (Exception)
             {
+<<<<<<< HEAD
                 //MessageBox.Show("Lỗi xảy ra khi truy vấn dữ liệu hoặc kết nối với server thất bại !");
+=======
+                MessageBox.Show("Lỗi xảy ra khi truy vấn dữ liệu hoặc kết nối với server thất bại !");
+>>>>>>> 471b3102bc25857bb13ca30876b7ba2f7bcb9fcf
             }
             finally
             {

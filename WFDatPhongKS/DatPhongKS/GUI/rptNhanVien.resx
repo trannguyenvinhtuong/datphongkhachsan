@@ -117,6 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+<<<<<<< HEAD
   <data name="xrLabel20.Text" xml:space="preserve">
     <value>Điều 1: Thời gian làm việc
 Thời gian làm việc là 8 giờ / ngày, từ thứ 2 đến thứ 7.
@@ -142,6 +143,8 @@ Mọi nhân viên mang tài sản Công ty ra ngoài cần được sự đồng
 Có ý thức tiết kiệm và bảo vệ tài sản chung.
 Không tự ý sử dụng tài sản riêng của người khác.</value>
   </data>
+=======
+>>>>>>> 471b3102bc25857bb13ca30876b7ba2f7bcb9fcf
   <metadata name="dataSet_QLDP1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>

@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Reference Include="DevExpress.BonusSkins.v20.1" />
     <Reference Include="DevExpress.Charts.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v20.1" />
@@ -59,6 +60,32 @@
     <Reference Include="DevExpress.XtraReports.v20.1.Extensions, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraScheduler.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraScheduler.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+=======
+    <Reference Include="DevExpress.BonusSkins.v19.2" />
+    <Reference Include="DevExpress.Charts.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v19.2" />
+    <Reference Include="DevExpress.Office.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v19.2.Export, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v19.2" />
+    <Reference Include="DevExpress.Sparkline.v19.2.Core" />
+    <Reference Include="DevExpress.Utils.v19.2.UI, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v19.2" />
+    <Reference Include="DevExpress.Printing.v19.2.Core" />
+    <Reference Include="DevExpress.XtraGauges.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraLayout.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v19.2.Extensions, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+>>>>>>> 471b3102bc25857bb13ca30876b7ba2f7bcb9fcf
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -85,12 +112,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet_QLDP.xsd</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Editks.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Editks.Designer.cs">
       <DependentUpon>Editks.cs</DependentUpon>
     </Compile>
+=======
+>>>>>>> 471b3102bc25857bb13ca30876b7ba2f7bcb9fcf
     <Compile Include="FrmBackground.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,6 +227,7 @@
     <Compile Include="rptNhanVien.Designer.cs">
       <DependentUpon>rptNhanVien.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="SuaDV.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -266,6 +297,8 @@
     <EmbeddedResource Include="Editks.resx">
       <DependentUpon>Editks.cs</DependentUpon>
     </EmbeddedResource>
+=======
+>>>>>>> 471b3102bc25857bb13ca30876b7ba2f7bcb9fcf
     <EmbeddedResource Include="FrmBackground.resx">
       <DependentUpon>FrmBackground.cs</DependentUpon>
     </EmbeddedResource>
@@ -303,6 +336,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <EmbeddedResource Include="QLDichvu.resx">
       <DependentUpon>QLDichvu.cs</DependentUpon>
     </EmbeddedResource>
@@ -360,6 +394,11 @@
     <EmbeddedResource Include="Themtienich.resx">
       <DependentUpon>Themtienich.cs</DependentUpon>
     </EmbeddedResource>
+=======
+    <EmbeddedResource Include="rptNhanVien.resx">
+      <DependentUpon>rptNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+>>>>>>> 471b3102bc25857bb13ca30876b7ba2f7bcb9fcf
     <None Include="App.config" />
     <None Include="DataSet_QLDP.xsc">
       <DependentUpon>DataSet_QLDP.xsd</DependentUpon>

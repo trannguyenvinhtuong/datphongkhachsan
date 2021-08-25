@@ -14,9 +14,13 @@ namespace GUI
 {
     class QL_NguoiDung
     {
+<<<<<<< HEAD
 
         //SqlConnection con = new SqlConnection(@"Data Source=B902702E395D455\WIN2K; ;Initial Catalog = QLDPKS; User = sa; Password=sa2012");
         SqlConnection con = new SqlConnection(@"Data Source = DOUBLESHIT; Initial Catalog = QLDPKS; Integrated Security = True");
+=======
+        SqlConnection con = new SqlConnection(@"Data Source=B902702E395D455\WIN2K; ;Initial Catalog = QLDPKS; User = sa; Password=sa2012");
+>>>>>>> 471b3102bc25857bb13ca30876b7ba2f7bcb9fcf
         public int Check_Config()
         {
             if (Properties.Settings.Default.Connect == string.Empty)

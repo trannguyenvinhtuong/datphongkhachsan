@@ -35,8 +35,13 @@ namespace GUI
 
             if (ChucVu1 == "False")
             {
+<<<<<<< HEAD
                 menu_employee.Visible = false;
                 menu_Employees.Visible = false;
+=======
+                menu_employee.Enabled = false;
+                menu_statistics.Enabled = false;
+>>>>>>> 471b3102bc25857bb13ca30876b7ba2f7bcb9fcf
             }
 
         }
@@ -113,6 +118,7 @@ namespace GUI
 
         }
 
+<<<<<<< HEAD
         private void kháchToolStripMenuItem_Click(object sender, EventArgs e)
         {
             QLKhachSan ks = new QLKhachSan();
@@ -183,6 +189,8 @@ namespace GUI
             nhung(nv);
         }
 
+=======
+>>>>>>> 471b3102bc25857bb13ca30876b7ba2f7bcb9fcf
         private void btnDoiMK_MouseClick(object sender, MouseEventArgs e)
         {
 

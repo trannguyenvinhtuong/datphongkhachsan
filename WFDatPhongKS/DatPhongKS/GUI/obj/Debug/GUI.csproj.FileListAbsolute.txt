@@ -210,6 +210,7 @@ D:\GitHub\datphongkhachsan\WFDatPhongKS\DatPhongKS\GUI\bin\Debug\ja\DevExpress.D
 D:\GitHub\datphongkhachsan\WFDatPhongKS\DatPhongKS\GUI\bin\Debug\ru\DevExpress.Diagram.v19.2.Core.resources.dll
 D:\GitHub\datphongkhachsan\WFDatPhongKS\DatPhongKS\GUI\obj\Debug\GUI.FrmDoiMK.resources
 D:\GitHub\datphongkhachsan\WFDatPhongKS\DatPhongKS\GUI\obj\Debug\GUI.FrmBackground.resources
+<<<<<<< HEAD
 H:\new\WFDatPhongKS\DatPhongKS\GUI\bin\Debug\GUI.exe.config
 H:\new\WFDatPhongKS\DatPhongKS\GUI\bin\Debug\GUI.exe
 H:\new\WFDatPhongKS\DatPhongKS\GUI\bin\Debug\GUI.pdb
@@ -445,3 +446,5 @@ H:\new\WFDatPhongKS\DatPhongKS\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
 H:\new\WFDatPhongKS\DatPhongKS\GUI\obj\Debug\GUI.csproj.CopyComplete
 H:\new\WFDatPhongKS\DatPhongKS\GUI\obj\Debug\GUI.exe
 H:\new\WFDatPhongKS\DatPhongKS\GUI\obj\Debug\GUI.pdb
+=======
+>>>>>>> 471b3102bc25857bb13ca30876b7ba2f7bcb9fcf
